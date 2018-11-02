@@ -1,0 +1,205 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-ibanner-v1" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="container">
+    <div class="banner-home4-top">
+      <div class="col-md-6 hover-images">
+        <a href="{{section.settings.ib1_url}}" title="banner">
+        {% if section.settings.ib1_background == blank %}
+        {% capture _img_url %}ib_v1_bg1.jpg{% endcapture %}
+        <img src="{{ _img_url | asset_url}}" alt="">
+        {% else %}
+        <img src="{{ section.settings.ib1_background | img_url:'master' }}" alt="banner">
+        {% endif %}
+        </a>
+        <div class="text">
+          <a href="{{section.settings.ib1_url}}"><h1>{{section.settings.ib1_content_1}}</h1></a> 
+          <h2>{{section.settings.ib1_content_2}}</h2>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="col-md-6">
+          <div class="col-md-12 col-sm-6 col-xs-6 hover-images">
+            <a href="{{section.settings.ib2_url}}" title="banner">
+            {% if section.settings.ib2_background == blank %}
+            {% capture _img_url %}ib_v1_bg2.jpg{% endcapture %}
+            <img src="{{ _img_url | asset_url}}" alt="">
+            {% else %}
+            <img src="{{ section.settings.ib2_background | img_url:'master' }}" alt="banner">
+            {% endif %}
+            </a>
+            <div class="text">
+            <a href="{{section.settings.ib2_url}}"><h1>{{section.settings.ib2_content_1}}</h1></a> 
+            <h2>{{section.settings.ib2_content_2}}</h2>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-6  col-xs-6 hover-images">
+            <a href="{{section.settings.ib3_url}}" title="banner">
+            {% if section.settings.ib3_background == blank %}
+            {% capture _img_url %}ib_v1_bg3.jpg{% endcapture %}
+            <img src="{{ _img_url | asset_url}}" alt="">
+            {% else %}
+            <img src="{{ section.settings.ib3_background | img_url:'master' }}" alt="banner">
+            {% endif %}
+            </a>
+            <div class="text">
+            <a href="{{section.settings.ib3_url}}"><h1>{{section.settings.ib3_content_1}}</h1></a> 
+            <h2>{{section.settings.ib3_content_2}}</h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 hover-images">
+          <a href="{{section.settings.ib4_url}}" title="banner">
+          {% if section.settings.ib4_background == blank %}
+          {% capture _img_url %}ib_v1_bg4.jpg{% endcapture %}
+          <img src="{{ _img_url | asset_url}}" alt="">
+          {% else %}
+          <img src="{{ section.settings.ib4_background | img_url:'master' }}" alt="banner">
+          {% endif %}
+          </a>
+          <div class="text">
+          <a href="{{section.settings.ib4_url}}"><h1>{{section.settings.ib4_content_1}}</h1></a> 
+          <h2>{{section.settings.ib4_content_2}}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Interactive Banner v1",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Banner 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "ib1_background",
+      "label": "Background"
+    },
+    {
+      "type": "text",
+      "id": "ib1_content_1",
+      "label": "Content 1",
+      "default": "Features"
+    },
+    {
+      "type": "text",
+      "id": "ib1_content_2",
+      "label": "Content 2",
+      "default": "Assertively recaptiualize quality"
+    },
+    {
+      "type": "text",
+      "id": "ib1_url",
+      "label": "URL",
+      "default": "\/collections\/all"
+    },
+    {
+      "type": "header",
+      "content": "Banner 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "ib2_background",
+      "label": "Background"
+    },
+    {
+      "type": "text",
+      "id": "ib2_content_1",
+      "label": "Content 1",
+      "default": "Shoose"
+    },
+    {
+      "type": "text",
+      "id": "ib2_content_2",
+      "label": "Content 2",
+      "default": "Assertively recaptiualize quality"
+    },
+    {
+      "type": "text",
+      "id": "ib2_url",
+      "label": "URL",
+      "default": "\/collections\/all"
+    },
+    {
+      "type": "header",
+      "content": "Banner 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "ib3_background",
+      "label": "Background"
+    },
+    {
+      "type": "text",
+      "id": "ib3_content_1",
+      "label": "Content 1",
+      "default": "Accessories"
+    },
+    {
+      "type": "text",
+      "id": "ib3_content_2",
+      "label": "Content 2",
+      "default": "Assertively recaptiualize quality"
+    },
+    {
+      "type": "text",
+      "id": "ib3_url",
+      "label": "URL",
+      "default": "\/collections\/all"
+    },
+    {
+      "type": "header",
+      "content": "Banner 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "ib4_background",
+      "label": "Background"
+    },
+    {
+      "type": "text",
+      "id": "ib4_content_1",
+      "label": "Content 1",
+      "default": "House & Home"
+    },
+    {
+      "type": "text",
+      "id": "ib4_content_2",
+      "label": "Content 2",
+      "default": "Assertively recaptiualize quality"
+    },
+    {
+      "type": "text",
+      "id": "ib4_url",
+      "label": "URL",
+      "default": "\/collections\/all"
+    },
+	{
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Interactive Banner v1",
+      "category": "Content"
+    }
+  ]
+}
+{% endschema %}

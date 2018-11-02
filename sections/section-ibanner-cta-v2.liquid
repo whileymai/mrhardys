@@ -1,0 +1,224 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-ibanner-cta-v2" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="container">
+    <div class="banner-hom7-center">
+      <div class="col-md-6">
+        <div class="col-md-6 banner-private banner-home7-center1">
+          <a href="{{section.settings.bn1_url}}" title="Banner">
+            {% if section.settings.banner_1 == blank %}
+            {% capture _img_url %}ibanner_cta_v2_banner1.jpg{% endcapture %}
+            <img src="{{ _img_url | asset_url}}" alt="">
+            {% else %}
+            <img src="{{ section.settings.banner_1 | img_url:'master' }}" alt="Banner">
+            {% endif %}
+          </a>
+          <div class="text">
+            <span class="{{section.settings.bn1_icon}}"></span>
+            <h3>{{section.settings.bn1_content}}</h3>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 hover-images">
+          <a href="{{section.settings.bn2_url}}" title="Banner">
+            {% if section.settings.banner_2 == blank %}
+            {% capture _img_url %}ibanner_cta_v2_banner2.jpg{% endcapture %}
+            <img src="{{ _img_url | asset_url}}" alt="">
+            {% else %}
+            <img src="{{ section.settings.banner_2 | img_url:'master' }}" alt="Banner">
+            {% endif %}
+          </a>
+        </div>
+        <div class="col-md-6 col-sm-6 hover-images">
+          <a href="{{section.settings.bn3_url}}" title="Banner">
+            {% if section.settings.banner_3 == blank %}
+            {% capture _img_url %}ibanner_cta_v2_banner3.jpg{% endcapture %}
+            <img src="{{ _img_url | asset_url}}" alt="">
+            {% else %}
+            <img src="{{ section.settings.banner_3 | img_url:'master' }}" alt="Banner">
+            {% endif %}
+          </a>
+        </div>
+        <div class="col-md-6 banner-private banner-home7-center2">
+          <a href="{{section.settings.bn4_url}}" title="Banner">
+            {% if section.settings.banner_4 == blank %}
+            {% capture _img_url %}ibanner_cta_v2_banner4.jpg{% endcapture %}
+            <img src="{{ _img_url | asset_url}}" alt="">
+            {% else %}
+            <img src="{{ section.settings.banner_4 | img_url:'master' }}" alt="Banner">
+            {% endif %}
+          </a>
+          <div class="text">
+            <span class="{{section.settings.bn4_icon}}"></span>
+            <h3>{{section.settings.bn4_content}}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 banner-private-v2">
+        <div class="hover-images">
+          {% if section.settings.cta_background == blank %}
+          {% capture _img_url %}ibanner_cta_v2_bgcta.jpg{% endcapture %}
+          <img src="{{ _img_url | asset_url}}" alt="">
+          {% else %}
+          <img src="{{ section.settings.cta_background | img_url:'master' }}" alt="Banner">
+          {% endif %}
+
+        </div>
+        <div class="text">
+          <h4>{{section.settings.cta_content_1}}</h4>
+          <h3>{{section.settings.cta_content_2}}</h3>
+          <p>{{section.settings.cta_content_3}}</p>
+          {% if section.settings.cta_btn_url != blank %}
+          <a href="{{section.settings.cta_btn_url}}">
+            <button class="button button1 hover-white">{{section.settings.cta_btn_name}} <i class="link-icon-white"></i></button>
+          </a>
+          {% endif %}
+        </div>
+        <!-- End text -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "iBanner & CTA v2",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Banner"
+    },
+	{
+      "type": "image_picker",
+      "id": "banner_1",
+      "label": "Banner 1 Image"
+    },
+    {
+      "type": "text",
+      "id": "bn1_url",
+      "label": "Banner 1 URL",
+      "default": "\/collections\/all"
+    },
+	{
+      "type": "text",
+      "id": "bn1_icon",
+      "label": "Banner 1 Icon",
+	  "info": "[Get icon from here](http://simplelineicons.com/)",
+      "default": "icon-plane"
+	},
+	{
+      "type": "text",
+      "id": "bn1_content",
+      "label": "Banner 1 Content",
+      "default": "FREE STANDARD SHIPPING ON ORDERS OVER $100"
+	},
+    {
+      "type": "image_picker",
+      "id": "banner_2",
+      "label": "Banner 2 Image"
+    },
+    {
+      "type": "text",
+      "id": "bn2_url",
+      "label": "Banner 2 URL",
+      "default": "\/collections\/all"
+    },
+	{
+      "type": "image_picker",
+      "id": "banner_3",
+      "label": "Banner 3 Image"
+    },
+    {
+      "type": "text",
+      "id": "bn3_url",
+      "label": "Banner 3 URL",
+      "default": "\/collections\/all"
+    },
+	{
+      "type": "image_picker",
+      "id": "banner_4",
+      "label": "Banner 4 Image"
+    },
+    {
+      "type": "text",
+      "id": "bn4_url",
+      "label": "Banner 4 URL",
+      "default": "\/collections\/all"
+    },
+	{
+      "type": "text",
+      "id": "bn4_icon",
+      "label": "Banner 4 Icon",
+	  "info": "[Get icon from here](http://simplelineicons.com/)",
+      "default": "icon-diamond"
+	},
+	{
+      "type": "text",
+      "id": "bn4_content",
+      "label": "Banner 4 Content",
+      "default": "Up to 25% off* spectacular"
+	},
+	{
+      "type": "header",
+      "content": "Call to Action"
+    },
+    {
+      "type": "image_picker",
+      "id": "cta_background",
+      "label": "CTA Background"
+    },
+    {
+      "type": "text",
+      "id": "cta_content_1",
+      "label": "CTA content 1",
+      "default": "SPRING 2016 COLLECTION"
+    },
+    {
+      "type": "text",
+      "id": "cta_content_2",
+      "label": "CTA content 2",
+      "default": "Vestibu & Inceptos"
+    },
+    {
+      "type": "text",
+      "id": "cta_content_3",
+      "label": "CTA content 3",
+      "default": "Seamlessly restore robust partnerships and frictionless materials nteractively"
+    },
+    {
+      "type": "text",
+      "id": "cta_btn_name",
+      "label": "CTA button name",
+      "default": "Take me there"
+    },
+    {
+      "type": "text",
+      "id": "cta_btn_url",
+      "label": "CTA button url",
+	  "info": "if URL empty, Button don't show",
+      "default": "\/collections\/all"
+    },
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "iBanner & CTA v2",
+      "category": "Content"
+    }
+  ]
+}
+{% endschema %}

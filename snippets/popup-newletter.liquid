@@ -1,0 +1,90 @@
+
+{% if settings.newsletter_form_action != blank %}
+{% assign form_action = settings.newsletter_form_action %}
+{% else %}
+{% assign form_action = '//myshopify.us12.list-manage.com/subscribe/post?u=9ade7b39da179308b891bd263&amp;id=e9dbec7f92' %}
+{% endif %}
+
+{% if settings.po_newletter_style == "pn_s1" %}
+<div class="popup-content" id="email-modal">
+  <div class="popup-content-wrapper">
+    <div class="popup-container">
+      <div class="col-md-6 col-sm-6 images">
+        <img class="img-responsive" src="{{ 'pns1_img.jpg' | asset_url }}" alt="newsletter">
+      </div>
+      <div class="col-md-6 col-sm-6 text">
+        <div class="popup-content-text">
+          <a href="javascript:void(0)" class="close-popup"><i class="fa">x</i></a>
+          <h3>{{settings.pns1_title}}</h3>
+          <h4>{{settings.pns1_des}}</h4>
+          <p>{{settings.pns1_content}}</p>
+        </div>
+        <div class="newletter-form">
+          <div class="widget_wysija_cont shortcode_wysija">
+            <div class="wysija-msg ajax" id="msg-form-wysija-shortcode57bd06004b338-1"></div>
+            <form class="widget_wysija shortcode_wysija" action="{{form_action}}" method="post" id="form-wysija-shortcode57bd06004b338-1">
+              <p class="wysija-paragraph">
+                <input type="text" value="" placeholder="{{settings.pns1_placeholder}}" title="{{settings.pns1_placeholder}}" class="wysija-input validate[required,custom[email]]" name="EMAIL">
+                <span class="abs-req">
+                  <input type="text" value="" class="wysija-input validated[abs][email]" name="wysija[user][abs][email]">
+                </span>
+              </p>
+              <button type="submit" value="{{settings.pns1_btn_name}}" class="wysija-submit wysija-submit-field button button1 hover-white">{{settings.pns1_btn_name}}<i class="link-icon-white"></i></button>
+            </form>
+          </div>
+        </div>
+        <label class="not-again engoj_newletter_close"><span>{{settings.pns1_close_name}}</span></label>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if settings.po_newletter_style == "pn_s2" %}
+<div class="popup-content" id="email-modal">
+  <div class="popup-content-wrapper popup-content-wrapper-v2">
+    <div class="popup-container">
+      <div class="col-md-12 text">
+        <div class="popup-content-text">
+          <a href="javascript:void(0)" class="close-popup"><i class="fa">x</i></a>
+          <h2>{{settings.pns2_title1}}</h2>
+          <h1>{{settings.pns2_title2_1}}<span>{{settings.pns2_title2_2}}</span></h1>
+          <h3>{{settings.pns2_title3}}</h3>
+          <h4>{{settings.pns2_content1}}</h4>
+          <p>{{settings.pns2_content2}}</p>
+        </div>
+        <div class="newletter-form">
+          <div class="widget_wysija_cont shortcode_wysija">
+            <div class="wysija-msg ajax" id="msg-form-wysija-shortcode57bd06004b338-1"></div>
+            <form class="widget_wysija shortcode_wysija" action="{{form_action}}" method="post" id="form-wysija-shortcode57bd06004b338-1">
+              <p class="wysija-paragraph">
+                <input type="text" value="" placeholder="{{settings.pns2_placeholder}}" title="{{settings.pns2_placeholder}}" class="wysija-input validate[required,custom[email]]" name="EMAIL">
+                <span class="abs-req">
+                  <input type="text" value="" class="wysija-input validated[abs][email]" name="wysija[user][abs][email]">
+                </span>
+              </p>
+              <button type="submit" value="{{settings.pns2_btn_name}}" class="wysija-submit wysija-submit-field button button1 hover-white">{{settings.pns2_btn_name}}<i class="link-icon-white"></i></button>
+            </form>
+          </div>
+        </div>
+        <label class="not-again engoj_newletter_close"><span>{{settings.pns2_close_name}}</span></label>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<script type="text/javascript">
+  if (!jQuery.cookie('uno_pop_newletter') || jQuery.cookie('uno_pop_newletter') == null) {    
+      jQuery(window).load(function() {
+        setTimeout($('#email-modal').show(), {{settings.popup_delay}} * 10000);
+        jQuery('.engoj_newletter_close').click(function(e) {
+          e.preventDefault();
+          jQuery('#email-modal').hide(); date.setTime(date.getTime() + (minutes * 60 * 1000));
+          jQuery.cookie('uno_pop_newletter', '1', { expires: 2, path: '/' });
+        });
+      });
+     } else {
+        $('#email-modal').remove();
+     }
+</script>

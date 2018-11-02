@@ -1,0 +1,140 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-ibanner-cta-v1" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="main-content">
+    <div class="banner-home2 space-40">
+      <div class="container">
+        <div class="col-md-7">
+          <a class="hover-images" href="{{section.settings.bn1_url}}" title="Banner">
+            {% if section.settings.banner_one == blank %}
+            {% capture _img_url %}ibanner_cta_v1_banner1.jpg{% endcapture %}
+            <img src="{{ _img_url | asset_url}}" alt="">
+            {% else %}
+            <img src="{{ section.settings.banner_one | img_url:'master' }}" alt="Banner">
+            {% endif %}
+          </a>
+        </div>
+        <!-- End col-md-7 -->
+        <div class="col-md-5">
+          <a class="hover-images" href="{{section.settings.bn2_url}}" title="Banner">
+            {% if section.settings.banner_two == blank %}
+            {% capture _img_url %}ibanner_cta_v1_banner2.jpg{% endcapture %}
+            <img src="{{ _img_url | asset_url}}" alt="">
+            {% else %}
+            <img src="{{ section.settings.banner_two | img_url:'master' }}" alt="Banner">
+            {% endif %}
+          </a>
+          <div class="hover-effect-border">
+            {% if section.settings.cta_background == blank %}
+            {% capture _img_url %}ibanner_cta_v1_bgcta.jpg{% endcapture %}
+            <img src="{{ _img_url | asset_url}}" alt="">
+            {% else %}
+            <img src="{{ section.settings.cta_background | img_url:'master' }}" alt="Banner">
+            {% endif %}
+            <div class="text">
+              <h4>{{section.settings.cta_content_1}}</h4>
+              <h3 class="hidden-xs">{{section.settings.cta_content_2}}</h3>
+              <p class="hidden-xs">{{section.settings.cta_content_3}}</p>
+              {% if section.settings.cta_btn_url != blank %}
+              <a href="{{section.settings.cta_btn_url}}">
+                <button class="button button1 hover-white">{{section.settings.cta_btn_name}} <i class="link-icon-white"></i></button>
+              </a>
+              {% endif %}
+            </div>
+            <!-- End text -->
+          </div>
+        </div>
+        <!-- End col-md-5 -->
+      </div>
+      <!-- End container -->
+    </div>
+    <!-- End banner home 2 -->
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "iBanner & CTA v1",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "banner_one",
+      "label": "Banner 1 Image"
+    },
+    {
+      "type": "text",
+      "id": "bn1_url",
+      "label": "Banner 1 URL",
+      "default": "\/collections\/all"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_two",
+      "label": "Banner 2 Image"
+    },
+    {
+      "type": "text",
+      "id": "bn2_url",
+      "label": "Banner 2 URL",
+      "default": "\/collections\/all"
+    },
+    {
+      "type": "image_picker",
+      "id": "cta_background",
+      "label": "CTA Background"
+    },
+    {
+      "type": "text",
+      "id": "cta_content_1",
+      "label": "CTA content 1",
+      "default": "SPRING 2016 COLLECTION"
+    },
+    {
+      "type": "text",
+      "id": "cta_content_2",
+      "label": "CTA content 2",
+      "default": "Vestibu & Inceptos"
+    },
+    {
+      "type": "text",
+      "id": "cta_content_3",
+      "label": "CTA content 3",
+      "default": "Seamlessly restore robust partnerships and frictionless materials nteractively"
+    },
+    {
+      "type": "text",
+      "id": "cta_btn_name",
+      "label": "CTA button name",
+      "default": "Take me there"
+    },
+    {
+      "type": "text",
+      "id": "cta_btn_url",
+      "label": "CTA button url",
+	  "info": "if URL empty, Button don't show",
+      "default": "\/collections\/all"
+    },
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "iBanner & CTA v1",
+      "category": "Content"
+    }
+  ]
+}
+{% endschema %}

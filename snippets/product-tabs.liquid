@@ -1,0 +1,19 @@
+<!-- /snippets/product-tabs.liquid -->
+<div class="hoz-tab-container space-padding-tb-40 slider-product tabs-title-v2">
+  <ul class="tabs">
+    {% if section.settings.enable_des_tab %}
+    <li class="item" rel="description">{{section.settings.title_des_tab}}</li>
+    {% endif %}
+  </ul>
+  <div class="tab-container">
+    {% if section.settings.enable_des_tab %}
+    <div id="description" class="tab-content mockup mockup-v3 text-center">
+      {{ product.description }}
+    </div>
+    <!-- End description -->
+    {% endif %}
+   
+
+  </div>
+</div>
+<!-- tab-container -->

@@ -1,0 +1,178 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-cta-v2" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="banner-home8-top banner-home8-center">
+    {% if section.blocks.size > 0 %}
+    {%- assign i = 1 -%}
+    {% for block in section.blocks %}
+    <div class="col-md-6">
+      <div class="col-md-12 banner-private hover-images">
+        {% if block.settings.cta1_background == blank %}
+        {% capture _img_url %}cta_v2_block{{i}}_bg1.jpg{% endcapture %}
+        <img src="{{ _img_url | asset_url}}" alt="">
+        {% else %}
+        <img src="{{ block.settings.cta1_background | img_url:'master' }}" alt="Banner-center">
+        {% endif %}
+        <div class="text">
+          <h3>{{block.settings.cta1_content_1}}</h3>
+          <p>{{block.settings.cta1_content_2}}</p>
+          {% if block.settings.cta1_btn_url != blank %}
+          <a class="button button1 hover-white" href="{{block.settings.cta1_btn_url}}" title="{{block.settings.cta1_btn_name}}">{{block.settings.cta1_btn_name}}<i class="link-icon-white"></i></a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-md-12 banner-private hover-images">
+        {% if block.settings.cta2_background == blank %}
+        {% capture _img_url %}cta_v2_block{{i}}_bg2.jpg{% endcapture %}
+        <img src="{{ _img_url | asset_url}}" alt="">
+        {% else %}
+        <img src="{{ block.settings.cta2_background | img_url:'master' }}" alt="Banner-center">
+        {% endif %}
+        <div class="text">
+          <h3>{{block.settings.cta2_content_1}}</h3>
+          <p>{{block.settings.cta2_content_2}}</p>
+          {% if block.settings.cta2_btn_url != blank %}
+          <a class="button button1 hover-white" href="{{block.settings.cta2_btn_url}}" title="{{block.settings.cta2_btn_name}}">{{block.settings.cta2_btn_name}}<i class="link-icon-white"></i></a>
+          {% endif %}
+        </div>
+      </div>                   
+    </div>
+    {%- assign i = i | plus : 1 -%}
+    {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Call To Action v2",
+  "max_blocks": 2,
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "header",
+          "content": "CTA 1"
+        },
+		{
+          "type": "image_picker",
+          "id": "cta1_background",
+          "label": "Background"
+        },
+        {
+          "type": "text",
+          "id": "cta1_content_1",
+          "label": "Content 1",
+          "default": "Summer Collection"
+        },
+        {
+          "type": "text",
+          "id": "cta1_content_2",
+          "label": "Content 2",
+          "default": "Best collection 2016"
+        },
+        {
+          "type": "text",
+          "id": "cta1_btn_name",
+          "label": "Button name",
+          "default": "Shop now"
+        },
+        {
+          "type": "text",
+          "id": "cta1_btn_url",
+          "label": "Button url",
+          "info": "if URL empty, Button don't show",
+          "default": "\/collections\/all"
+        },
+        {
+          "type": "header",
+          "content": "CTA 2"
+        },
+		{
+          "type": "image_picker",
+          "id": "cta2_background",
+          "label": "Background"
+        },
+        {
+          "type": "text",
+          "id": "cta2_content_1",
+          "label": "Content 1",
+          "default": "Shaes Shadow"
+        },
+        {
+          "type": "text",
+          "id": "cta2_content_2",
+          "label": "Content 2",
+          "default": "NEW TRENDING 2016"
+        },
+        {
+          "type": "text",
+          "id": "cta2_btn_name",
+          "label": "Button name",
+          "default": "Shop now"
+        },
+        {
+          "type": "text",
+          "id": "cta2_btn_url",
+          "label": "Button url",
+          "info": "if URL empty, Button don't show",
+          "default": "\/collections\/all"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Call To Action v2",
+      "category": "Content",
+      "blocks": [
+        {
+          "type": "block",
+          "settings": {
+            "cta1_content_1": "Summer Collection",
+            "cta1_content_2": "Best collection 2016",   		
+			"cta1_btn_name": "Shop now",
+			"cta1_btn_url": "collections/all",
+			"cta2_content_1": "Shaes Shadow",
+            "cta2_content_2": "NEW TRENDING 2016",   		
+			"cta2_btn_name": "Shop now",
+			"cta2_btn_url": "collections/all"
+          }
+        },
+        {
+          "type": "block",
+          "settings": {
+            "cta1_content_1": "Dream Comere",
+            "cta1_content_2": "Sale up to 50% OFF",   		
+			"cta1_btn_name": "Shop now",
+			"cta1_btn_url": "collections/all",
+			"cta2_content_1": "Glassese Collection",
+            "cta2_content_2": "Best collection 2016",   		
+			"cta2_btn_name": "Shop now",
+			"cta2_btn_url": "collections/all"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,43 @@
+<!-- /templates/snippets/blog-template-masonry.liquid -->
+<div class="title-page space-padding-tb-50">
+  <h3>{{blog.title}}</h3>
+</div>
+<!-- End container -->
+<div class="container container-ver2 blog-classic">
+  <div class="grid blog-masonry blog-post-container space-50">
+    <div class="grid-sizer"></div>
+    <div class="inner-blog-masonry">
+      {% for article in blog.articles %}
+      <div class="grid-item">
+        <a class="hover-images" href="{{ article.url }}" title="{{ article.title }}">
+          <img src="{{ article.image.src | img_url: 'original' }}" alt="{{ article.title }}">
+        </a>
+        <p class="cat"><a title="cat">{{blog.title}}</a></p>
+        <h3><a title="{{ article.title }}" href="{{ article.url }}">{{ article.title }}</a></h3>
+        <div class="content">
+          <p>{{ article.content | strip_html | truncate: 200 }}</p>
+        </div>
+        <a title="{{ 'blogs.article.read_more' | t }}" href="{{ article.url }}" class="button button1">{{ 'blogs.article.read_more' | t }}<i class="link-icon-black"></i></a>
+        {% if section.settings.show_authordate %}
+        <div class="post-by">
+          <p class="by-user"><span>{{ 'blogs.article.by' | t }}</span> <a title="{{ article.author }}" href="{{ article.url }}">{{ article.author }}</a></p>
+          <p class="day">{{ article.published_at | date: "%B, %d, %Y" }}</p>
+        </div>
+        {% endif %}
+      </div>
+	  {% endfor %}
+    </div>
+  </div>
+  <!-- End grid -->
+  {% if paginate.pages > 1 %}
+  <div class="pagination-container pagination-blog">
+    <nav class="pagination">   
+      {{ paginate | default_pagination | replace: '&laquo; Previous', '<i class="fa fa-angle-left"></i>' | replace: 'Next &raquo;', '<i class="fa fa-angle-right"></i>' }}
+    </nav>
+  </div>
+  {% endif %}
+  <!-- End link -->
+</div>
+<!-- End container --> 
+
+

@@ -1,0 +1,115 @@
+<!-- /sections/footer.liquid -->
+
+{% if template contains 'index' %}
+  {% if section.settings.select_hds == "header_s1" %}
+  {% include 'header-s1' %}
+  {% elsif section.settings.select_hds == "header_s2" %}
+  {% include 'header-s2' %}
+  {% elsif section.settings.select_hds == "header_s3" %}
+  {% include 'header-s3' %}
+  {% elsif section.settings.select_hds == "header_s4" %}
+  {% include 'header-s4' %}
+  {% elsif section.settings.select_hds == "header_s5" %}
+  {% include 'header-s5' %}
+  {% elsif section.settings.select_hds == "header_s6" %}
+  {% include 'header-s6' %}
+  {% endif %}
+{% else %}
+  {% if section.settings.select_hds_all == "header_style1" %}
+  {% include 'header-s1' %}
+  {% elsif section.settings.select_hds_all == "header_style2" %}
+  {% include 'header-s2' %}
+  {% elsif section.settings.select_hds_all == "header_style3" %}
+  {% include 'header-s3' %}
+  {% elsif section.settings.select_hds_all == "header_style4" %}
+  {% include 'header-s4' %}
+  {% elsif section.settings.select_hds_all == "header_style5" %}
+  {% include 'header-s5' %}
+  {% elsif section.settings.select_hds_all == "header_style6" %}
+  {% include 'header-s6' %}
+  {% endif %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "select_hds",
+      "label": "Select Header Style for Homepage",
+      "options": [
+        {
+          "value": "header_s1",
+          "label": "Header Style 1"
+        },
+        {
+          "value": "header_s2",
+          "label": "Header Style 2"
+        },
+        {
+          "value": "header_s3",
+          "label": "Header Style 3"
+        },
+        {
+          "value": "header_s4",
+          "label": "Header Style 4"
+        },
+        {
+          "value": "header_s5",
+          "label": "Header Style 5"
+        },
+        {
+          "value": "header_s6",
+          "label": "Header Style 6"
+        }
+      ],
+      "default": "header_s1",
+      "info": "[View image with header designs](https://cdn.shopify.com/s/files/1/1552/1369/files/demo_header.jpg?6300831229300689227)"
+    },
+    {
+      "type": "select",
+      "id": "select_hds_all",
+      "label": "Select Header Style for All page (unless Homepage)",
+      "options": [
+        {
+          "value": "header_style1",
+          "label": "Header Style 1"
+        },
+        {
+          "value": "header_style2",
+          "label": "Header Style 2"
+        },
+        {
+          "value": "header_style3",
+          "label": "Header Style 3"
+        },
+        {
+          "value": "header_style4",
+          "label": "Header Style 4"
+        },
+        {
+          "value": "header_style5",
+          "label": "Header Style 5"
+        },
+        {
+          "value": "header_style6",
+          "label": "Header Style 6"
+        }
+      ],
+      "default": "header_style1",
+      "info": "[View image with header designs](https://cdn.shopify.com/s/files/1/1552/1369/files/demo_header.jpg?6300831229300689227)"
+    },
+    {
+      "type": "header",
+      "content": "Select Menu"
+    },
+    {
+      "type": "link_list",
+      "id": "main_menu_store",
+      "label": "Menu Main"
+    }
+  ]
+}
+{% endschema %}

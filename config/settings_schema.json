@@ -1,0 +1,4474 @@
+[
+  {
+    "name": "theme_info",
+    "logo": "https:\/\/cdn.shopify.com\/s\/files\/1\/1677\/9427\/files\/imgpsh_fullsize.jpg?11266935912603612743",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Uno - Multi Store Responsive Shopify Theme"
+      },
+      {
+        "type": "paragraph",
+        "content": "v1.0.3"
+      },
+      {
+        "type": "paragraph",
+        "content": "See the theme [Landing page and document](http:\/\/landing.engotheme.com\/shopify\/uno) for more information about this wonderful theme."
+      },
+      {
+        "type": "paragraph",
+        "content": "If you love this theme, please [Rate 5 stars](https:\/\/themeforest.net\/item\/uno-multi-store-responsive-shopify-theme\/reviews\/19244984), which will be a great motivation for us to continue create great themes in the future. [How to rate?](http:\/\/landing.engotheme.com\/library\/how-to-rate.png)"
+      }
+    ]
+  },
+  {
+    "name": "General",
+    "settings": [
+      {
+        "type": "image",
+        "id": "favicon.png",
+        "label": "Favicon",
+        "info": "16 x 16px png"
+      },
+      {
+        "type": "image",
+        "id": "icon-for-mobile.png",
+        "label": "Site Identity",
+        "info": "The Site Icon is used as a browser and app icon for your site. Icons must be square, and at least 512 pixels wide and tall."
+      },
+      {
+        "type": "header",
+        "content": "MailChimp"
+      },
+      {
+        "type": "text",
+        "id": "newsletter_form_action",
+        "label": "MailChimp form action URL",
+        "info": "[Where do I find my MailChimp form action URL?](http:\/\/docs.shopify.com\/support\/configuration\/store-customization\/where-do-i-get-my-mailchimp-form-action)"
+      },
+      {
+        "type": "header",
+        "content": "Multi Currency"
+      },
+      {
+        "type": "text",
+        "id": "supported_currencies",
+        "label": "Currencies you wish to support",
+        "default": "INR GBP CAD USD AUD EUR JPY"
+      },
+      {
+        "type": "color",
+        "id": "mlc_bg",
+        "label": "Background Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "mlc_icon",
+        "label": "Icon Color",
+        "default": "#808080"
+      },
+      {
+        "type": "color",
+        "id": "mlc_color",
+        "label": "Currency default color",
+        "default": "#808080"
+      },
+      {
+        "type": "color",
+        "id": "mlc_color_hover",
+        "label": "Currency default hover color",
+        "default": "#808080"
+      }
+    ]
+  },
+  {
+    "name": "Pre-Loader",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_preloader",
+        "label": "Enable Pre-Loader?",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Use class=\"color\" on a an input tag to bring up the color picker. Only a few colors have been included here as an example."
+      },
+      {
+        "type": "header",
+        "content": "General colors"
+      },
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Primary Color",
+        "default": "#ba933e"
+      },
+      {
+        "type": "color",
+        "id": "primary_color_hover",
+        "label": "Primary Color hover",
+        "default": "#81662b"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#161616"
+      },
+      {
+        "type": "color",
+        "id": "header_color",
+        "label": "Slider Color",
+        "default": "#000"
+      },
+      {
+        "type": "header",
+        "content": "Header Style 1",
+        "info": "[View image config](https:\/\/cdn.shopify.com\/s\/files\/1\/1552\/1369\/files\/demo_header_s1.png?6248324847168048036)"
+      },
+      {
+        "type": "color",
+        "id": "hs1_tb_border",
+        "label": "Topbar border",
+        "default": "#eeeeee"
+      },
+      {
+        "type": "color",
+        "id": "hs1_tb_bg",
+        "label": "Topbar background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hs1_tb_text",
+        "label": "Topbar text",
+        "default": "#aaaaaa"
+      },
+      {
+        "type": "color",
+        "id": "hs1_tb_textlink",
+        "label": "Topbar text link",
+        "default": "#eb5050"
+      },
+      {
+        "type": "color",
+        "id": "hs1_action_icon",
+        "label": "Topbar action icon",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "hs1_social_icon",
+        "label": "Topbar social icon",
+        "default": "#555555"
+      },
+      {
+        "type": "color",
+        "id": "hs1_social_icon_hover",
+        "label": "Topbar social icon hover",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "hs1_nav_border",
+        "label": "Nav border",
+        "default": "#e8e8e8"
+      },
+      {
+        "type": "color",
+        "id": "hs1_nav_bg_wp",
+        "label": "Nav background wrapper",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hs1_nav_bg",
+        "label": "Nav background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hs1_nav_textlink",
+        "label": "Nav text link",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "hs1_nav_action_icon",
+        "label": "Nav action icon",
+        "default": "#161616"
+      },
+      {
+        "type": "color",
+        "id": "hs1_nav_action_icon_number",
+        "label": "Nav action icon cart count",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "hs1_subnav_bg",
+        "label": "subNav background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hs1_subnav_textlink",
+        "label": "subNav textlink",
+        "default": "#333333"
+      },
+      {
+        "type": "color",
+        "id": "hs1_subnav_textlink_meg",
+        "label": "subNav textlink megamenu",
+        "default": "#858585"
+      },
+      {
+        "type": "color",
+        "id": "hs1_subnav_textlink_hover",
+        "label": "subNav textlink hover",
+        "default": "#e95252"
+      },
+      {
+        "type": "color",
+        "id": "hs1_subnav_border",
+        "label": "subNav border",
+        "default": "#eeeeee"
+      },
+      {
+        "type": "header",
+        "content": "Header Style 2",
+        "info": "[View image config](https:\/\/cdn.shopify.com\/s\/files\/1\/1552\/1369\/files\/demo_header_s2.png?10794844678413117720)"
+      },
+      {
+        "type": "color",
+        "id": "hs2_tb_bg",
+        "label": "Topbar background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hs2_social_icon",
+        "label": "Topbar social icon",
+        "default": "#555555"
+      },
+      {
+        "type": "color",
+        "id": "hs2_social_icon_hover",
+        "label": "Topbar social icon hover",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "hs2_tb_action_link",
+        "label": "Topbar action link",
+        "default": "#9d9d9d"
+      },
+      {
+        "type": "color",
+        "id": "hs2_tb_action_link_border",
+        "label": "Topbar action link border",
+        "default": "#eeeeee"
+      },
+      {
+        "type": "color",
+        "id": "hs2_tb_action_link_hover",
+        "label": "Topbar action link hover",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "hs2_nav_bg_wp",
+        "label": "Nav background wrapper",
+        "default": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "type": "color",
+        "id": "hs2_nav_bg",
+        "label": "Nav background",
+        "default": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "type": "color",
+        "id": "hs2_nav_textlink",
+        "label": "Nav text link",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hs2_nav_action_icon",
+        "label": "Nav action icon",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hs2_nav_action_icon_number",
+        "label": "Nav action icon cart count",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hs2_subnav_bg",
+        "label": "subNav background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hs2_subnav_textlink",
+        "label": "subNav textlink",
+        "default": "#333333"
+      },
+      {
+        "type": "color",
+        "id": "hs2_subnav_textlink_meg",
+        "label": "subNav textlink megamenu",
+        "default": "#858585"
+      },
+      {
+        "type": "color",
+        "id": "hs2_subnav_textlink_hover",
+        "label": "subNav textlink hover",
+        "default": "#e95252"
+      },
+      {
+        "type": "color",
+        "id": "hs2_subnav_border",
+        "label": "subNav border",
+        "default": "#eeeeee"
+      },
+      {
+        "type": "header",
+        "content": "Header Style 3",
+        "info": "[View image config](https:\/\/cdn.shopify.com\/s\/files\/1\/1552\/1369\/files\/demo_header_s3.png?932109782456099206)"
+      },
+      {
+        "type": "color",
+        "id": "hs3_tb_bg",
+        "label": "Topbar background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hs3_icon_left",
+        "label": "Topbar action icon left",
+        "default": "#555555"
+      },
+      {
+        "type": "color",
+        "id": "hs3_icon_left_hover",
+        "label": "Topbar action icon left hover",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "hs3_icon_right",
+        "label": "Topbar action icon right",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "hs3_icon_right_number",
+        "label": "Topbar action icon cart count",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "hs3_nav_border",
+        "label": "Nav border",
+        "default": "#e8e8e8"
+      },
+      {
+        "type": "color",
+        "id": "hs3_nav_bg_wp",
+        "label": "Nav background wrapper",
+        "default": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "type": "color",
+        "id": "hs3_nav_bg",
+        "label": "Nav background",
+        "default": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "type": "color",
+        "id": "hs3_nav_textlink",
+        "label": "Nav text link",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "hs3_subnav_bg",
+        "label": "subNav background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hs3_subnav_textlink",
+        "label": "subNav textlink",
+        "default": "#333333"
+      },
+      {
+        "type": "color",
+        "id": "hs3_subnav_textlink_meg",
+        "label": "subNav textlink megamenu",
+        "default": "#858585"
+      },
+      {
+        "type": "color",
+        "id": "hs3_subnav_textlink_hover",
+        "label": "subNav textlink hover",
+        "default": "#e95252"
+      },
+      {
+        "type": "color",
+        "id": "hs3_subnav_border",
+        "label": "subNav border",
+        "default": "#eeeeee"
+      },
+      {
+        "type": "header",
+        "content": "Header Style 4",
+        "info": "[View image config](https:\/\/cdn.shopify.com\/s\/files\/1\/1552\/1369\/files\/demo_header_s4.png?932109782456099206)"
+      },
+      {
+        "type": "color",
+        "id": "hs4_tb_bg_wp",
+        "label": "Topbar background wrapper",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hs4_tb_bg",
+        "label": "Topbar background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hs4_tb_menu",
+        "label": "Topbar menu name",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "hs4_icon_left",
+        "label": "Topbar action icon left",
+        "default": "#555555"
+      },
+      {
+        "type": "color",
+        "id": "hs4_icon_left_hover",
+        "label": "Topbar action icon left hover",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "hs4_icon_right",
+        "label": "Topbar action icon right",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "hs4_icon_right_number",
+        "label": "Topbar action icon cart count",
+        "default": "#000000"
+      },
+      {
+        "type": "header",
+        "content": "Header Style 5",
+        "info": "[View image config](https:\/\/cdn.shopify.com\/s\/files\/1\/1552\/1369\/files\/demo_header_s5.png?932109782456099206)"
+      },
+      {
+        "type": "color",
+        "id": "hs5_tb_bg_wp",
+        "label": "Topbar background wrapper",
+        "default": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "type": "color",
+        "id": "hs5_tb_bg",
+        "label": "Topbar background",
+        "default": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "type": "color",
+        "id": "hs5_tb_text",
+        "label": "Topbar text",
+        "default": "#aaaaaa"
+      },
+      {
+        "type": "color",
+        "id": "hs5_tb_textlink",
+        "label": "Topbar textlink",
+        "default": "#eb5050"
+      },
+      {
+        "type": "color",
+        "id": "hs5_tb_icon",
+        "label": "Topbar action icon",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hs5_tb_icon_number",
+        "label": "Topbar action icon cart count",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hs5_nav_border",
+        "label": "Nav border",
+        "default": "#72757f"
+      },
+      {
+        "type": "color",
+        "id": "hs5_nav_bg",
+        "label": "Nav background",
+        "default": "rgba(0, 0, 0, 0)"
+      },
+      {
+        "type": "color",
+        "id": "hs5_nav_textlink",
+        "label": "Nav text link",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hs5_subnav_bg",
+        "label": "subNav background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hs5_subnav_textlink",
+        "label": "subNav textlink",
+        "default": "#333333"
+      },
+      {
+        "type": "color",
+        "id": "hs5_subnav_textlink_meg",
+        "label": "subNav textlink megamenu",
+        "default": "#858585"
+      },
+      {
+        "type": "color",
+        "id": "hs5_subnav_textlink_hover",
+        "label": "subNav textlink hover",
+        "default": "#e95252"
+      },
+      {
+        "type": "color",
+        "id": "hs5_subnav_border",
+        "label": "subNav border",
+        "default": "#eeeeee"
+      },
+      {
+        "type": "header",
+        "content": "Header Style 6",
+        "info": "[View image config](https:\/\/cdn.shopify.com\/s\/files\/1\/1552\/1369\/files\/demo_header_s6.png?932109782456099206)"
+      },
+      {
+        "type": "color",
+        "id": "hs6_hd_bg",
+        "label": "Header background",
+        "default": "#141414"
+      },
+      {
+        "type": "color",
+        "id": "hs6_tb_bg",
+        "label": "Topbar background",
+        "default": "#141414"
+      },
+      {
+        "type": "color",
+        "id": "hs6_tb_icon",
+        "label": "Topbar action icon",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hs6_tb_icon_number",
+        "label": "Topbar action icon cart count",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hs6_nav_border",
+        "label": "Nav border",
+        "default": "#2d2d2d"
+      },
+      {
+        "type": "color",
+        "id": "hs6_nav_bg",
+        "label": "Nav background",
+        "default": "#141414"
+      },
+      {
+        "type": "color",
+        "id": "hs6_nav_textlink",
+        "label": "Nav text link",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hs6_subnav_bg",
+        "label": "subNav background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hs6_subnav_textlink",
+        "label": "subNav textlink",
+        "default": "#333333"
+      },
+      {
+        "type": "color",
+        "id": "hs6_subnav_textlink_meg",
+        "label": "subNav textlink megamenu",
+        "default": "#858585"
+      },
+      {
+        "type": "color",
+        "id": "hs6_subnav_textlink_hover",
+        "label": "subNav textlink hover",
+        "default": "#e95252"
+      },
+      {
+        "type": "color",
+        "id": "hs6_subnav_border",
+        "label": "subNav border",
+        "default": "#eeeeee"
+      },
+      {
+        "type": "header",
+        "content": "Footer Style 1",
+        "info": "[View image config](https:\/\/cdn.shopify.com\/s\/files\/1\/1552\/1369\/files\/demo_footer_s1.png?932109782456099206)"
+      },
+      {
+        "type": "color",
+        "id": "fs1_bg",
+        "label": "Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "fs1_left_text",
+        "label": "Left content text",
+        "default": "#808080"
+      },
+      {
+        "type": "color",
+        "id": "fs1_left_textlink",
+        "label": "Left content textlink",
+        "default": "#ba933e"
+      },
+      {
+        "type": "color",
+        "id": "fs1_left_textlink_hover",
+        "label": "Left content textlink hover",
+        "default": "#81662b"
+      },
+      {
+        "type": "color",
+        "id": "fs1_right_text",
+        "label": "Right content",
+        "default": "#808080"
+      },
+      {
+        "type": "header",
+        "content": "Footer Style 2",
+        "info": "[View image config](https:\/\/cdn.shopify.com\/s\/files\/1\/1552\/1369\/files\/demo_footer_s2.png?932109782456099206)"
+      },
+      {
+        "type": "color",
+        "id": "fs2_top_bg",
+        "label": "Top background",
+        "default": "#f5f5f5"
+      },
+      {
+        "type": "color",
+        "id": "fs2_top_textlink",
+        "label": "Top textlink",
+        "default": "#636363"
+      },
+      {
+        "type": "color",
+        "id": "fs2_top_textlink_border",
+        "label": "Top textlink border",
+        "default": "#d0d0d0"
+      },
+      {
+        "type": "color",
+        "id": "fs2_top_textlink_hover",
+        "label": "Top textlink hover",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "fs2_top_social",
+        "label": "Top social icon",
+        "default": "#555555"
+      },
+      {
+        "type": "color",
+        "id": "fs2_top_social_hover",
+        "label": "Top social icon hover",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "fs2_bottom_bg",
+        "label": "Bottom background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "fs2_bottom_text",
+        "label": "Bottom text",
+        "default": "#8d8c8c"
+      },
+      {
+        "type": "color",
+        "id": "fs2_bottom_textlink",
+        "label": "Bottom textlink",
+        "default": "#f56666"
+      },
+      {
+        "type": "color",
+        "id": "fs2_bottom_textlink_hover",
+        "label": "Bottom textlink hover",
+        "default": "#f56666"
+      },
+      {
+        "type": "header",
+        "content": "Footer Style 3",
+        "info": "[View image config](https:\/\/cdn.shopify.com\/s\/files\/1\/1552\/1369\/files\/demo_footer_s3.png?932109782456099206)"
+      },
+      {
+        "type": "color",
+        "id": "fs3_top_bg",
+        "label": "Top background",
+        "default": "#1e1e1e"
+      },
+      {
+        "type": "color",
+        "id": "fs3_tophead_bg",
+        "label": "Top head background",
+        "default": "#f5f5f5"
+      },
+      {
+        "type": "color",
+        "id": "fs3_tophead_social",
+        "label": "Top head social icon",
+        "default": "#bdbdbd"
+      },
+      {
+        "type": "color",
+        "id": "fs3_tophead_social_hover",
+        "label": "Top head social icon hover",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "fs3_tophead_social_hover_bg",
+        "label": "Top head social icon background hover",
+        "default": "#e95252"
+      },
+      {
+        "type": "color",
+        "id": "fs3_top_textlink",
+        "label": "Top textlink",
+        "default": "#939393"
+      },
+      {
+        "type": "color",
+        "id": "fs3_top_textlink_hover",
+        "label": "Top textlink hover",
+        "default": "#e95252"
+      },
+      {
+        "type": "color",
+        "id": "fs3_bottom_bg",
+        "label": "Bottom background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "fs3_bottom_text",
+        "label": "Bottom text",
+        "default": "#8d8c8c"
+      },
+      {
+        "type": "color",
+        "id": "fs3_bottom_textlink",
+        "label": "Bottom textlink",
+        "default": "#f56666"
+      },
+      {
+        "type": "color",
+        "id": "fs3_bottom_textlink_hover",
+        "label": "Bottom textlink hover",
+        "default": "#f56666"
+      },
+      {
+        "type": "header",
+        "content": "Footer Style 4",
+        "info": "[View image config](https:\/\/cdn.shopify.com\/s\/files\/1\/1552\/1369\/files\/demo_footer_s4.png?932109782456099206)"
+      },
+      {
+        "type": "color",
+        "id": "fs4_top_bg",
+        "label": "Top background",
+        "default": "#f5f5f5"
+      },
+      {
+        "type": "color",
+        "id": "fs4_top_heading",
+        "label": "Top heading",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "fs4_top_text",
+        "label": "Top text",
+        "default": "#858585"
+      },
+      {
+        "type": "color",
+        "id": "fs4_top_textlink",
+        "label": "Top textlink",
+        "default": "#858585"
+      },
+      {
+        "type": "color",
+        "id": "fs4_top_textlink_hover",
+        "label": "Top textlink hover",
+        "default": "#e95252"
+      },
+      {
+        "type": "color",
+        "id": "fs4_top_social_icon",
+        "label": "Top social icon",
+        "default": "#161616"
+      },
+      {
+        "type": "color",
+        "id": "fs4_bottom_bg",
+        "label": "Bottom background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "fs4_bottom_text",
+        "label": "Bottom text",
+        "default": "#8d8c8c"
+      },
+      {
+        "type": "color",
+        "id": "fs4_bottom_textlink",
+        "label": "Bottom textlink",
+        "default": "#f56666"
+      },
+      {
+        "type": "color",
+        "id": "fs4_bottom_textlink_hover",
+        "label": "Bottom textlink hover",
+        "default": "#f56666"
+      }
+    ]
+  },
+  {
+    "name": "Fonts",
+    "settings": [
+      {
+        "type": "radio",
+        "id": "font_type",
+        "label": "Select font type:",
+        "options": [
+          {
+            "value": "normal_fonts",
+            "label": "Normal Fonts"
+          },
+          {
+            "value": "google_fonts",
+            "label": "Google Fonts [Where do I find Google Fonts?](http:\/\/www.google.com\/fonts)"
+          }
+        ],
+        "default": "google_fonts"
+      },
+      {
+        "type": "header",
+        "content": "SETTING GOOGLE FONTS"
+      },
+      {
+        "type": "header",
+        "content": "Font 1"
+      },
+      {
+        "type": "text",
+        "id": "fonts_name_1",
+        "label": "Google Fonts Name 1",
+        "default": "Montserrat"
+      },
+      {
+        "type": "header",
+        "content": "Font 2"
+      },
+      {
+        "type": "text",
+        "id": "fonts_name_2",
+        "label": "Google Fonts Name 2",
+        "default": "Poppins"
+      },
+      {
+        "type": "header",
+        "content": "Font 3"
+      },
+      {
+        "type": "text",
+        "id": "fonts_name_3",
+        "label": "Google Fonts Name 3",
+        "default": "Playfair Display"
+      },
+      {
+        "type": "header",
+        "content": "Font 4"
+      },
+      {
+        "type": "text",
+        "id": "fonts_name_4",
+        "label": "Google Fonts Name 4",
+        "default": "Oswald"
+      },
+      {
+        "type": "header",
+        "content": "Font 5"
+      },
+      {
+        "type": "text",
+        "id": "fonts_name_5",
+        "label": "Google Fonts Name 5",
+        "default": "Lato"
+      }
+    ]
+  },
+  {
+    "name": "Header Style 1",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Design Header Style 1",
+        "info": "[View image with header style 1 design](https:\/\/cdn.shopify.com\/s\/files\/1\/1552\/1369\/files\/demo_header_s1.png?6300831229300689227)"
+      },
+      {
+        "type": "header",
+        "content": "Header Topbar"
+      },
+      {
+        "type": "checkbox",
+        "id": "hds1_topbar_enable",
+        "label": "Enable Header Topbar?",
+        "default": true
+      },
+      {
+        "type": "textarea",
+        "id": "hds1_topbar_left_content",
+        "label": "Topbar Left Content"
+      },
+      {
+        "type": "text",
+        "id": "hds1_acc_icon",
+        "label": "Icon Account",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-user"
+      },
+      {
+        "type": "text",
+        "id": "hds1_wishlist_icon",
+        "label": "Icon Wishlist",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-heart"
+      },
+      {
+        "type": "textarea",
+        "id": "hds1_topbar_right_content",
+        "label": "Topbar Right Social Content"
+      },
+      {
+        "type": "header",
+        "content": "Header Main"
+      },
+      {
+        "type": "image_picker",
+        "id": "hds1_logo",
+        "label": "Logo Image",
+        "info": "70 x 42px .png recommended"
+      },
+      {
+        "type": "checkbox",
+        "id": "hds1_svg_logo_enable",
+        "label": "Use svg logo?"
+      },
+      {
+        "type": "textarea",
+        "id": "hds1_svg_logo",
+        "label": "Svg logo",
+        "info": "Priority svg logo, It will display  best for retina display"
+      },
+      {
+        "type": "text",
+        "id": "hds1_search_icon",
+        "label": "Icon Search",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-magnifier"
+      },
+      {
+        "type": "text",
+        "id": "hds1_cart_icon",
+        "label": "Icon Cart",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-bag"
+      },
+      {
+        "type": "header",
+        "content": "Logo for Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "hds1_mobile_logo",
+        "label": "Logo Image",
+        "info": "70 x 42px .png recommended"
+      },
+      {
+        "type": "checkbox",
+        "id": "hds1_mobile_svg_logo_enable",
+        "label": "Use svg logo?"
+      },
+      {
+        "type": "textarea",
+        "id": "hds1_mobile_svg_logo",
+        "label": "Svg logo",
+        "info": "Priority svg logo, It will display  best for retina display"
+      }
+    ]
+  },
+  {
+    "name": "Header Style 2",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Design Header Style 2",
+        "info": "[View image with header style 2 design](https:\/\/cdn.shopify.com\/s\/files\/1\/1552\/1369\/files\/demo_header_s2.png?6300831229300689227)"
+      },
+      {
+        "type": "header",
+        "content": "Header Topbar"
+      },
+      {
+        "type": "checkbox",
+        "id": "hds2_topbar_enable",
+        "label": "Enable Header Topbar?",
+        "default": true
+      },
+      {
+        "type": "textarea",
+        "id": "hds2_topbar_left_content",
+        "label": "Topbar Left Social Content"
+      },
+      {
+        "type": "text",
+        "id": "hds2_mail_icon",
+        "label": "Icon Mail",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-envelope"
+      },
+      {
+        "type": "text",
+        "id": "hds2_mail_content",
+        "label": "Content Mail",
+        "default": "engotheme@gmail.com"
+      },
+      {
+        "type": "text",
+        "id": "hds2_acc_icon",
+        "label": "Icon Account",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-user"
+      },
+      {
+        "type": "text",
+        "id": "hds2_acc_content",
+        "label": "Content Account",
+        "default": "Login"
+      },
+      {
+        "type": "text",
+        "id": "hds2_wishlist_icon",
+        "label": "Icon Wishlist",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-heart"
+      },
+      {
+        "type": "text",
+        "id": "hds2_wishlist_content",
+        "label": "Content Wishlist",
+        "default": "Wishlist"
+      },
+      {
+        "type": "text",
+        "id": "hds2_search_icon",
+        "label": "Icon Search",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-magnifier"
+      },
+      {
+        "type": "text",
+        "id": "hds2_search_content",
+        "label": "Content Search",
+        "default": "Search"
+      },
+      {
+        "type": "header",
+        "content": "Header Main"
+      },
+      {
+        "type": "image_picker",
+        "id": "hds2_logo",
+        "label": "Logo Image",
+        "info": "70 x 42px .png recommended"
+      },
+      {
+        "type": "checkbox",
+        "id": "hds2_svg_logo_enable",
+        "label": "Use svg logo?"
+      },
+      {
+        "type": "textarea",
+        "id": "hds2_svg_logo",
+        "label": "Svg logo",
+        "info": "Priority svg logo, It will display  best for retina display"
+      },
+      {
+        "type": "text",
+        "id": "hds2_cart_icon",
+        "label": "Icon Cart",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-bag"
+      },
+      {
+        "type": "header",
+        "content": "Logo for Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "hds2_mobile_logo",
+        "label": "Logo Image",
+        "info": "70 x 42px .png recommended"
+      },
+      {
+        "type": "checkbox",
+        "id": "hds2_mobile_svg_logo_enable",
+        "label": "Use svg logo?"
+      },
+      {
+        "type": "textarea",
+        "id": "hds2_mobile_svg_logo",
+        "label": "Svg logo",
+        "info": "Priority svg logo, It will display  best for retina display"
+      }
+    ]
+  },
+  {
+    "name": "Header Style 3",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Design Header Style 3",
+        "info": "[View image with header style 3 design](https:\/\/cdn.shopify.com\/s\/files\/1\/1552\/1369\/files\/demo_header_s3.png?6300831229300689227)"
+      },
+      {
+        "type": "header",
+        "content": "Header Topbar"
+      },
+      {
+        "type": "checkbox",
+        "id": "hds3_topbar_enable",
+        "label": "Enable Header Topbar?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "hds3_mail_icon",
+        "label": "Icon Mail",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-envelope"
+      },
+      {
+        "type": "text",
+        "id": "hds3_acc_icon",
+        "label": "Icon Account",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-user"
+      },
+      {
+        "type": "image_picker",
+        "id": "hds3_logo",
+        "label": "Logo Image",
+        "info": "70 x 42px .png recommended"
+      },
+      {
+        "type": "checkbox",
+        "id": "hds3_svg_logo_enable",
+        "label": "Use svg logo?"
+      },
+      {
+        "type": "textarea",
+        "id": "hds3_svg_logo",
+        "label": "Svg logo",
+        "info": "Priority svg logo, It will display  best for retina display"
+      },
+      {
+        "type": "text",
+        "id": "hds3_search_icon",
+        "label": "Icon Search",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-magnifier"
+      },
+      {
+        "type": "text",
+        "id": "hds3_cart_icon",
+        "label": "Icon Cart",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-bag"
+      },
+      {
+        "type": "header",
+        "content": "Logo for Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "hds3_mobile_logo",
+        "label": "Logo Image",
+        "info": "70 x 42px .png recommended"
+      },
+      {
+        "type": "checkbox",
+        "id": "hds3_mobile_svg_logo_enable",
+        "label": "Use svg logo?"
+      },
+      {
+        "type": "textarea",
+        "id": "hds3_mobile_svg_logo",
+        "label": "Svg logo",
+        "info": "Priority svg logo, It will display  best for retina display"
+      }
+    ]
+  },
+  {
+    "name": "Header Style 4",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Design Header Style 4",
+        "info": "[View image with header style 4 design](https:\/\/cdn.shopify.com\/s\/files\/1\/1552\/1369\/files\/demo_header_s4.png?6300831229300689227)"
+      },
+      {
+        "type": "link_list",
+        "id": "main_menu_store",
+        "info": "Don't support megamenu.",
+        "label": "Menu Main"
+      },
+      {
+        "type": "text",
+        "id": "hds4_menu_content",
+        "label": "Content Menu",
+        "default": "Menu"
+      },
+      {
+        "type": "text",
+        "id": "hds4_acc_icon",
+        "label": "Icon Account",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-user"
+      },
+      {
+        "type": "text",
+        "id": "hds4_mail_icon",
+        "label": "Icon Mail",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-envelope"
+      },
+      {
+        "type": "image_picker",
+        "id": "hds4_logo",
+        "label": "Logo Image",
+        "info": "70 x 42px .png recommended"
+      },
+      {
+        "type": "checkbox",
+        "id": "hds4_svg_logo_enable",
+        "label": "Use svg logo?"
+      },
+      {
+        "type": "textarea",
+        "id": "hds4_svg_logo",
+        "label": "Svg logo",
+        "info": "Priority svg logo, It will display  best for retina display"
+      },
+      {
+        "type": "text",
+        "id": "hds4_search_icon",
+        "label": "Icon Search",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-magnifier"
+      },
+      {
+        "type": "text",
+        "id": "hds4_cart_icon",
+        "label": "Icon Cart",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-bag"
+      }
+    ]
+  },
+  {
+    "name": "Header Style 5",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Design Header Style 5",
+        "info": "[View image with header style 5 design](https:\/\/cdn.shopify.com\/s\/files\/1\/1552\/1369\/files\/demo_header_s5.png?6300831229300689227)"
+      },
+      {
+        "type": "header",
+        "content": "Header Topbar 1"
+      },
+      {
+        "type": "checkbox",
+        "id": "hds5_topbar1_enable",
+        "label": "Enable?",
+        "default": true
+      },
+      {
+        "type": "textarea",
+        "id": "hds5_topbar1_content",
+        "label": "Topbar 1 Content"
+      },
+      {
+        "type": "header",
+        "content": "Header Topbar 2"
+      },
+      {
+        "type": "checkbox",
+        "id": "hds5_topbar2_enable",
+        "label": "Enable?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "hds5_acc_icon",
+        "label": "Icon Account",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-user"
+      },
+      {
+        "type": "text",
+        "id": "hds5_wishlist_icon",
+        "label": "Icon Wishlist",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-heart"
+      },
+      {
+        "type": "image_picker",
+        "id": "hds5_logo",
+        "label": "Logo Image",
+        "info": "70 x 42px .png recommended"
+      },
+      {
+        "type": "checkbox",
+        "id": "hds5_svg_logo_enable",
+        "label": "Use svg logo?"
+      },
+      {
+        "type": "textarea",
+        "id": "hds5_svg_logo",
+        "label": "Svg logo",
+        "info": "Priority svg logo, It will display  best for retina display"
+      },
+      {
+        "type": "text",
+        "id": "hds5_search_icon",
+        "label": "Icon Search",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-magnifier"
+      },
+      {
+        "type": "text",
+        "id": "hds5_cart_icon",
+        "label": "Icon Cart",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-bag"
+      },
+      {
+        "type": "header",
+        "content": "Logo for Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "hds5_mobile_logo",
+        "label": "Logo Image",
+        "info": "70 x 42px .png recommended"
+      },
+      {
+        "type": "checkbox",
+        "id": "hds5_mobile_svg_logo_enable",
+        "label": "Use svg logo?"
+      },
+      {
+        "type": "textarea",
+        "id": "hds5_mobile_svg_logo",
+        "label": "Svg logo",
+        "info": "Priority svg logo, It will display  best for retina display"
+      }
+    ]
+  },
+  {
+    "name": "Header Style 6",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Design Header Style 6",
+        "info": "[View image with header style 6 design](https:\/\/cdn.shopify.com\/s\/files\/1\/1552\/1369\/files\/demo_header_s6.png?6300831229300689227)"
+      },
+      {
+        "type": "header",
+        "content": "Header Topbar"
+      },
+      {
+        "type": "checkbox",
+        "id": "hds6_topbar_enable",
+        "label": "Enable Header Topbar?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "hds6_acc_icon",
+        "label": "Icon Account",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-user"
+      },
+      {
+        "type": "text",
+        "id": "hds6_wishlist_icon",
+        "label": "Icon Wishlist",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-heart"
+      },
+      {
+        "type": "image_picker",
+        "id": "hds6_logo",
+        "label": "Logo Image",
+        "info": "70 x 42px .png recommended"
+      },
+      {
+        "type": "checkbox",
+        "id": "hds6_svg_logo_enable",
+        "label": "Use svg logo?"
+      },
+      {
+        "type": "textarea",
+        "id": "hds6_svg_logo",
+        "label": "Svg logo",
+        "info": "Priority svg logo, It will display  best for retina display"
+      },
+      {
+        "type": "text",
+        "id": "hds6_search_icon",
+        "label": "Icon Search",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-magnifier"
+      },
+      {
+        "type": "text",
+        "id": "hds6_cart_icon",
+        "label": "Icon Cart",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-bag"
+      },
+      {
+        "type": "header",
+        "content": "Logo for Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "hds6_mobile_logo",
+        "label": "Logo Image",
+        "info": "70 x 42px .png recommended"
+      },
+      {
+        "type": "checkbox",
+        "id": "hds6_mobile_svg_logo_enable",
+        "label": "Use svg logo?"
+      },
+      {
+        "type": "textarea",
+        "id": "hds6_mobile_svg_logo",
+        "label": "Svg logo",
+        "info": "Priority svg logo, It will display  best for retina display"
+      }
+    ]
+  },
+  {
+    "name": "Sidebar Collection & Product Pages",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Block Categories"
+      },
+      {
+        "type": "checkbox",
+        "id": "sb_categories",
+        "label": "Enable Block Categories",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "sb_categories_heading",
+        "label": "Title"
+      },
+      {
+        "type": "link_list",
+        "id": "sb_categories_menu",
+        "label": "Select a Menu to use"
+      },
+      {
+        "type": "header",
+        "content": "Price Range",
+        "info": "Only Collection Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_sb_price_range",
+        "label": "Enable Price Range",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "heading_sb_price_range",
+        "label": "Title"
+      },
+      {
+        "type": "header",
+        "content": "Filter",
+        "info": "Only Collection Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_sb_filters",
+        "label": "Enable Filter ",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "heading_sb_filters",
+        "label": "Title",
+        "default": "Filter"
+      },
+      {
+        "type": "radio",
+        "id": "sb_filters",
+        "options": [
+          {
+            "value": "tags",
+            "label": "Filter by Tags"
+          },
+          {
+            "value": "groups",
+            "label": "Filter by Groups"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Banner"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_sb_banner_1",
+        "label": "Enable Banner",
+        "default": true
+      },
+      {
+        "type": "image",
+        "id": "sb_banner_1.jpg"
+      },
+      {
+        "type": "text",
+        "id": "sb_banner_link_1",
+        "label": "Link"
+      },
+      {
+        "type": "header",
+        "content": "Latest Products"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_sb_latest_product",
+        "label": "Enable Latest Products",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "sb_latest_product_title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "sb_latest_product_limit",
+        "label": "Limited Items"
+      },
+      {
+        "type": "collection",
+        "id": "sb_latest_product_col",
+        "label": "Collection To Use"
+      },
+      {
+        "type": "header",
+        "content": "Block Services",
+        "info": "Only Product Page and use settings in Secvicce Bar section"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_sb_services",
+        "label": "Enable Block Services",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Megamenu",
+    "settings": [
+      {
+        "type": "header",
+        "content": "MEGAMENU 1"
+      },
+      {
+        "type": "text",
+        "id": "meg1_parent",
+        "label": "Parent name of dropdown menu"
+      },
+      {
+        "type": "checkbox",
+        "id": "meg1c1_enable",
+        "default": true,
+        "label": "Enable First Column?"
+      },
+      {
+        "type": "select",
+        "id": "meg1c1_select",
+        "label": "Select Content of First Column",
+        "options": [
+          {
+            "value": "meg1c1_linklist",
+            "label": "Linklist"
+          },
+          {
+            "value": "meg1c1_banner",
+            "label": "Banner"
+          },
+          {
+            "value": "meg1c1_product",
+            "label": "Product"
+          }
+        ],
+        "default": "meg1c1_linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg1c1_linklist_title",
+        "info": "*only for content Linklist",
+        "label": "Column Title"
+      },
+      {
+        "type": "link_list",
+        "id": "meg1c1_linklist",
+        "label": "Select Linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg1c1_banner_url",
+        "info": "*only for content Banner",
+        "default": "\/collections\/all",
+        "label": "URL Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "meg1c1_banner_img",
+        "label": "Banner"
+      },
+      {
+        "type": "product",
+        "id": "meg1c1_product_p",
+        "info": "*only for content Product",
+        "label": "Select Product"
+      },
+      {
+        "type": "checkbox",
+        "id": "meg1c2_enable",
+        "default": true,
+        "label": "Enable Main Column?"
+      },
+      {
+        "type": "select",
+        "id": "meg1c2_select",
+        "label": "Select Content of Main Column",
+        "options": [
+          {
+            "value": "meg1c2_linklist",
+            "label": "Linklist"
+          },
+          {
+            "value": "meg1c2_banner",
+            "label": "Banner"
+          },
+          {
+            "value": "meg1c2_product",
+            "label": "Product"
+          }
+        ],
+        "default": "meg1c2_linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg1c2_linklist_title",
+        "info": "*only for content Linklist",
+        "label": "Column Title"
+      },
+      {
+        "type": "link_list",
+        "id": "meg1c2_linklist",
+        "label": "Select Linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg1c2_banner_url",
+        "info": "*only for content Banner",
+        "default": "\/collections\/all",
+        "label": "URL Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "meg1c2_banner_img",
+        "label": "Banner"
+      },
+      {
+        "type": "product",
+        "id": "meg1c2_product_p",
+        "info": "*only for content Product",
+        "label": "Select Product"
+      },
+      {
+        "type": "checkbox",
+        "id": "meg1c3_enable",
+        "default": true,
+        "label": "Enable Last Column?"
+      },
+      {
+        "type": "select",
+        "id": "meg1c3_select",
+        "label": "Select Content of Last Column",
+        "options": [
+          {
+            "value": "meg1c3_linklist",
+            "label": "Linklist"
+          },
+          {
+            "value": "meg1c3_banner",
+            "label": "Banner"
+          },
+          {
+            "value": "meg1c3_product",
+            "label": "Product"
+          }
+        ],
+        "default": "meg1c3_linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg1c3_linklist_title",
+        "info": "*only for content Linklist",
+        "label": "Column Title"
+      },
+      {
+        "type": "link_list",
+        "id": "meg1c3_linklist",
+        "label": "Select Linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg1c3_banner_url",
+        "info": "*only for content Banner",
+        "default": "\/collections\/all",
+        "label": "URL Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "meg1c3_banner_img",
+        "label": "Banner"
+      },
+      {
+        "type": "product",
+        "id": "meg1c3_product_p",
+        "info": "*only for content Product",
+        "label": "Select Product"
+      },
+      {
+        "type": "header",
+        "content": "MEGAMENU 2"
+      },
+      {
+        "type": "text",
+        "id": "meg2_parent",
+        "label": "Parent name of dropdown menu"
+      },
+      {
+        "type": "checkbox",
+        "id": "meg2c1_enable",
+        "default": true,
+        "label": "Enable First Column?"
+      },
+      {
+        "type": "select",
+        "id": "meg2c1_select",
+        "label": "Select Content of First Column",
+        "options": [
+          {
+            "value": "meg2c1_linklist",
+            "label": "Linklist"
+          },
+          {
+            "value": "meg2c1_banner",
+            "label": "Banner"
+          },
+          {
+            "value": "meg2c1_product",
+            "label": "Product"
+          }
+        ],
+        "default": "meg2c1_linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg2c1_linklist_title",
+        "info": "*only for content Linklist",
+        "label": "Column Title"
+      },
+      {
+        "type": "link_list",
+        "id": "meg2c1_linklist",
+        "label": "Select Linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg2c1_banner_url",
+        "info": "*only for content Banner",
+        "default": "\/collections\/all",
+        "label": "URL Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "meg2c1_banner_img",
+        "label": "Banner"
+      },
+      {
+        "type": "product",
+        "id": "meg2c1_product_p",
+        "info": "*only for content Product",
+        "label": "Select Product"
+      },
+      {
+        "type": "checkbox",
+        "id": "meg2c2_enable",
+        "default": true,
+        "label": "Enable Main Column?"
+      },
+      {
+        "type": "select",
+        "id": "meg2c2_select",
+        "label": "Select Content of Main Column",
+        "options": [
+          {
+            "value": "meg2c2_linklist",
+            "label": "Linklist"
+          },
+          {
+            "value": "meg2c2_banner",
+            "label": "Banner"
+          },
+          {
+            "value": "meg2c2_product",
+            "label": "Product"
+          }
+        ],
+        "default": "meg2c2_linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg2c2_linklist_title",
+        "info": "*only for content Linklist",
+        "label": "Column Title"
+      },
+      {
+        "type": "link_list",
+        "id": "meg2c2_linklist",
+        "label": "Select Linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg2c2_banner_url",
+        "info": "*only for content Banner",
+        "default": "\/collections\/all",
+        "label": "URL Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "meg2c2_banner_img",
+        "label": "Banner"
+      },
+      {
+        "type": "product",
+        "id": "meg2c2_product_p",
+        "info": "*only for content Product",
+        "label": "Select Product"
+      },
+      {
+        "type": "checkbox",
+        "id": "meg2c3_enable",
+        "default": true,
+        "label": "Enable Last Column?"
+      },
+      {
+        "type": "select",
+        "id": "meg2c3_select",
+        "label": "Select Content of Last Column",
+        "options": [
+          {
+            "value": "meg2c3_linklist",
+            "label": "Linklist"
+          },
+          {
+            "value": "meg2c3_banner",
+            "label": "Banner"
+          },
+          {
+            "value": "meg2c3_product",
+            "label": "Product"
+          }
+        ],
+        "default": "meg2c3_linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg2c3_linklist_title",
+        "info": "*only for content Linklist",
+        "label": "Column Title"
+      },
+      {
+        "type": "link_list",
+        "id": "meg2c3_linklist",
+        "label": "Select Linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg2c3_banner_url",
+        "info": "*only for content Banner",
+        "default": "\/collections\/all",
+        "label": "URL Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "meg2c3_banner_img",
+        "label": "Banner"
+      },
+      {
+        "type": "product",
+        "id": "meg2c3_product_p",
+        "info": "*only for content Product",
+        "label": "Select Product"
+      },
+      {
+        "type": "header",
+        "content": "MEGAMENU 3"
+      },
+      {
+        "type": "text",
+        "id": "meg3_parent",
+        "label": "Parent name of dropdown menu"
+      },
+      {
+        "type": "checkbox",
+        "id": "meg3c1_enable",
+        "default": true,
+        "label": "Enable First Column?"
+      },
+      {
+        "type": "select",
+        "id": "meg3c1_select",
+        "label": "Select Content of First Column",
+        "options": [
+          {
+            "value": "meg3c1_linklist",
+            "label": "Linklist"
+          },
+          {
+            "value": "meg3c1_banner",
+            "label": "Banner"
+          },
+          {
+            "value": "meg3c1_product",
+            "label": "Product"
+          }
+        ],
+        "default": "meg3c1_linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg3c1_linklist_title",
+        "info": "*only for content Linklist",
+        "label": "Column Title"
+      },
+      {
+        "type": "link_list",
+        "id": "meg3c1_linklist",
+        "label": "Select Linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg3c1_banner_url",
+        "info": "*only for content Banner",
+        "default": "\/collections\/all",
+        "label": "URL Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "meg3c1_banner_img",
+        "label": "Banner"
+      },
+      {
+        "type": "product",
+        "id": "meg3c1_product_p",
+        "info": "*only for content Product",
+        "label": "Select Product"
+      },
+      {
+        "type": "checkbox",
+        "id": "meg3c2_enable",
+        "default": true,
+        "label": "Enable Main Column?"
+      },
+      {
+        "type": "select",
+        "id": "meg3c2_select",
+        "label": "Select Content of Main Column",
+        "options": [
+          {
+            "value": "meg3c2_linklist",
+            "label": "Linklist"
+          },
+          {
+            "value": "meg3c2_banner",
+            "label": "Banner"
+          },
+          {
+            "value": "meg3c2_product",
+            "label": "Product"
+          }
+        ],
+        "default": "meg3c2_linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg3c2_linklist_title",
+        "info": "*only for content Linklist",
+        "label": "Column Title"
+      },
+      {
+        "type": "link_list",
+        "id": "meg3c2_linklist",
+        "label": "Select Linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg3c2_banner_url",
+        "info": "*only for content Banner",
+        "default": "\/collections\/all",
+        "label": "URL Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "meg3c2_banner_img",
+        "label": "Banner"
+      },
+      {
+        "type": "product",
+        "id": "meg3c2_product_p",
+        "info": "*only for content Product",
+        "label": "Select Product"
+      },
+      {
+        "type": "checkbox",
+        "id": "meg3c3_enable",
+        "default": true,
+        "label": "Enable Last Column?"
+      },
+      {
+        "type": "select",
+        "id": "meg3c3_select",
+        "label": "Select Content of Last Column",
+        "options": [
+          {
+            "value": "meg3c3_linklist",
+            "label": "Linklist"
+          },
+          {
+            "value": "meg3c3_banner",
+            "label": "Banner"
+          },
+          {
+            "value": "meg3c3_product",
+            "label": "Product"
+          }
+        ],
+        "default": "meg3c3_linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg3c3_linklist_title",
+        "info": "*only for content Linklist",
+        "label": "Column Title"
+      },
+      {
+        "type": "link_list",
+        "id": "meg3c3_linklist",
+        "label": "Select Linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg3c3_banner_url",
+        "info": "*only for content Banner",
+        "default": "\/collections\/all",
+        "label": "URL Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "meg3c3_banner_img",
+        "label": "Banner"
+      },
+      {
+        "type": "product",
+        "id": "meg3c3_product_p",
+        "info": "*only for content Product",
+        "label": "Select Product"
+      },
+      {
+        "type": "header",
+        "content": "MEGAMENU 4"
+      },
+      {
+        "type": "text",
+        "id": "meg4_parent",
+        "label": "Parent name of dropdown menu"
+      },
+      {
+        "type": "checkbox",
+        "id": "meg4c1_enable",
+        "default": true,
+        "label": "Enable First Column?"
+      },
+      {
+        "type": "select",
+        "id": "meg4c1_select",
+        "label": "Select Content of First Column",
+        "options": [
+          {
+            "value": "meg4c1_linklist",
+            "label": "Linklist"
+          },
+          {
+            "value": "meg4c1_banner",
+            "label": "Banner"
+          },
+          {
+            "value": "meg4c1_product",
+            "label": "Product"
+          }
+        ],
+        "default": "meg4c1_linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg4c1_linklist_title",
+        "info": "*only for content Linklist",
+        "label": "Column Title"
+      },
+      {
+        "type": "link_list",
+        "id": "meg4c1_linklist",
+        "label": "Select Linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg4c1_banner_url",
+        "info": "*only for content Banner",
+        "default": "\/collections\/all",
+        "label": "URL Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "meg4c1_banner_img",
+        "label": "Banner"
+      },
+      {
+        "type": "product",
+        "id": "meg4c1_product_p",
+        "info": "*only for content Product",
+        "label": "Select Product"
+      },
+      {
+        "type": "checkbox",
+        "id": "meg4c2_enable",
+        "default": true,
+        "label": "Enable Main Column?"
+      },
+      {
+        "type": "select",
+        "id": "meg4c2_select",
+        "label": "Select Content of Main Column",
+        "options": [
+          {
+            "value": "meg4c2_linklist",
+            "label": "Linklist"
+          },
+          {
+            "value": "meg4c2_banner",
+            "label": "Banner"
+          },
+          {
+            "value": "meg4c2_product",
+            "label": "Product"
+          }
+        ],
+        "default": "meg4c2_linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg4c2_linklist_title",
+        "info": "*only for content Linklist",
+        "label": "Column Title"
+      },
+      {
+        "type": "link_list",
+        "id": "meg4c2_linklist",
+        "label": "Select Linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg4c2_banner_url",
+        "info": "*only for content Banner",
+        "default": "\/collections\/all",
+        "label": "URL Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "meg4c2_banner_img",
+        "label": "Banner"
+      },
+      {
+        "type": "product",
+        "id": "meg4c2_product_p",
+        "info": "*only for content Product",
+        "label": "Select Product"
+      },
+      {
+        "type": "checkbox",
+        "id": "meg4c3_enable",
+        "default": true,
+        "label": "Enable Last Column?"
+      },
+      {
+        "type": "select",
+        "id": "meg4c3_select",
+        "label": "Select Content of Last Column",
+        "options": [
+          {
+            "value": "meg4c3_linklist",
+            "label": "Linklist"
+          },
+          {
+            "value": "meg4c3_banner",
+            "label": "Banner"
+          },
+          {
+            "value": "meg4c3_product",
+            "label": "Product"
+          }
+        ],
+        "default": "meg4c3_linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg4c3_linklist_title",
+        "info": "*only for content Linklist",
+        "label": "Column Title"
+      },
+      {
+        "type": "link_list",
+        "id": "meg4c3_linklist",
+        "label": "Select Linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg4c3_banner_url",
+        "info": "*only for content Banner",
+        "default": "\/collections\/all",
+        "label": "URL Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "meg4c3_banner_img",
+        "label": "Banner"
+      },
+      {
+        "type": "product",
+        "id": "meg4c3_product_p",
+        "info": "*only for content Product",
+        "label": "Select Product"
+      },
+      {
+        "type": "header",
+        "content": "MEGAMENU 5"
+      },
+      {
+        "type": "text",
+        "id": "meg5_parent",
+        "label": "Parent name of dropdown menu"
+      },
+      {
+        "type": "checkbox",
+        "id": "meg5c1_enable",
+        "default": true,
+        "label": "Enable First Column?"
+      },
+      {
+        "type": "select",
+        "id": "meg5c1_select",
+        "label": "Select Content of First Column",
+        "options": [
+          {
+            "value": "meg5c1_linklist",
+            "label": "Linklist"
+          },
+          {
+            "value": "meg5c1_banner",
+            "label": "Banner"
+          },
+          {
+            "value": "meg5c1_product",
+            "label": "Product"
+          }
+        ],
+        "default": "meg5c1_linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg5c1_linklist_title",
+        "info": "*only for content Linklist",
+        "label": "Column Title"
+      },
+      {
+        "type": "link_list",
+        "id": "meg5c1_linklist",
+        "label": "Select Linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg5c1_banner_url",
+        "info": "*only for content Banner",
+        "default": "\/collections\/all",
+        "label": "URL Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "meg5c1_banner_img",
+        "label": "Banner"
+      },
+      {
+        "type": "product",
+        "id": "meg5c1_product_p",
+        "info": "*only for content Product",
+        "label": "Select Product"
+      },
+      {
+        "type": "checkbox",
+        "id": "meg5c2_enable",
+        "default": true,
+        "label": "Enable Main Column?"
+      },
+      {
+        "type": "select",
+        "id": "meg5c2_select",
+        "label": "Select Content of Main Column",
+        "options": [
+          {
+            "value": "meg5c2_linklist",
+            "label": "Linklist"
+          },
+          {
+            "value": "meg5c2_banner",
+            "label": "Banner"
+          },
+          {
+            "value": "meg5c2_product",
+            "label": "Product"
+          }
+        ],
+        "default": "meg5c2_linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg5c2_linklist_title",
+        "info": "*only for content Linklist",
+        "label": "Column Title"
+      },
+      {
+        "type": "link_list",
+        "id": "meg5c2_linklist",
+        "label": "Select Linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg5c2_banner_url",
+        "info": "*only for content Banner",
+        "default": "\/collections\/all",
+        "label": "URL Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "meg5c2_banner_img",
+        "label": "Banner"
+      },
+      {
+        "type": "product",
+        "id": "meg5c2_product_p",
+        "info": "*only for content Product",
+        "label": "Select Product"
+      },
+      {
+        "type": "checkbox",
+        "id": "meg5c3_enable",
+        "default": true,
+        "label": "Enable Last Column?"
+      },
+      {
+        "type": "select",
+        "id": "meg5c3_select",
+        "label": "Select Content of Last Column",
+        "options": [
+          {
+            "value": "meg5c3_linklist",
+            "label": "Linklist"
+          },
+          {
+            "value": "meg5c3_banner",
+            "label": "Banner"
+          },
+          {
+            "value": "meg5c3_product",
+            "label": "Product"
+          }
+        ],
+        "default": "meg5c3_linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg5c3_linklist_title",
+        "info": "*only for content Linklist",
+        "label": "Column Title"
+      },
+      {
+        "type": "link_list",
+        "id": "meg5c3_linklist",
+        "label": "Select Linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg5c3_banner_url",
+        "info": "*only for content Banner",
+        "default": "\/collections\/all",
+        "label": "URL Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "meg5c3_banner_img",
+        "label": "Banner"
+      },
+      {
+        "type": "product",
+        "id": "meg5c3_product_p",
+        "info": "*only for content Product",
+        "label": "Select Product"
+      },
+      {
+        "type": "header",
+        "content": "MEGAMENU 6"
+      },
+      {
+        "type": "text",
+        "id": "meg6_parent",
+        "label": "Parent name of dropdown menu"
+      },
+      {
+        "type": "checkbox",
+        "id": "meg6c1_enable",
+        "default": true,
+        "label": "Enable First Column?"
+      },
+      {
+        "type": "select",
+        "id": "meg6c1_select",
+        "label": "Select Content of First Column",
+        "options": [
+          {
+            "value": "meg6c1_linklist",
+            "label": "Linklist"
+          },
+          {
+            "value": "meg6c1_banner",
+            "label": "Banner"
+          },
+          {
+            "value": "meg6c1_product",
+            "label": "Product"
+          }
+        ],
+        "default": "meg6c1_linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg6c1_linklist_title",
+        "info": "*only for content Linklist",
+        "label": "Column Title"
+      },
+      {
+        "type": "link_list",
+        "id": "meg6c1_linklist",
+        "label": "Select Linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg6c1_banner_url",
+        "info": "*only for content Banner",
+        "default": "\/collections\/all",
+        "label": "URL Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "meg6c1_banner_img",
+        "label": "Banner"
+      },
+      {
+        "type": "product",
+        "id": "meg6c1_product_p",
+        "info": "*only for content Product",
+        "label": "Select Product"
+      },
+      {
+        "type": "checkbox",
+        "id": "meg6c2_enable",
+        "default": true,
+        "label": "Enable Main Column?"
+      },
+      {
+        "type": "select",
+        "id": "meg6c2_select",
+        "label": "Select Content of Main Column",
+        "options": [
+          {
+            "value": "meg6c2_linklist",
+            "label": "Linklist"
+          },
+          {
+            "value": "meg6c2_banner",
+            "label": "Banner"
+          },
+          {
+            "value": "meg6c2_product",
+            "label": "Product"
+          }
+        ],
+        "default": "meg6c2_linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg6c2_linklist_title",
+        "info": "*only for content Linklist",
+        "label": "Column Title"
+      },
+      {
+        "type": "link_list",
+        "id": "meg6c2_linklist",
+        "label": "Select Linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg6c2_banner_url",
+        "info": "*only for content Banner",
+        "default": "\/collections\/all",
+        "label": "URL Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "meg6c2_banner_img",
+        "label": "Banner"
+      },
+      {
+        "type": "product",
+        "id": "meg6c2_product_p",
+        "info": "*only for content Product",
+        "label": "Select Product"
+      },
+      {
+        "type": "checkbox",
+        "id": "meg6c3_enable",
+        "default": true,
+        "label": "Enable Last Column?"
+      },
+      {
+        "type": "select",
+        "id": "meg6c3_select",
+        "label": "Select Content of Last Column",
+        "options": [
+          {
+            "value": "meg6c3_linklist",
+            "label": "Linklist"
+          },
+          {
+            "value": "meg6c3_banner",
+            "label": "Banner"
+          },
+          {
+            "value": "meg6c3_product",
+            "label": "Product"
+          }
+        ],
+        "default": "meg6c3_linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg6c3_linklist_title",
+        "info": "*only for content Linklist",
+        "label": "Column Title"
+      },
+      {
+        "type": "link_list",
+        "id": "meg6c3_linklist",
+        "label": "Select Linklist"
+      },
+      {
+        "type": "text",
+        "id": "meg6c3_banner_url",
+        "info": "*only for content Banner",
+        "default": "\/collections\/all",
+        "label": "URL Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "meg6c3_banner_img",
+        "label": "Banner"
+      },
+      {
+        "type": "product",
+        "id": "meg6c3_product_p",
+        "info": "*only for content Product",
+        "label": "Select Product"
+      }
+    ]
+  },
+  {
+    "name": "Footer Style 1",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Design Footer Style 1",
+        "info": "[View image with footer style 1](https:\/\/cdn.shopify.com\/s\/files\/1\/1552\/1369\/files\/demo_footer_s1.png?6300831229300689227)"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_fs1_copyright",
+        "label": "Show Copyright?",
+        "default": true
+      },
+      {
+        "type": "textarea",
+        "id": "fs1_copyright",
+        "label": "Copyright Content"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_fs1_email",
+        "label": "Show Email Support?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "fs1_email",
+        "label": "Email",
+        "default": "engotheme@gmail.com"
+      }
+    ]
+  },
+  {
+    "name": "Footer Style 2",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Design Footer Style 2",
+        "info": "[View image with footer style 2](https:\/\/cdn.shopify.com\/s\/files\/1\/1552\/1369\/files\/demo_footer_s2.png?6300831229300689227)"
+      },
+      {
+        "type": "select",
+        "id": "fs2_style",
+        "label": "Choose Style",
+        "options": [
+          {
+            "value": "fs2_fw",
+            "label": "Background color fullwidth"
+          },
+          {
+            "value": "fs2_fc",
+            "label": "Background color fullscreen"
+          }
+        ],
+        "default": "fs2_fw",
+        "info": "[View image with designs](https:\/\/cdn.shopify.com\/s\/files\/1\/1552\/1369\/files\/fs2_2styles.jpg?16719521017738109522)"
+      },
+      {
+        "type": "image",
+        "id": "fs2_logo_black.png",
+        "label": "Logo",
+        "info": "70 x 42px .png recommended"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_svglogo_fs2",
+        "label": "Use svg logo"
+      },
+      {
+        "type": "textarea",
+        "id": "svglogo_text_fs2",
+        "label": "Svg logo",
+        "info": "Priority svg logo ,It will display  best for retina display"
+      },
+      {
+        "type": "link_list",
+        "id": "fs2_menu",
+        "label": "Menu"
+      },
+      {
+        "type": "textarea",
+        "id": "fs2_social",
+        "label": "Social Content"
+      },
+      {
+        "type": "header",
+        "content": "Bottom Copyright"
+      },
+      {
+        "type": "textarea",
+        "id": "fs2_copyright",
+        "label": "Copyright Content"
+      }
+    ]
+  },
+  {
+    "name": "Footer Style 3",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Design Footer Style 3",
+        "info": "[View image with footer style 3](https:\/\/cdn.shopify.com\/s\/files\/1\/1552\/1369\/files\/demo_footer_s3.png?6300831229300689227)"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_fs3_top",
+        "label": "Show Footer Top?",
+        "default": true
+      },
+      {
+        "type": "textarea",
+        "id": "fs3_social",
+        "label": "Social Content"
+      },
+      {
+        "type": "header",
+        "info": "MailChimp form action URL: Setting in Login Store > Customize theme > General Settings tab > General > Mailchimp",
+        "content": "Mailchimp"
+      },
+      {
+        "type": "text",
+        "id": "fs3_subscribe_placeholder",
+        "label": "Subscribe input placeholder",
+        "default": "Enter adress..."
+      },
+      {
+        "type": "text",
+        "id": "fs3_subscribe_btn_name",
+        "label": "Subscribe button name",
+        "default": "Send"
+      },
+      {
+        "type": "image",
+        "id": "fs3_logo_white.png",
+        "label": "Logo",
+        "info": "70 x 42px .png recommended"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_svglogo_fs3",
+        "label": "Use svg logo"
+      },
+      {
+        "type": "textarea",
+        "id": "svglogo_text_fs3",
+        "label": "Svg logo",
+        "info": "Priority svg logo ,It will display  best for retina display"
+      },
+      {
+        "type": "link_list",
+        "id": "fs3_menu",
+        "label": "Menu"
+      },
+      {
+        "type": "header",
+        "content": "Bottom Copyright"
+      },
+      {
+        "type": "textarea",
+        "id": "fs3_copyright",
+        "label": "Copyright Content"
+      }
+    ]
+  },
+  {
+    "name": "Footer Style 4",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Design Footer Style 4",
+        "info": "[View image with footer style 4](https:\/\/cdn.shopify.com\/s\/files\/1\/1552\/1369\/files\/demo_footer_s4.png?6300831229300689227)"
+      },
+      {
+        "type": "header",
+        "content": "Column 1"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_fs4_col1",
+        "label": "Enable?",
+        "default": true
+      },
+      {
+        "type": "image",
+        "id": "fs4_logo_black.png",
+        "label": "Logo",
+        "info": "70 x 42px .png recommended"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_svglogo_fs4",
+        "label": "Use svg logo"
+      },
+      {
+        "type": "textarea",
+        "id": "svglogo_text_fs4",
+        "label": "Svg logo",
+        "info": "Priority svg logo ,It will display  best for retina display"
+      },
+      {
+        "type": "text",
+        "id": "fs4_col1_content1",
+        "label": "Content 1",
+        "default": "3100 West Cary Street"
+      },
+      {
+        "type": "text",
+        "id": "fs4_col1_content2",
+        "label": "Content 2",
+        "default": "Richmond, VA 23221"
+      },
+      {
+        "type": "text",
+        "id": "fs4_col1_content3",
+        "label": "Content 3",
+        "default": "804.355.4383"
+      },
+      {
+        "type": "header",
+        "info": "MailChimp form action URL: Setting in Login Store > Customize theme > General Settings tab > General > Mailchimp",
+        "content": "Column 2"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_fs4_col2",
+        "label": "Enable?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "fs4_col2_title",
+        "label": "Title",
+        "default": "SUBSCRIBE"
+      },
+      {
+        "type": "text",
+        "id": "fs4_subscribe_placeholder",
+        "label": "Subscribe input placeholder",
+        "default": "Enter adress..."
+      },
+      {
+        "type": "text",
+        "id": "fs4_subscribe_btn_name",
+        "label": "Subscribe button name",
+        "default": "Send"
+      },
+      {
+        "type": "header",
+        "content": "Column 3"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_fs4_col3",
+        "label": "Enable?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "fs4_col3_title",
+        "label": "Title",
+        "default": "INFORMATION"
+      },
+      {
+        "type": "link_list",
+        "id": "fs4_menu_col3",
+        "label": "Menu"
+      },
+      {
+        "type": "header",
+        "content": "Column4"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_fs4_col4",
+        "label": "Enable?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "fs4_col4_title",
+        "label": "Title",
+        "default": "MORE LINK"
+      },
+      {
+        "type": "link_list",
+        "id": "fs4_menu_col4",
+        "label": "Menu"
+      },
+      {
+        "type": "header",
+        "content": "Column 5"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_fs4_col5",
+        "label": "Enable?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "fs4_col5_title",
+        "label": "Title",
+        "default": "FOLLOW"
+      },
+      {
+        "type": "textarea",
+        "id": "fs4_col5_social",
+        "label": "Social Content"
+      },
+      {
+        "type": "header",
+        "content": "Footer Bottom"
+      },
+      {
+        "type": "textarea",
+        "id": "fs4_copyright",
+        "label": "Copyright Content"
+      }
+    ]
+  },
+  {
+    "name": "Product",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Product swatch"
+      },
+      {
+        "type": "radio",
+        "id": "po_style",
+        "label": "Product Options Style?",
+        "options": [
+          {
+            "value": "po_dropdown",
+            "label": "Select Dropdown List"
+          },
+          {
+            "value": "po_swatchs",
+            "label": "Color Swatches"
+          }
+        ],
+        "default": "po_swatchs"
+      },
+      {
+        "type": "header",
+        "content": "Product Icon Action"
+      },
+      {
+        "type": "text",
+        "id": "pia_compare",
+        "label": "Icon Compare",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-bar-chart"
+      },
+      {
+        "type": "text",
+        "id": "pia_compare_name",
+        "label": "Name tooltip Compare",
+        "default": "Compare"
+      },
+      {
+        "type": "text",
+        "id": "pia_quickview",
+        "label": "Icon Quickview",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-magnifier-add"
+      },
+      {
+        "type": "text",
+        "id": "pia_quickview_name",
+        "label": "Name tooltip Quickview",
+        "default": "Quick view"
+      },
+      {
+        "type": "text",
+        "id": "pia_wishlist",
+        "label": "Icon Wishlist",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-heart"
+      },
+      {
+        "type": "text",
+        "id": "pia_wishlist_name",
+        "label": "Name tooltip Wishlist",
+        "default": "Add to Wishlist"
+      },
+      {
+        "type": "text",
+        "id": "pia_selectoption",
+        "label": "Icon Select Option",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-options"
+      },
+      {
+        "type": "text",
+        "id": "pia_selectoption_name",
+        "label": "Name tooltip Select Option",
+        "default": "Select Option"
+      },
+      {
+        "type": "text",
+        "id": "pia_addcart",
+        "label": "Icon Add to Cart",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-bag"
+      },
+      {
+        "type": "text",
+        "id": "pia_addcart_name",
+        "label": "Name tooltip Add to Cart",
+        "default": "Add to Cart"
+      },
+      {
+        "type": "text",
+        "id": "pia_sold",
+        "label": "Icon Sold Out",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-bag"
+      },
+      {
+        "type": "text",
+        "id": "pia_sold_name",
+        "label": "Name tooltip Sold Out",
+        "default": "Sold out"
+      }
+    ]
+  },
+  {
+    "name": "About Us page",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section Info"
+      },
+      {
+        "type": "image_picker",
+        "id": "about_sifo_bg1",
+        "label": "Background Image 1"
+      },
+      {
+        "type": "text",
+        "id": "about_sifo_tit1",
+        "label": "Title 1",
+        "default": "HISTORY"
+      },
+      {
+        "type": "textarea",
+        "id": "about_sifo_con1",
+        "label": "Content 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "about_sifo_bg2",
+        "label": "Background Image 2"
+      },
+      {
+        "type": "text",
+        "id": "about_sifo_tit2",
+        "label": "Title 2",
+        "default": "OUR STORE"
+      },
+      {
+        "type": "textarea",
+        "id": "about_sifo_con2",
+        "label": "Content 2"
+      },
+      {
+        "type": "header",
+        "content": "Section Space"
+      },
+      {
+        "type": "text",
+        "id": "about_sifo_margin_top",
+        "label": "Margin Top",
+        "info": "Defined in pixels. Do not add the 'px' unit."
+      },
+      {
+        "type": "text",
+        "id": "about_sifo_margin_bottom",
+        "label": "Margin Bottom",
+        "info": "Defined in pixels. Do not add the 'px' unit."
+      },
+      {
+        "type": "header",
+        "content": "Section Service"
+      },
+      {
+        "type": "text",
+        "id": "service_title",
+        "label": "Title Section",
+        "default": "What we do"
+      },
+      {
+        "type": "text",
+        "id": "service_icon1",
+        "label": "Icon 1",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-earphones"
+      },
+      {
+        "type": "text",
+        "id": "service_title1",
+        "label": "Title 1",
+        "default": "Featured Products"
+      },
+      {
+        "type": "text",
+        "id": "service_content1",
+        "label": "Content 1",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipcing elit, sed do eiusmod tempor incididunt"
+      },
+      {
+        "type": "text",
+        "id": "service_btn1",
+        "label": "Button name 1",
+        "default": "Lean more"
+      },
+      {
+        "type": "text",
+        "id": "service_url1",
+        "label": "Button url 1",
+        "default": "#"
+      },
+      {
+        "type": "text",
+        "id": "service_icon2",
+        "label": "Icon 2",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-game-controller"
+      },
+      {
+        "type": "text",
+        "id": "service_title2",
+        "label": "Title 2",
+        "default": "Development"
+      },
+      {
+        "type": "text",
+        "id": "service_content2",
+        "label": "Content 2",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipcing elit, sed do eiusmod tempor incididunt"
+      },
+      {
+        "type": "text",
+        "id": "service_btn2",
+        "label": "Button name 2",
+        "default": "Lean more"
+      },
+      {
+        "type": "text",
+        "id": "service_url2",
+        "label": "Button url 2",
+        "default": "#"
+      },
+      {
+        "type": "text",
+        "id": "service_icon3",
+        "label": "Icon 3",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-anchor"
+      },
+      {
+        "type": "text",
+        "id": "service_title3",
+        "label": "Title 3",
+        "default": "Photography"
+      },
+      {
+        "type": "text",
+        "id": "service_content3",
+        "label": "Content 3",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipcing elit, sed do eiusmod tempor incididunt"
+      },
+      {
+        "type": "text",
+        "id": "service_btn3",
+        "label": "Button name 3",
+        "default": "Lean more"
+      },
+      {
+        "type": "text",
+        "id": "service_url3",
+        "label": "Button url 3",
+        "default": "#"
+      },
+      {
+        "type": "text",
+        "id": "service_icon4",
+        "label": "Icon 4",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-diamond"
+      },
+      {
+        "type": "text",
+        "id": "service_title4",
+        "label": "Title 4",
+        "default": "Markerting"
+      },
+      {
+        "type": "text",
+        "id": "service_content4",
+        "label": "Content 4",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipcing elit, sed do eiusmod tempor incididunt"
+      },
+      {
+        "type": "text",
+        "id": "service_btn4",
+        "label": "Button name 4",
+        "default": "Lean more"
+      },
+      {
+        "type": "text",
+        "id": "service_url4",
+        "label": "Button url 4",
+        "default": "#"
+      },
+      {
+        "type": "header",
+        "content": "Section Space"
+      },
+      {
+        "type": "text",
+        "id": "about_service_margin_top",
+        "label": "Margin Top",
+        "info": "Defined in pixels. Do not add the 'px' unit."
+      },
+      {
+        "type": "text",
+        "id": "about_service_margin_bottom",
+        "label": "Margin Bottom",
+        "info": "Defined in pixels. Do not add the 'px' unit."
+      },
+      {
+        "type": "header",
+        "content": "Section Newletter"
+      },
+      {
+        "type": "paragraph",
+        "content": "MailChimp form action URL: Setting in Login Store > Customize theme > General Settings tab > General > Mailchimp"
+      },
+      {
+        "type": "select",
+        "id": "newletter_style",
+        "options": [
+          {
+            "value": "f_width",
+            "label": "Full Width"
+          },
+          {
+            "value": "f_screen",
+            "label": "Full Screen"
+          }
+        ],
+        "label": "Choose Style",
+        "default": "f_width"
+      },
+      {
+        "type": "image_picker",
+        "id": "newletter_bg",
+        "label": "Background Section"
+      },
+      {
+        "type": "text",
+        "id": "newletter_icon",
+        "label": "Icon",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-envelope-letter"
+      },
+      {
+        "type": "text",
+        "id": "newletter_title",
+        "label": "Title",
+        "default": "Sign up for newsletter"
+      },
+      {
+        "type": "text",
+        "id": "newletter_des",
+        "label": "Description",
+        "default": "to receive updates"
+      },
+      {
+        "type": "text",
+        "id": "newletter_placeholder",
+        "label": "Input placeholder",
+        "default": "Enter your email here..."
+      },
+      {
+        "type": "text",
+        "id": "newletter_btn_name",
+        "label": "Button name",
+        "default": "Subscribe"
+      },
+      {
+        "type": "header",
+        "content": "Section Space"
+      },
+      {
+        "type": "text",
+        "id": "margin_top",
+        "label": "Margin Top",
+        "info": "Defined in pixels. Do not add the 'px' unit."
+      },
+      {
+        "type": "text",
+        "id": "margin_bottom",
+        "label": "Margin Bottom",
+        "info": "Defined in pixels. Do not add the 'px' unit."
+      }
+    ]
+  },
+  {
+    "name": "Contact Us page",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section GMap"
+      },
+      {
+        "type": "paragraph",
+        "content": "Google Maps: Setting in Login Store > Customize theme > General Settings tab > Google Maps"
+      },
+      {
+        "type": "header",
+        "content": "Section Space"
+      },
+      {
+        "type": "text",
+        "id": "contact_sgmap_margin_top",
+        "label": "Margin Top",
+        "info": "Defined in pixels. Do not add the 'px' unit."
+      },
+      {
+        "type": "text",
+        "id": "contact_sgmap_margin_bottom",
+        "label": "Margin Bottom",
+        "info": "Defined in pixels. Do not add the 'px' unit."
+      },
+      {
+        "type": "header",
+        "content": "Section Address"
+      },
+      {
+        "type": "text",
+        "id": "contact_add_b1_title",
+        "label": "Block 1 Title",
+        "default": "New York Store"
+      },
+      {
+        "type": "text",
+        "id": "contact_add_b1_content1",
+        "label": "Block 1 Content 1",
+        "default": "7397 Gartner Street Chaska, MN 55318"
+      },
+      {
+        "type": "text",
+        "id": "contact_add_b1_content2",
+        "label": "Block 1 Content 2",
+        "default": "(845) 337-3298"
+      },
+      {
+        "type": "text",
+        "id": "contact_add_b1_content3",
+        "label": "Block 1 Content 3",
+        "default": "Support@unostore.com"
+      },
+      {
+        "type": "text",
+        "id": "contact_add_b2_title",
+        "label": "Block 2 Title",
+        "default": "Pari Store"
+      },
+      {
+        "type": "text",
+        "id": "contact_add_b2_content1",
+        "label": "Block 2 Content 1",
+        "default": "7397 Gartner Street Chaska, MN 55318"
+      },
+      {
+        "type": "text",
+        "id": "contact_add_b2_content2",
+        "label": "Block 2 Content 2",
+        "default": "(845) 337-3298"
+      },
+      {
+        "type": "text",
+        "id": "contact_add_b2_content3",
+        "label": "Block 2 Content 3",
+        "default": "Support@unostore.com"
+      },
+      {
+        "type": "text",
+        "id": "contact_add_b3_title",
+        "label": "Block 3 Title",
+        "default": "Roma Store"
+      },
+      {
+        "type": "text",
+        "id": "contact_add_b3_content1",
+        "label": "Block 3 Content 1",
+        "default": "7397 Gartner Street Chaska, MN 55318"
+      },
+      {
+        "type": "text",
+        "id": "contact_add_b3_content2",
+        "label": "Block 3 Content 2",
+        "default": "(845) 337-3298"
+      },
+      {
+        "type": "text",
+        "id": "contact_add_b3_content3",
+        "label": "Block 3 Content 3",
+        "default": "Support@unostore.com"
+      },
+      {
+        "type": "header",
+        "content": "Section Space"
+      },
+      {
+        "type": "text",
+        "id": "margin_top_contact_address",
+        "label": "Margin Top",
+        "info": "Defined in pixels. Do not add the 'px' unit."
+      },
+      {
+        "type": "text",
+        "id": "margin_bottom_contact_address",
+        "label": "Margin Bottom",
+        "info": "Defined in pixels. Do not add the 'px' unit."
+      },
+      {
+        "type": "header",
+        "content": "Form Contact"
+      },
+      {
+        "type": "text",
+        "id": "fc_icon",
+        "label": "Icon",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-paper-plane"
+      },
+      {
+        "type": "text",
+        "id": "fc_title",
+        "label": "Title",
+        "default": "Contact Us"
+      },
+      {
+        "type": "text",
+        "id": "fc_des",
+        "label": "Description",
+        "default": "TO RECEIVE UPDATES"
+      },
+      {
+        "type": "text",
+        "id": "fc_firstname",
+        "label": "Text placeholder firstname",
+        "default": "First Name"
+      },
+      {
+        "type": "text",
+        "id": "fc_lastname",
+        "label": "Text placeholder lastname",
+        "default": "Last Name"
+      },
+      {
+        "type": "text",
+        "id": "fc_phone",
+        "label": "Text placeholder phone",
+        "default": "Phone number"
+      },
+      {
+        "type": "text",
+        "id": "fc_email",
+        "label": "Text placeholder email",
+        "default": "Email address"
+      },
+      {
+        "type": "text",
+        "id": "fc_message",
+        "label": "Text placeholder message",
+        "default": "Message"
+      },
+      {
+        "type": "text",
+        "id": "fc_btn_name",
+        "label": "Button name",
+        "default": "Submit"
+      },
+      {
+        "type": "header",
+        "content": "Section Space"
+      },
+      {
+        "type": "text",
+        "id": "margin_top_contact_form",
+        "label": "Margin Top",
+        "info": "Defined in pixels. Do not add the 'px' unit."
+      },
+      {
+        "type": "text",
+        "id": "margin_bottom_contact_form",
+        "label": "Margin Bottom",
+        "info": "Defined in pixels. Do not add the 'px' unit."
+      },
+      {
+        "type": "header",
+        "content": "Section Newletter"
+      },
+      {
+        "type": "paragraph",
+        "content": "MailChimp form action URL: Setting in Login Store > Customize theme > General Settings tab > General > Mailchimp"
+      },
+      {
+        "type": "select",
+        "id": "newletter_style_contact_4",
+        "options": [
+          {
+            "value": "f_width_contact_4",
+            "label": "Full Width"
+          },
+          {
+            "value": "f_screen_contact_4",
+            "label": "Full Screen"
+          }
+        ],
+        "label": "Choose Style",
+        "default": "f_width_contact_4"
+      },
+      {
+        "type": "image_picker",
+        "id": "newletter_bg_contact_4",
+        "label": "Background Section"
+      },
+      {
+        "type": "text",
+        "id": "newletter_icon_contact_4",
+        "label": "Icon",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-envelope-letter"
+      },
+      {
+        "type": "text",
+        "id": "newletter_title_contact_4",
+        "label": "Title",
+        "default": "Sign up for newsletter"
+      },
+      {
+        "type": "text",
+        "id": "newletter_des_contact_4",
+        "label": "Description",
+        "default": "to receive updates"
+      },
+      {
+        "type": "text",
+        "id": "newletter_placeholder_contact_4",
+        "label": "Input placeholder",
+        "default": "Enter your email here..."
+      },
+      {
+        "type": "text",
+        "id": "newletter_btn_name_contact_4",
+        "label": "Button name",
+        "default": "Subscribe"
+      },
+      {
+        "type": "header",
+        "content": "Section Space"
+      },
+      {
+        "type": "text",
+        "id": "margin_top_contact_4",
+        "label": "Margin Top",
+        "info": "Defined in pixels. Do not add the 'px' unit."
+      },
+      {
+        "type": "text",
+        "id": "margin_bottom_contact_4",
+        "label": "Margin Bottom",
+        "info": "Defined in pixels. Do not add the 'px' unit."
+      }
+    ]
+  },
+  {
+    "name": "Lookbook page v1",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Settings"
+      },
+      {
+        "type": "image_picker",
+        "id": "lbv1_bg",
+        "label": "Background Image"
+      },
+      {
+        "type": "text",
+        "id": "lbv1_icon",
+        "label": "Icon",
+        "info": "[Get icon from here](http:\/\/simplelineicons.com\/)",
+        "default": "icon-diamond"
+      },
+      {
+        "type": "richtext",
+        "id": "lbv1_summary",
+        "label": "Summary",
+        "default": "<p><strong>Fashion is not something that exists in dresses only.<\/strong> Fashion is in the sky, in the street, fashion has to do with ideas, <em>the way we live, what is happening.<\/em><\/p>"
+      },
+      {
+        "type": "text",
+        "id": "lbv1_title",
+        "label": "Title",
+        "default": "Coco chanel"
+      },
+      {
+        "type": "header",
+        "content": "Gallery slider 1"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_gs1",
+        "label": "Enable?",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "image_gs1",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "title_gs1",
+        "label": "Title",
+        "default": "Osam Rotatume"
+      },
+      {
+        "type": "text",
+        "id": "des_gs1",
+        "label": "Description",
+        "default": "spring summer 2016"
+      },
+      {
+        "type": "text",
+        "id": "btn_name_gs1",
+        "label": "Button Name",
+        "default": "explore the collection"
+      },
+      {
+        "type": "text",
+        "id": "btn_url_gs1",
+        "label": "Button URL",
+        "default": "\/collections\/all"
+      },
+      {
+        "type": "header",
+        "content": "Gallery slider 2"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_gs2",
+        "label": "Enable?",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "image_gs2",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "title_gs2",
+        "label": "Title",
+        "default": "Osam Rotatume"
+      },
+      {
+        "type": "text",
+        "id": "des_gs2",
+        "label": "Description",
+        "default": "spring summer 2016"
+      },
+      {
+        "type": "text",
+        "id": "btn_name_gs2",
+        "label": "Button Name",
+        "default": "explore the collection"
+      },
+      {
+        "type": "text",
+        "id": "btn_url_gs2",
+        "label": "Button URL",
+        "default": "\/collections\/all"
+      },
+      {
+        "type": "header",
+        "content": "Gallery slider 3"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_gs3",
+        "label": "Enable?",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "image_gs3",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "title_gs3",
+        "label": "Title",
+        "default": "Osam Rotatume"
+      },
+      {
+        "type": "text",
+        "id": "des_gs3",
+        "label": "Description",
+        "default": "spring summer 2016"
+      },
+      {
+        "type": "text",
+        "id": "btn_name_gs3",
+        "label": "Button Name",
+        "default": "explore the collection"
+      },
+      {
+        "type": "text",
+        "id": "btn_url_gs3",
+        "label": "Button URL",
+        "default": "\/collections\/all"
+      },
+      {
+        "type": "header",
+        "content": "Gallery slider 4"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_gs4",
+        "label": "Enable?",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "image_gs4",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "title_gs4",
+        "label": "Title",
+        "default": "Osam Rotatume"
+      },
+      {
+        "type": "text",
+        "id": "des_gs4",
+        "label": "Description",
+        "default": "spring summer 2016"
+      },
+      {
+        "type": "text",
+        "id": "btn_name_gs4",
+        "label": "Button Name",
+        "default": "explore the collection"
+      },
+      {
+        "type": "text",
+        "id": "btn_url_gs4",
+        "label": "Button URL",
+        "default": "\/collections\/all"
+      },
+      {
+        "type": "header",
+        "content": "Gallery slider 5"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_gs5",
+        "label": "Enable?",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "image_gs5",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "title_gs5",
+        "label": "Title",
+        "default": "Osam Rotatume"
+      },
+      {
+        "type": "text",
+        "id": "des_gs5",
+        "label": "Description",
+        "default": "spring summer 2016"
+      },
+      {
+        "type": "text",
+        "id": "btn_name_gs5",
+        "label": "Button Name",
+        "default": "explore the collection"
+      },
+      {
+        "type": "text",
+        "id": "btn_url_gs5",
+        "label": "Button URL",
+        "default": "\/collections\/all"
+      },
+      {
+        "type": "header",
+        "content": "Gallery slider 6"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_gs6",
+        "label": "Enable?",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "image_gs6",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "title_gs6",
+        "label": "Title",
+        "default": "Osam Rotatume"
+      },
+      {
+        "type": "text",
+        "id": "des_gs6",
+        "label": "Description",
+        "default": "spring summer 2016"
+      },
+      {
+        "type": "text",
+        "id": "btn_name_gs6",
+        "label": "Button Name",
+        "default": "explore the collection"
+      },
+      {
+        "type": "text",
+        "id": "btn_url_gs6",
+        "label": "Button URL",
+        "default": "\/collections\/all"
+      }
+    ]
+  },
+  {
+    "name": "Lookbook page v2",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Settings"
+      },
+      {
+        "type": "image_picker",
+        "id": "lbv2_bg",
+        "label": "Background Image"
+      },
+      {
+        "type": "header",
+        "content": "Gallery block 1"
+      },
+      {
+        "type": "checkbox",
+        "id": "lb2_enable_gs1",
+        "label": "Enable?",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "lb2_image_gs1",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "lb2_title_gs1",
+        "label": "Title",
+        "default": "Bowness Bay"
+      },
+      {
+        "type": "text",
+        "id": "lb2_des_gs1",
+        "label": "Description",
+        "default": "A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time...."
+      },
+      {
+        "type": "url",
+        "id": "lb2_btn_url_gs1",
+        "label": "URL"
+      },
+      {
+        "type": "header",
+        "content": "Gallery block 2"
+      },
+      {
+        "type": "checkbox",
+        "id": "lb2_enable_gs2",
+        "label": "Enable?",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "lb2_image_gs2",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "lb2_title_gs2",
+        "label": "Title",
+        "default": "Bowness Bay"
+      },
+      {
+        "type": "text",
+        "id": "lb2_des_gs2",
+        "label": "Description",
+        "default": "A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time...."
+      },
+      {
+        "type": "url",
+        "id": "lb2_btn_url_gs2",
+        "label": "URL"
+      },
+      {
+        "type": "header",
+        "content": "Gallery block 3"
+      },
+      {
+        "type": "checkbox",
+        "id": "lb2_enable_gs3",
+        "label": "Enable?",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "lb2_image_gs3",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "lb2_title_gs3",
+        "label": "Title",
+        "default": "Bowness Bay"
+      },
+      {
+        "type": "text",
+        "id": "lb2_des_gs3",
+        "label": "Description",
+        "default": "A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time...."
+      },
+      {
+        "type": "url",
+        "id": "lb2_btn_url_gs3",
+        "label": "URL"
+      },
+      {
+        "type": "header",
+        "content": "Gallery block 4"
+      },
+      {
+        "type": "checkbox",
+        "id": "lb2_enable_gs4",
+        "label": "Enable?",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "lb2_image_gs4",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "lb2_title_gs4",
+        "label": "Title",
+        "default": "Bowness Bay"
+      },
+      {
+        "type": "text",
+        "id": "lb2_des_gs4",
+        "label": "Description",
+        "default": "A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time...."
+      },
+      {
+        "type": "url",
+        "id": "lb2_btn_url_gs4",
+        "label": "URL"
+      },
+      {
+        "type": "header",
+        "content": "Gallery block 5"
+      },
+      {
+        "type": "checkbox",
+        "id": "lb2_enable_gs5",
+        "label": "Enable?",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "lb2_image_gs5",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "lb2_title_gs5",
+        "label": "Title",
+        "default": "Bowness Bay"
+      },
+      {
+        "type": "text",
+        "id": "lb2_des_gs5",
+        "label": "Description",
+        "default": "A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time...."
+      },
+      {
+        "type": "url",
+        "id": "lb2_btn_url_gs5",
+        "label": "URL"
+      },
+      {
+        "type": "header",
+        "content": "Gallery block 6"
+      },
+      {
+        "type": "checkbox",
+        "id": "lb2_enable_gs6",
+        "label": "Enable?",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "lb2_image_gs6",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "lb2_title_gs6",
+        "label": "Title",
+        "default": "Bowness Bay"
+      },
+      {
+        "type": "text",
+        "id": "lb2_des_gs6",
+        "label": "Description",
+        "default": "A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time...."
+      },
+      {
+        "type": "url",
+        "id": "lb2_btn_url_gs6",
+        "label": "URL"
+      },
+      {
+        "type": "header",
+        "content": "Gallery block 7"
+      },
+      {
+        "type": "checkbox",
+        "id": "lb2_enable_gs7",
+        "label": "Enable?",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "lb2_image_gs7",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "lb2_title_gs7",
+        "label": "Title",
+        "default": "Bowness Bay"
+      },
+      {
+        "type": "text",
+        "id": "lb2_des_gs7",
+        "label": "Description",
+        "default": "A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time...."
+      },
+      {
+        "type": "url",
+        "id": "lb2_btn_url_gs7",
+        "label": "URL"
+      },
+      {
+        "type": "header",
+        "content": "Gallery block 8"
+      },
+      {
+        "type": "checkbox",
+        "id": "lb2_enable_gs8",
+        "label": "Enable?",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "lb2_image_gs8",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "lb2_title_gs8",
+        "label": "Title",
+        "default": "Bowness Bay"
+      },
+      {
+        "type": "text",
+        "id": "lb2_des_gs8",
+        "label": "Description",
+        "default": "A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time...."
+      },
+      {
+        "type": "url",
+        "id": "lb2_btn_url_gs8",
+        "label": "URL"
+      },
+      {
+        "type": "header",
+        "content": "Gallery block 9"
+      },
+      {
+        "type": "checkbox",
+        "id": "lb2_enable_gs9",
+        "label": "Enable?",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "lb2_image_gs9",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "lb2_title_gs9",
+        "label": "Title",
+        "default": "Bowness Bay"
+      },
+      {
+        "type": "text",
+        "id": "lb2_des_gs9",
+        "label": "Description",
+        "default": "A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time...."
+      },
+      {
+        "type": "url",
+        "id": "lb2_btn_url_gs9",
+        "label": "URL"
+      }
+    ]
+  },
+  {
+    "name": "Popup Newsletter",
+    "settings": [
+      {
+        "type": "header",
+        "info": "MailChimp form action URL: Setting in Login Store > Customize theme > General Settings tab > General > Mailchimp",
+        "content": "Mailchimp"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_popup_newletter",
+        "label": "Show Popup Newletter",
+        "default": true
+      },
+      {
+        "type": "number",
+        "id": "popup_delay",
+        "label": "Popup delay(seconds)",
+        "default": 300
+      },
+      {
+        "type": "radio",
+        "id": "po_newletter_style",
+        "label": "Popup Newletter Style?",
+        "options": [
+          {
+            "value": "pn_s1",
+            "label": "Style Rectangle"
+          },
+          {
+            "value": "pn_s2",
+            "label": "Style Circle"
+          }
+        ],
+        "default": "pn_s1",
+        "info": "[View image with newletter popup designs](https:\/\/cdn.shopify.com\/s\/files\/1\/1419\/5158\/t\/6\/assets\/demo_product_option.png?7548039049645998855)"
+      },
+      {
+        "type": "header",
+        "content": "Settings Style Rectangle"
+      },
+      {
+        "type": "image",
+        "id": "pns1_img.jpg",
+        "label": "Popup image",
+        "info": "487 x 583px"
+      },
+      {
+        "type": "text",
+        "id": "pns1_title",
+        "label": "Title",
+        "default": "SIGN UP FOR EMAILS"
+      },
+      {
+        "type": "text",
+        "id": "pns1_des",
+        "label": "Description",
+        "default": "Get 20% off your entire purchase"
+      },
+      {
+        "type": "text",
+        "id": "pns1_content",
+        "label": "Content",
+        "default": "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit"
+      },
+      {
+        "type": "text",
+        "id": "pns1_placeholder",
+        "label": "Input placeholder",
+        "default": "Email adress"
+      },
+      {
+        "type": "text",
+        "id": "pns1_btn_name",
+        "label": "Button name",
+        "default": "Subscribe"
+      },
+      {
+        "type": "text",
+        "id": "pns1_close_name",
+        "label": "Close name",
+        "default": "No thank"
+      },
+      {
+        "type": "header",
+        "content": "Settings Style Circle"
+      },
+      {
+        "type": "text",
+        "id": "pns2_title1",
+        "label": "Title 1",
+        "default": "get"
+      },
+      {
+        "type": "text",
+        "id": "pns2_title2_1",
+        "label": "Title 2.1",
+        "default": "20"
+      },
+      {
+        "type": "text",
+        "id": "pns2_title2_2",
+        "label": "Title 2.2",
+        "default": "%"
+      },
+      {
+        "type": "text",
+        "id": "pns2_title3",
+        "label": "Title 3",
+        "default": "OFF aNY ODER"
+      },
+      {
+        "type": "text",
+        "id": "pns2_content1",
+        "label": "Content 1",
+        "default": "SIGN UP FOR OUR EMAILS aND BE THE FIRST TO KNOW aBOUT SPECIAL OFFERS, SALES, THE LATEST aRRIVALS aND MUCH MORE!"
+      },
+      {
+        "type": "text",
+        "id": "pns2_content2",
+        "label": "Content 2",
+        "default": "10% OFF OFFER aPPLIES TO FIRST TIME EMAIL SUBSCRIBERS ONLY."
+      },
+      {
+        "type": "text",
+        "id": "pns2_placeholder",
+        "label": "Input placeholder",
+        "default": "Email adress"
+      },
+      {
+        "type": "text",
+        "id": "pns2_btn_name",
+        "label": "Button name",
+        "default": "Subscribe"
+      },
+      {
+        "type": "text",
+        "id": "pns2_close_name",
+        "label": "Close name",
+        "default": "No thank"
+      }
+    ]
+  },
+  {
+    "name": "Google Maps",
+    "settings": [
+      {
+        "id": "gmap_key",
+        "type": "text",
+        "info": "If your store experiences more than 2,500 visitors a day, you’ll need to generate both [JavaScript](https:\/\/developers.google.com\/maps\/documentation\/javascript\/get-api-key) and [Geocoding](https:\/\/developers.google.com\/maps\/documentation\/geocoding\/get-api-key) API keys",
+        "label": "Google Maps API key"
+      },
+      {
+        "type": "text",
+        "id": "gmap_textpoint",
+        "label": "Text of Point",
+        "default": "Uno"
+      },
+      {
+        "type": "select",
+        "id": "gmap_style",
+        "label": "Select Google Map style",
+        "options": [
+          {
+            "value": "ggm_s1",
+            "label": "Default"
+          },
+          {
+            "value": "ggm_s2",
+            "label": "Standard Map"
+          },
+          {
+            "value": "ggm_s3",
+            "label": "Satellite Map"
+          },
+          {
+            "value": "ggm_s4",
+            "label": "Hybrid Map"
+          },
+          {
+            "value": "ggm_s5",
+            "label": "Coloured Map"
+          },
+          {
+            "value": "ggm_s6",
+            "label": "Mono Light Map"
+          },
+          {
+            "value": "ggm_s7",
+            "label": "Mono Dark Map"
+          },
+          {
+            "value": "ggm_s8",
+            "label": "Custom Styled 1"
+          },
+          {
+            "value": "ggm_s9",
+            "label": "Custom Styled 2"
+          }
+        ],
+        "default": "ggm_s1"
+      },
+      {
+        "type": "text",
+        "id": "gmap_latitude",
+        "label": "Google Map Latitude",
+        "default": "33.3209127"
+      },
+      {
+        "type": "text",
+        "id": "gmap_longitude",
+        "label": "Google Map Longitude",
+        "default": "-111.8005377"
+      }
+    ]
+  }
+]

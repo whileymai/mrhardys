@@ -1,0 +1,56 @@
+<!-- /templates/page.lookbookv2.liquid -->
+
+<div class="container">
+  <div class="banner-header banner-lbook3 engoc_header_collection" style="background-image: url({% if settings.lbv2_bg == blank %}{% capture _img_url %}collection_ls_hbg.jpg{% endcapture %}{{ _img_url | asset_url}}{% else %}{{ settings.lbv2_bg | img_url:'master' }}{% endif %});">
+    <div class="text">
+      <h3>{{page.title}}</h3>
+      <img class="border" src="{{ 'border_title_blog_detail.png' | asset_url }}" alt="border">
+      <p>{{page.content}}</p>
+    </div>
+  </div>
+</div>
+<!-- Begin Gallery -->
+<div class="wrap-gallery">
+  <div class="container">
+    <ul id="lightgallery">
+      {% for i in (1..9) %}
+      
+      {% capture _enable %}lb2_enable_gs{{i}}{% endcapture %}
+      {% capture _gallery_image %}lb2_image_gs{{i}}{% endcapture %}
+      {% capture _title %}lb2_title_gs{{i}}{% endcapture %}   
+      {% capture _des %}lb2_des_gs{{i}}{% endcapture %}
+      {% capture _btn_url %}lb2_btn_url_gs{{i}}{% endcapture %}
+
+      {% assign enable = settings[_enable] %}
+      {% if enable %}
+      {% assign gallery_image = settings[_gallery_image] %}
+      {% assign title = settings[_title] %}
+      {% assign des = settings[_des] %}    
+      {% assign btn_url = settings[_btn_url] %}
+      
+      <li 
+          class="col-xs-6 col-sm-4 col-md-4 effect-v6 hover-images" 
+          {% if gallery_image == blank %}
+          {% capture _img_url %}lb2_gallery.png{% endcapture %}
+          data-src="{{ _img_url | asset_url}}" 
+          {% else %}
+          data-src="{{ gallery_image | img_url:'master' }}" 
+          {% endif %}
+          data-sub-html="<h4>{{title}}</h4><p>{{des}}</p>">
+        <a href="{{btn_url}}">
+          {% if gallery_image == blank %}
+          {% capture _img_url %}lb2_gallery.png{% endcapture %}
+          <img class="img-responsive" src="{{ _img_url | asset_url}}" alt="">
+          {% else %}
+          <img class="img-responsive" src="{{ gallery_image | img_url:'master' }}" alt="Lookbook">
+          {% endif %}
+        </a>
+      </li>
+      
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  <!-- End container -->
+</div>
+

@@ -1,0 +1,1309 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-slider-v2" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="container">
+    <div class="tp-banner-container ver3">
+      <div class="tp-banner" >
+        <ul> 
+          {% if section.blocks.size > 0 %}
+          {% for block in section.blocks %}
+          
+            {% if block.type == 'image' %}  
+            <li data-transition="{{block.settings.slider_transition}}" data-slotamount="7" data-masterspeed="1000" >
+              <img src="{% if block.settings.slider_bg == blank %}{% capture _img_url %}slider_v2_bg2.jpg{% endcapture %}{{ _img_url | asset_url}}{% else %}{{ block.settings.slider_bg | img_url: "master" }}{% endif %}"  alt="slideshow"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+              <!-- LAYER NR. 3 -->
+              <div class="tp-caption large_bold_orange color-black font-os letter-spacing-5 font-300 {{block.settings.slider_content1_textEffect}} customout size-24"
+                   data-x="{{block.settings.slider_content1_x}}"
+                   data-y="{{block.settings.slider_content1_y}}"
+                   data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                   data-speed="800"
+                   data-start="1600"
+                   data-easing="Power4.easeOut"
+                   data-endspeed="300"
+                   data-endeasing="Power1.easeIn"
+                   data-captionhidden="on"
+                   style="z-index: 9">{{block.settings.slider_content1}}
+              </div>
+              <!-- LAYER NR. 4 -->
+              <div class="tp-caption large_bold_orange color-black text-transform-cap font-play {{block.settings.slider_content2_textEffect}} customout size-80"
+                   data-x="{{block.settings.slider_content2_x}}"
+                   data-y="{{block.settings.slider_content2_y}}"
+                   data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                   data-speed="800"
+                   data-start="1700"
+                   data-easing="Power4.easeOut"
+                   data-endspeed="300"
+                   data-endeasing="Power1.easeIn"
+                   data-captionhidden="on"
+                   style="z-index: 7">{{block.settings.slider_content2}}
+              </div>
+
+              <!-- LAYER NR. 5 -->
+              <div class="tp-caption welcome size-16 {{block.settings.slider_icon_effect}} customout"
+                   data-x="{{block.settings.slider_icon_x}}" data-hoffset="-140"
+                   data-y="{{block.settings.slider_icon_y}}" data-voffset="-103"
+                   data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:5;scaleY:5;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                   data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                   data-speed="500"
+                   data-start="1500"
+                   data-easing="Power4.easeOut"
+                   data-endspeed="500"
+                   data-endeasing="Power4.easeIn"
+                   data-captionhidden="on"
+                   style="z-index: 7"><img src="{% if block.settings.slider_icon == blank %}{% capture _img_url %}slider_v2_line.png{% endcapture %}{{ _img_url | asset_url}}{% else %}{{ block.settings.slider_icon | img_url: "master" }}{% endif %}" alt="Slide-show-home1">
+              </div>
+
+              <!-- LAYER NR. 7 -->
+              <div class="tp-caption {{block.settings.slider_btn_effect}} customout font-italic font-play link-1 height-50"
+                   data-x="{{block.settings.slider_btn_x}}"
+                   data-y="{{block.settings.slider_btn_y}}"
+                   data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                   data-speed="800"
+                   data-start="1500"
+                   data-easing="Power4.easeOut"
+                   data-endspeed="300" 
+                   data-endeasing="Power1.easeIn"
+                   data-captionhidden="on"
+                   style="z-index: 8"><a href="{{block.settings.slider_btn_url}}" title="{{block.settings.slider_btn_name}}" class="">{{block.settings.slider_btn_name}}</a>
+              </div>
+
+              <!-- LAYER NR. 8s -->
+            </li>
+            {% endif %}
+
+            {% if block.type == 'video' %}  
+            <li data-transition="{{block.settings.slider_transition}}" data-slotamount="7" data-masterspeed="1000" >
+              {% if block.settings.choose_videobg =="vimeo" %}
+              <!-- BACKGROUND VIMEO VIDEO LAYER -->
+              <div class="rs-background-video-layer" 
+                   data-forcerewind="on" 
+                   data-volume="mute" 
+                   data-vimeoid="{{block.settings.slider_video_id}}" 
+                   data-videoattributes="title=0&amp;byline=0&amp;portrait=0&amp;api=1" 
+                   data-videowidth="100%" 
+                   data-videoheight="100%" 
+                   data-videocontrols="none"
+                   data-videoloop="loop" 
+                   data-forceCover="1" 
+                   data-aspectratio="4:3" 
+                   data-autoplay="true" 
+                   data-autoplayonlyfirsttime="false" 
+                   data-nextslideatend="true" 
+                   >
+              </div>
+              {% endif %}
+              
+              {% if block.settings.choose_videobg =="youtube" %}
+              <!-- BACKGROUND YOUTUBE VIDEO LAYER -->
+              <div class="rs-background-video-layer" 
+                   data-forcerewind="on" 
+                   data-volume="mute" 
+                   data-ytid="{{block.settings.slider_video_id}}" 
+                   data-videoattributes="version=3&amp;enablejsapi=1&amp;html5=1&amp;hd=1&amp;wmode=opaque&amp;showinfo=0&amp;ref=0&amp;autoplay=1;origin=https://www.youtube.com/;" 
+                   data-videorate="1" 
+                   data-videowidth="100%" 
+                   data-videoheight="100%" 
+                   data-videocontrols="none" 
+                   data-videoloop="loop" 
+                   data-forceCover="1" 
+                   data-aspectratio="4:3" 
+                   data-autoplay="true" 
+                   data-autoplayonlyfirsttime="false" 
+                   data-nextslideatend="true" 
+                   >
+              </div>
+              {% endif %}
+              <!-- LAYER NR. 3 -->
+              <div class="tp-caption large_bold_orange color-white font-os letter-spacing-5 font-300 {{block.settings.slider_video_content1_textEffect}} customout size-24"
+                   data-x="{{block.settings.slider_video_content1_x}}"
+                   data-y="{{block.settings.slider_video_content1_y}}"
+                   data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                   data-speed="800"
+                   data-start="1600"
+                   data-easing="Power4.easeOut"
+                   data-endspeed="300"
+                   data-endeasing="Power1.easeIn"
+                   data-captionhidden="on"
+                   style="z-index: 9">{{block.settings.slider_video_content1}}
+              </div>
+              <!-- LAYER NR. 4 -->
+              <div class="tp-caption large_bold_orange color-white text-transform-cap font-play {{block.settings.slider_video_content2_textEffect}} customout size-80"
+                   data-x="{{block.settings.slider_video_content2_x}}"
+                   data-y="{{block.settings.slider_video_content2_y}}"
+                   data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                   data-speed="800"
+                   data-start="1700"
+                   data-easing="Power4.easeOut"
+                   data-endspeed="300"
+                   data-endeasing="Power1.easeIn"
+                   data-captionhidden="on"
+                   style="z-index: 7">{{block.settings.slider_video_content2}}
+              </div>
+
+              <!-- LAYER NR. 5 -->
+              <div class="tp-caption welcome size-16 {{block.settings.slider_video_icon_effect}} customout"
+                   data-x="{{block.settings.slider_video_icon_x}}" data-hoffset="-140"
+                   data-y="{{block.settings.slider_video_icon_y}}" data-voffset="-103"
+                   data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:5;scaleY:5;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                   data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                   data-speed="500"
+                   data-start="1500"
+                   data-easing="Power4.easeOut"
+                   data-endspeed="500"
+                   data-endeasing="Power4.easeIn"
+                   data-captionhidden="on"
+                   style="z-index: 7"><img src="{% if block.settings.slider_video_icon == blank %}{% capture _img_url %}slider_v2_line.png{% endcapture %}{{ _img_url | asset_url}}{% else %}{{ block.settings.slider_video_icon | img_url: "master" }}{% endif %}" alt="Slide-show-home1">
+              </div>
+
+              <!-- LAYER NR. 7 -->
+              <div class="tp-caption {{block.settings.slider_video_btn_effect}} customout font-italic font-play link-1 height-50"
+                   data-x="{{block.settings.slider_video_btn_x}}"
+                   data-y="{{block.settings.slider_video_btn_y}}"
+                   data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                   data-speed="800"
+                   data-start="1500"
+                   data-easing="Power4.easeOut"
+                   data-endspeed="300" 
+                   data-endeasing="Power1.easeIn"
+                   data-captionhidden="on"
+                   style="z-index: 8"><a href="{{block.settings.slider_video_btn_url}}" title="{{block.settings.slider_video_btn_name}}" class="">{{block.settings.slider_video_btn_name}}</a>
+              </div>
+
+              <!-- LAYER NR. 8s -->
+            </li>
+            {% endif %}
+          
+          {% endfor %}
+          {% endif %}
+        </ul>
+        <div class="tp-bannertimer"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* All setting bullet: https://www.themepunch.com/revsliderjquery-doc/navigation/#navbullets */
+  jQuery(document).ready(function($) {
+    if ($(".tp-banner").length) {
+      $('.ver3 .tp-banner').revolution({
+        jsFileLocation:"",
+        delay: {{section.settings.slideshow_time}},
+        startwidth: {{section.settings.slider_startwidth}},
+        startheight: {{section.settings.slider_startheight}},
+        hideThumbs: 10,
+        fullWidth: "on",
+        forceFullWidth: "on",
+        navigation: { 
+        {% comment %}
+        keyboardNavigation:"off",
+			keyboard_direction: "horizontal",
+			mouseScrollNavigation:"off",
+			onHoverStop:"off",
+			arrows: {
+				style:"",
+				enable:true,
+				hide_onmobile:false,
+				hide_onleave:false,
+				left: {
+					h_align:"left",
+					v_align:"center",
+					h_offset:20,
+					v_offset:0
+				},
+				right: {
+					h_align:"right",
+					v_align:"center",
+					h_offset:20,
+					v_offset:0
+				}
+			},
+          {% endcomment %}
+          touch:{
+           touchenabled:"on",
+           swipe_treshold : 75,
+           swipe_min_touches : 1,
+           drag_block_vertical:false,
+           swipe_direction:"horizontal"
+          },
+          bullets:{
+          style:"tp-bullets simplebullets round",
+          enable:true,
+          container:"slider",
+          rtl:false,
+          hide_onmobile:false,
+          hide_onleave:true,
+          hide_delay:200,
+          hide_delay_mobile:1200,
+          hide_under:0,
+          hide_over:9999,
+          tmp:'', 
+          direction:"horizontal",
+          space:0,       
+          h_align:"center",
+          v_align:"bottom",
+          h_offset:0,
+          v_offset:20
+          }
+        }
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Slider v2",
+  "max_blocks": 6,
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Main Settings"
+    },
+    {
+      "type": "select",
+      "id": "slideshow_time",
+      "label": "Autoplay Slideshow with",
+      "options": [
+        {
+          "value": "1000",
+          "label": "1 seconds"
+        },
+        {
+          "value": "2000",
+          "label": "2 seconds"
+        },
+        {
+          "value": "3000",
+          "label": "3 seconds"
+        },
+        {
+          "value": "4000",
+          "label": "4 seconds"
+        },
+        {
+          "value": "5000",
+          "label": "5 seconds"
+        },
+        {
+          "value": "6000",
+          "label": "6 seconds"
+        },
+        {
+          "value": "7000",
+          "label": "7 seconds"
+        },
+        {
+          "value": "8000",
+          "label": "8 seconds"
+        },
+        {
+          "value": "9000",
+          "label": "9 seconds"
+        },
+        {
+          "value": "10000",
+          "label": "10 seconds"
+        }
+      ],
+      "default": "9000"
+    },
+    {
+      "type": "text",
+      "id": "slider_startwidth",
+      "label": "Start width",
+      "default": "1765",
+      "info": "Default : 1765"
+    },
+    {
+      "type": "text",
+      "id": "slider_startheight",
+      "label": "Start height",
+      "default": "840",
+      "info": "Default : 840"
+    },
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image slide",
+      "settings": [
+        {
+          "type": "select",
+          "id": "slider_transition",
+          "options": [
+			{
+              "value": "random",
+              "label": "Random"
+            },
+			{
+              "value": "fade",
+              "label": "Fade"
+            },
+			{
+              "value": "slideup",
+              "label": "Slide To Top"
+            },
+            {
+              "value": "slidedown",
+              "label": "Slide To Bottom"
+            },
+            {
+              "value": "slideright",
+              "label": "Slide To Right"
+            },
+            {
+              "value": "slideleft",
+              "label": "Slide To Left"
+            },
+            {
+              "value": "slideoverup",
+              "label": "Slide Over to Top"
+            },
+            {
+              "value": "slideoverdown",
+              "label": "Slide Over to Bottom"
+            },
+            {
+              "value": "slideoverright",
+              "label": "Slide Over to Right"
+            },
+            {
+              "value": "slideoverleft",
+              "label": "Slide Over to Left"
+            },
+            {
+              "value": "slideremoveup",
+              "label": "Slide Remove to Top"
+            },
+            {
+              "value": "slideremovedown",
+              "label": "Slide Remove to Bottom"
+            },
+            {
+              "value": "slideremoveright",
+              "label": "Slide Remove to Right"
+            },
+            {
+              "value": "slideremoveleft",
+              "label": "Slide Remove to Left"
+            },
+            {
+              "value": "boxslide",
+              "label": "Slide Boxes"
+            },
+            {
+              "value": "slotslide-horizontal",
+              "label": "Slide Slots Horizontal"
+            },
+            {
+              "value": "slotslide-vertical",
+              "label": "Slide Slots Vertical"
+            },
+            {
+              "value": "boxfade",
+              "label": "Fade Boxes"
+            },
+            {
+              "value": "slotfade-horizontal",
+              "label": "Fade Slots Horizontal"
+            },
+            {
+              "value": "slotfade-vertical",
+              "label": "Fade Slots Vertical"
+            },
+            {
+              "value": "fadefromright",
+              "label": "Fade and Slide from Right"
+            },
+            {
+              "value": "fadefromleft",
+              "label": "Fade and Slide from Left"
+            },
+            {
+              "value": "fadefromtop",
+              "label": "Fade and Slide from Top"
+            },
+            {
+              "value": "fadefrombottom",
+              "label": "Fade and Slide from Bottom"
+            },
+            {
+              "value": "fadetoleftfadefromright",
+              "label": "To Left from Right"
+            },
+            {
+              "value": "fadetorightfadefromleft",
+              "label": "To Right from Left"
+            },
+            {
+              "value": "fadetotopfadefrombottom",
+              "label": "To Top from Bottom"
+            },
+            {
+              "value": "fadetobottomfadefromtop",
+              "label": "To Bottom from Top"
+            },
+            {
+              "value": "parallaxtoright",
+              "label": "Parallax to Left"
+            },
+            {
+              "value": "parallaxtoleft",
+              "label": "Parallax to Right"
+            },
+            {
+              "value": "parallaxtotop",
+              "label": "Parallax to Bottom"
+            },
+            {
+              "value": "parallaxtobottom",
+              "label": "Parallax to Top"
+            },
+            {
+              "value": "scaledownfromright",
+              "label": "Zoom Out and Fade from Right"
+            },
+            {
+              "value": "scaledownfromleft",
+              "label": "Zoom Out and Fade from Left"
+            },
+            {
+              "value": "scaledownfromtop",
+              "label": "Zoom Out and Fade from Top"
+            },
+            {
+              "value": "scaledownfrombottom",
+              "label": "Zoom Out and Fade from Bottom"
+            },
+            {
+              "value": "curtain-1",
+              "label": "Curtain from Left"
+            },
+            {
+              "value": "curtain-2",
+              "label": "Curtain from Right"
+            },
+            {
+              "value": "curtain-3",
+              "label": "Curtain from Middle"
+            },
+            {
+              "value": "3dcurtain-horizontal",
+              "label": "3D Curtain Horizontal"
+            },
+            {
+              "value": "3dcurtain-vertical",
+              "label": "3D Curtain Vertical"
+            },
+            {
+              "value": "cube",
+              "label": "Cube Vertical"
+            },
+            {
+              "value": "cube-horizontal",
+              "label": "Cube Horizontal"
+            },
+            {
+              "value": "incube",
+              "label": "In Cube Vertical"
+            },
+            {
+              "value": "incube-horizontal",
+              "label": "In Cube Horizontal"
+            },
+            {
+              "value": "turnoff",
+              "label": "Turn Off Horizontal"
+            },
+            {
+              "value": "turnoff-vertical",
+              "label": "Turn Off Vertical"
+            },
+            {
+              "value": "papercut",
+              "label": "Paper Cut"
+            },
+            {
+              "value": "flyin",
+              "label": "Fly In"
+            }
+          ],
+          "label": "Transition Effects",
+          "default": "random"
+        },
+		{
+          "type": "image_picker",
+          "id": "slider_bg",
+          "label": "Background Slider"
+        },
+        {
+          "type": "header",
+          "content": "Content 1"
+        },
+        {
+          "type": "text",
+          "id": "slider_content1",
+          "label": "Content 1",
+          "default": "Coming up"
+        },
+		{
+          "type": "select",
+          "id": "slider_content1_textEffect",
+          "options": [
+            {
+              "value": "sft",
+              "label": "Short from Top"
+            },
+            {
+              "value": "sfb",
+              "label": "Short from Bottom"
+            },
+            {
+              "value": "sfr",
+              "label": "Short from Right"
+            },
+            {
+              "value": "sfl",
+              "label": "Short from Left"
+            },
+            {
+              "value": "lft",
+              "label": "Long from Top"
+            },
+            {
+              "value": "lfb",
+              "label": "Long from Bottom"
+            },
+            {
+              "value": "lfr",
+              "label": "Long from Right"
+            },
+            {
+              "value": "lfl",
+              "label": "Long from Left"
+            },
+            {
+              "value": "skewfromright",
+              "label": "Skew from Right"
+            },
+            {
+              "value": "skewfromleft",
+              "label": "Skew from Left"
+            },
+            {
+              "value": "skewfromleftshort",
+              "label": "Skew from Left Short"
+            },
+            {
+              "value": "skewfromrightshort",
+              "label": "Skew from Right Short"
+            },
+            {
+              "value": "randomrotate",
+              "label": "Random Rotate"
+            }
+          ],
+		  "label": "Content 1 - Text Effect",
+          "default": "skewfromleft"
+        },
+		{
+          "type": "text",
+          "id": "slider_content1_y",
+          "label": "Content 1 - Top position",
+          "default": "306"
+        },
+        {
+          "type": "text",
+          "id": "slider_content1_x",
+          "label": "Content 1 - Left position",
+          "default": "794"
+        },
+        {
+          "type": "header",
+          "content": "Content 2"
+        },
+		{
+          "type": "text",
+          "id": "slider_content2",
+          "label": "Content 2",
+          "default": "Summer Collection"
+        },
+		{
+          "type": "select",
+          "id": "slider_content2_textEffect",
+          "options": [
+            {
+              "value": "sft",
+              "label": "Short from Top"
+            },
+            {
+              "value": "sfb",
+              "label": "Short from Bottom"
+            },
+            {
+              "value": "sfr",
+              "label": "Short from Right"
+            },
+            {
+              "value": "sfl",
+              "label": "Short from Left"
+            },
+            {
+              "value": "lft",
+              "label": "Long from Top"
+            },
+            {
+              "value": "lfb",
+              "label": "Long from Bottom"
+            },
+            {
+              "value": "lfr",
+              "label": "Long from Right"
+            },
+            {
+              "value": "lfl",
+              "label": "Long from Left"
+            },
+            {
+              "value": "skewfromright",
+              "label": "Skew from Right"
+            },
+            {
+              "value": "skewfromleft",
+              "label": "Skew from Left"
+            },
+            {
+              "value": "skewfromleftshort",
+              "label": "Skew from Left Short"
+            },
+            {
+              "value": "skewfromrightshort",
+              "label": "Skew from Right Short"
+            },
+            {
+              "value": "randomrotate",
+              "label": "Random Rotate"
+            }
+          ],
+		  "label": "Content 2 - Text Effect",
+          "default": "skewfromright"
+        },
+		{
+          "type": "text",
+          "id": "slider_content2_y",
+          "label": "Content 2 - Top position",
+          "default": "330"
+        },
+        {
+          "type": "text",
+          "id": "slider_content2_x",
+          "label": "Content 2 - Left position",
+          "default": "530"
+        },
+        {
+          "type": "header",
+          "content": "Icon"
+        },
+		{
+          "type": "image_picker",
+          "id": "slider_icon",
+          "label": "Icon Image"
+        },
+		{
+          "type": "select",
+          "id": "slider_icon_effect",
+          "options": [
+            {
+              "value": "sft",
+              "label": "Short from Top"
+            },
+            {
+              "value": "sfb",
+              "label": "Short from Bottom"
+            },
+            {
+              "value": "sfr",
+              "label": "Short from Right"
+            },
+            {
+              "value": "sfl",
+              "label": "Short from Left"
+            },
+            {
+              "value": "lft",
+              "label": "Long from Top"
+            },
+            {
+              "value": "lfb",
+              "label": "Long from Bottom"
+            },
+            {
+              "value": "lfr",
+              "label": "Long from Right"
+            },
+            {
+              "value": "lfl",
+              "label": "Long from Left"
+            },
+            {
+              "value": "skewfromright",
+              "label": "Skew from Right"
+            },
+            {
+              "value": "skewfromleft",
+              "label": "Skew from Left"
+            },
+            {
+              "value": "skewfromleftshort",
+              "label": "Skew from Left Short"
+            },
+            {
+              "value": "skewfromrightshort",
+              "label": "Skew from Right Short"
+            },
+            {
+              "value": "randomrotate",
+              "label": "Random Rotate"
+            }
+          ],
+		  "label": "Icon - Effect",
+          "default": "skewfromright"
+        },
+		{
+          "type": "text",
+          "id": "slider_icon_y",
+          "label": "Icon - Top position",
+          "default": "440"
+        },
+        {
+          "type": "text",
+          "id": "slider_icon_x",
+          "label": "Icon - Left position",
+          "default": "755"
+        },
+        {
+          "type": "header",
+          "content": "Button"
+        },
+		{
+          "type": "text",
+          "id": "slider_btn_name",
+          "label": "Button name",
+          "default": "SHOP NOW"
+        },
+		{
+          "type": "text",
+          "id": "slider_btn_url",
+          "label": "Button url",
+          "default": "\/collections\/all"
+        },
+		{
+          "type": "select",
+          "id": "slider_btn_effect",
+          "options": [
+            {
+              "value": "sft",
+              "label": "Short from Top"
+            },
+            {
+              "value": "sfb",
+              "label": "Short from Bottom"
+            },
+            {
+              "value": "sfr",
+              "label": "Short from Right"
+            },
+            {
+              "value": "sfl",
+              "label": "Short from Left"
+            },
+            {
+              "value": "lft",
+              "label": "Long from Top"
+            },
+            {
+              "value": "lfb",
+              "label": "Long from Bottom"
+            },
+            {
+              "value": "lfr",
+              "label": "Long from Right"
+            },
+            {
+              "value": "lfl",
+              "label": "Long from Left"
+            },
+            {
+              "value": "skewfromright",
+              "label": "Skew from Right"
+            },
+            {
+              "value": "skewfromleft",
+              "label": "Skew from Left"
+            },
+            {
+              "value": "skewfromleftshort",
+              "label": "Skew from Left Short"
+            },
+            {
+              "value": "skewfromrightshort",
+              "label": "Skew from Right Short"
+            },
+            {
+              "value": "randomrotate",
+              "label": "Random Rotate"
+            }
+          ],
+		  "label": "Button - Effect",
+          "default": "skewfromright"
+        },
+		{
+          "type": "text",
+          "id": "slider_btn_y",
+          "label": "Button - Top position",
+          "default": "510"
+        },
+        {
+          "type": "text",
+          "id": "slider_btn_x",
+          "label": "Button - Left position",
+          "default": "780"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Video slide",
+      "settings": [
+        {
+          "type": "select",
+          "id": "choose_videobg",
+          "label": "Choose Video?",
+          "options": [
+            {
+              "value": "vimeo",
+              "label": "Vimeo"
+            },
+            {
+              "value": "youtube",
+              "label": "Youtube"
+            }
+          ],
+          "default": "vimeo"
+        },
+		{
+          "type": "text",
+          "id": "slider_video_id",
+          "label": "Video ID",
+          "default": "82642494"
+        },
+        {
+          "type": "header",
+          "content": "Content 1"
+        },
+        {
+          "type": "text",
+          "id": "slider_video_content1",
+          "label": "Content 1",
+          "default": "Coming up"
+        },
+		{
+          "type": "select",
+          "id": "slider_video_content1_textEffect",
+          "options": [
+            {
+              "value": "sft",
+              "label": "Short from Top"
+            },
+            {
+              "value": "sfb",
+              "label": "Short from Bottom"
+            },
+            {
+              "value": "sfr",
+              "label": "Short from Right"
+            },
+            {
+              "value": "sfl",
+              "label": "Short from Left"
+            },
+            {
+              "value": "lft",
+              "label": "Long from Top"
+            },
+            {
+              "value": "lfb",
+              "label": "Long from Bottom"
+            },
+            {
+              "value": "lfr",
+              "label": "Long from Right"
+            },
+            {
+              "value": "lfl",
+              "label": "Long from Left"
+            },
+            {
+              "value": "skewfromright",
+              "label": "Skew from Right"
+            },
+            {
+              "value": "skewfromleft",
+              "label": "Skew from Left"
+            },
+            {
+              "value": "skewfromleftshort",
+              "label": "Skew from Left Short"
+            },
+            {
+              "value": "skewfromrightshort",
+              "label": "Skew from Right Short"
+            },
+            {
+              "value": "randomrotate",
+              "label": "Random Rotate"
+            }
+          ],
+		  "label": "Content 1 - Text Effect",
+          "default": "skewfromleft"
+        },
+		{
+          "type": "text",
+          "id": "slider_video_content1_y",
+          "label": "Content 1 - Top position",
+          "default": "250"
+        },
+        {
+          "type": "text",
+          "id": "slider_video_content1_x",
+          "label": "Content 1 - Left position",
+          "default": "168"
+        },
+        {
+          "type": "header",
+          "content": "Content 2"
+        },
+		{
+          "type": "text",
+          "id": "slider_video_content2",
+          "label": "Content 2",
+          "default": "Summer Collection"
+        },
+		{
+          "type": "select",
+          "id": "slider_video_content2_textEffect",
+          "options": [
+            {
+              "value": "sft",
+              "label": "Short from Top"
+            },
+            {
+              "value": "sfb",
+              "label": "Short from Bottom"
+            },
+            {
+              "value": "sfr",
+              "label": "Short from Right"
+            },
+            {
+              "value": "sfl",
+              "label": "Short from Left"
+            },
+            {
+              "value": "lft",
+              "label": "Long from Top"
+            },
+            {
+              "value": "lfb",
+              "label": "Long from Bottom"
+            },
+            {
+              "value": "lfr",
+              "label": "Long from Right"
+            },
+            {
+              "value": "lfl",
+              "label": "Long from Left"
+            },
+            {
+              "value": "skewfromright",
+              "label": "Skew from Right"
+            },
+            {
+              "value": "skewfromleft",
+              "label": "Skew from Left"
+            },
+            {
+              "value": "skewfromleftshort",
+              "label": "Skew from Left Short"
+            },
+            {
+              "value": "skewfromrightshort",
+              "label": "Skew from Right Short"
+            },
+            {
+              "value": "randomrotate",
+              "label": "Random Rotate"
+            }
+          ],
+		  "label": "Content 2 - Text Effect",
+          "default": "skewfromright"
+        },
+		{
+          "type": "text",
+          "id": "slider_video_content2_y",
+          "label": "Content 2 - Top position",
+          "default": "320"
+        },
+        {
+          "type": "text",
+          "id": "slider_video_content2_x",
+          "label": "Content 2 - Left position",
+          "default": "172"
+        },
+        {
+          "type": "header",
+          "content": "Icon"
+        },
+		{
+          "type": "image_picker",
+          "id": "slider_video_icon",
+          "label": "Icon Image"
+        },
+		{
+          "type": "select",
+          "id": "slider_video_icon_effect",
+          "options": [
+            {
+              "value": "sft",
+              "label": "Short from Top"
+            },
+            {
+              "value": "sfb",
+              "label": "Short from Bottom"
+            },
+            {
+              "value": "sfr",
+              "label": "Short from Right"
+            },
+            {
+              "value": "sfl",
+              "label": "Short from Left"
+            },
+            {
+              "value": "lft",
+              "label": "Long from Top"
+            },
+            {
+              "value": "lfb",
+              "label": "Long from Bottom"
+            },
+            {
+              "value": "lfr",
+              "label": "Long from Right"
+            },
+            {
+              "value": "lfl",
+              "label": "Long from Left"
+            },
+            {
+              "value": "skewfromright",
+              "label": "Skew from Right"
+            },
+            {
+              "value": "skewfromleft",
+              "label": "Skew from Left"
+            },
+            {
+              "value": "skewfromleftshort",
+              "label": "Skew from Left Short"
+            },
+            {
+              "value": "skewfromrightshort",
+              "label": "Skew from Right Short"
+            },
+            {
+              "value": "randomrotate",
+              "label": "Random Rotate"
+            }
+          ],
+		  "label": "Icon - Effect",
+          "default": "skewfromright"
+        },
+		{
+          "type": "text",
+          "id": "slider_video_icon_y",
+          "label": "Icon - Top position",
+          "default": "360"
+        },
+        {
+          "type": "text",
+          "id": "slider_video_icon_x",
+          "label": "Icon - Left position",
+          "default": "172"
+        },
+        {
+          "type": "header",
+          "content": "Button"
+        },
+		{
+          "type": "text",
+          "id": "slider_video_btn_name",
+          "label": "Button name",
+          "default": "SHOP NOW"
+        },
+		{
+          "type": "text",
+          "id": "slider_video_btn_url",
+          "label": "Button url",
+          "default": "\/collections\/all"
+        },
+		{
+          "type": "select",
+          "id": "slider_video_btn_effect",
+          "options": [
+            {
+              "value": "sft",
+              "label": "Short from Top"
+            },
+            {
+              "value": "sfb",
+              "label": "Short from Bottom"
+            },
+            {
+              "value": "sfr",
+              "label": "Short from Right"
+            },
+            {
+              "value": "sfl",
+              "label": "Short from Left"
+            },
+            {
+              "value": "lft",
+              "label": "Long from Top"
+            },
+            {
+              "value": "lfb",
+              "label": "Long from Bottom"
+            },
+            {
+              "value": "lfr",
+              "label": "Long from Right"
+            },
+            {
+              "value": "lfl",
+              "label": "Long from Left"
+            },
+            {
+              "value": "skewfromright",
+              "label": "Skew from Right"
+            },
+            {
+              "value": "skewfromleft",
+              "label": "Skew from Left"
+            },
+            {
+              "value": "skewfromleftshort",
+              "label": "Skew from Left Short"
+            },
+            {
+              "value": "skewfromrightshort",
+              "label": "Skew from Right Short"
+            },
+            {
+              "value": "randomrotate",
+              "label": "Random Rotate"
+            }
+          ],
+		  "label": "Button - Effect",
+          "default": "skewfromright"
+        },
+		{
+          "type": "text",
+          "id": "slider_video_btn_y",
+          "label": "Button - Top position",
+          "default": "490"
+        },
+        {
+          "type": "text",
+          "id": "slider_video_btn_x",
+          "label": "Button - Left position",
+          "default": "168"
+        }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Slider v2",
+    "category": "Slideshow",
+    "settings": {
+      "slideshow_time": "9000",
+      "slider_startwidth": "1765",
+      "slider_startheight" : "840"
+    },
+    "blocks": [
+      {
+        "type": "image",
+		"settings": {
+			"slider_transition": "random",
+            "slider_content1": "Coming up",
+			"slider_content1_textEffect": "skewfromleft",
+            "slider_content1_y": "306",
+            "slider_content1_x": "794",
+            "slider_content2": "Summer Collection",
+			"slider_content2_textEffect": "skewfromright",
+            "slider_content2_y": "330",
+            "slider_content2_x": "530",
+			"slider_icon_effect": "lfl",
+            "slider_icon_y": "440",
+            "slider_icon_x": "755",
+            "slider_btn_name": "SHOP NOW",
+            "slider_btn_url": "\/collections\/all",
+			"slider_btn_effect": "skewfromright",
+            "slider_btn_y": "510",
+            "slider_btn_x": "780"
+		}
+      },
+      {
+        "type": "video",
+		"settings": {
+			"choose_videobg": "vimeo",
+			"slider_video_id": "82642494",
+            "slider_video_content1": "Coming up",
+			"slider_video_content1_textEffect": "skewfromleft",
+            "slider_video_content1_y": "306",
+            "slider_video_content1_x": "794",
+            "slider_video_content2": "Summer Collection",
+			"slider_video_content2_textEffect": "skewfromright",
+            "slider_video_content2_y": "330",
+            "slider_video_content2_x": "530",
+			"slider_video_icon_effect": "lfl",
+            "slider_video_icon_y": "440",
+            "slider_video_icon_x": "755",
+            "slider_video_btn_name": "SHOP NOW",
+            "slider_video_btn_url": "\/collections\/all",
+			"slider_video_btn_effect": "skewfromright",
+            "slider_video_btn_y": "510",
+            "slider_video_btn_x": "780"
+		}
+      }
+    ]
+  }]
+}
+{% endschema %}

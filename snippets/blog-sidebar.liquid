@@ -1,0 +1,116 @@
+<!-- /snippets/blog-sidebar.liquid -->
+{% if section.settings.enable_widget_search %}
+<aside class="widget widget_search">
+  <div class="search-form">
+    <form action="#" method="get">
+      <input type="text" autocomplete="off" placeholder="Search..." value="" class="ajax_autosuggest_input ac_input" name="s">
+      <button type="submit" class="icon-search">
+        <i class="icons icon-magnifier"></i>
+      </button>
+    </form>
+  </div>
+</aside>
+{% endif %}
+
+{% if section.settings.enable_widget_categories %}
+<aside class="widget">
+  <h3 class="widget-title">{{section.settings.widget_categories_title}}</h3>
+  <ul>
+    {% for collection in collections %}
+    <li><a href="{{ collection.url }}" title="{{ collection.title }}">{{ collection.title }}</a></li>
+    {% endfor %}
+  </ul>
+</aside>
+{% endif %}
+
+{% if section.settings.enable_widget_social %}
+<aside class="widget widget-follow">
+  <h3 class="widget-title">{{section.settings.widget_social_title}}</h3>
+  <div class="social">
+    {{section.settings.widget_social_content}}
+  </div>
+</aside>
+{% endif %}
+
+{% if section.settings.enable_widget_newletter %}
+<aside class="widget">
+  {% comment %}<h3 class="widget-title">{{section.settings.widget_newletter_title}}</h3>  {% endcomment %}
+  <div class="newsletter-content newsletter-content-widget space-30" {% if section.settings.newletter_bg == blank %}{% capture _img_url %}cta_newletter_bg.jpg{% endcapture %}style="background: url({{ _img_url | asset_url }}) no-repeat;"{% else %}style="background: url({{ section.settings.newletter_bg | img_url:'master' }}) no-repeat;"{% endif %}>
+    <i class="icon {{section.settings.newletter_icon}}"></i>
+    <h3>{{section.settings.newletter_title}}</h3>
+    <p>{{section.settings.newletter_des}}</p>
+    {% if settings.newsletter_form_action != blank %}
+    {% assign form_action = settings.newsletter_form_action %}
+    {% else %}
+    {% assign form_action = '#' %}
+    {% endif %}
+    <form accept-charset="utf-8" method="get" action="{{ form_action }}">
+      <input type="text" name="email" id="newsletter" title="Sign up for our newsletter" class="input-text required-entry validate-email" value="{% if customer %}{{ customer.email }}{% endif %}" onfocus="if(this.value != '') {this.value = '';}" onblur="if (this.value == '') {this.value = '{{section.settings.newletter_placeholder}}';}"> 
+      <button type="submit" title="{{section.settings.newletter_btn_name}}" class="button button1 hover-white">{{section.settings.newletter_btn_name}}<i class="link-icon-white"></i></button>
+    </form>
+  </div>
+</aside>
+{% endif %}
+
+{% if section.settings.enable_widget_recent_post %}
+<aside class="widget">
+  <h3 class="widget-title">{{section.settings.widget_recent_post_title}}</h3>
+  <div class="related-post">
+    {% for article in blogs[section.settings.widget_recent_post_select].articles limit: section.settings.widget_recent_post_limit %}
+    <div class="items">
+      <a class="blog-post-image" href="{{ article.url }}" title="{{ article.title }}"><img src="{{ article.image.src | img_url: 'original' }}" alt="{{ article.title }}"></a>
+      <div class="text">
+        <h3><a href="{{ article.url }}" title="{{ article.title }}">{{ article.title }}</a></h3>
+        <p>{{ article.published_at | date: "%B, %d, %Y" }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</aside>
+{% endif %}
+
+{% if section.settings.enable_widget_gallery_instagram %}
+{% assign instafeed_img = '{{image}}' %}
+{% assign instafeed_link = '{{link}}' %}
+<script>
+  jQuery(document).ready(function($) {
+
+    var feed = new Instafeed({
+      get: 'user',
+      userId: '{{section.settings.gallery_instagram_userid}}',
+      accessToken: '{{section.settings.gallery_instagram_access_token}}',
+      template: ' <a href="{{instafeed_link}}"><img src="{{instafeed_img}}" alt=""></a>',
+      target: 'instagram-sidebar',
+      resolution: 'standard_resolution',
+      limit: '{{section.settings.gallery_instagram_limit_number}}'
+    });
+    feed.run();
+
+  });
+</script>
+<aside class="widget">
+  <h3 class="widget-title">{{section.settings.widget_gallery_instagram_title}}</h3>
+  <div class="wrap-instag">
+    <div id="instagram-sidebar" class="instag">
+
+    </div>
+  </div>
+</aside>
+{% endif %}
+
+{% if section.settings.enable_widget_tags %}
+<aside class="widget tags-cloud">
+  <h3 class="widget-title">{{section.settings.widget_tags_title}}</h3>
+  <div class="content">
+    {% if blog.all_tags.size > 0 %}
+    {% for tag in blog.all_tags %}
+    {% if current_tags contains tag %}
+    {{ tag }}
+    {% else %}
+    {{ tag | link_to_tag: tag }}
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+  </div>
+</aside>
+{% endif %}

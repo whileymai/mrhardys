@@ -1,0 +1,130 @@
+<!-- /templates/customers/register.liquid -->
+<div class="main-content">
+  <div class="title-page">
+    <h3>{{ page_title }}</h3>
+  </div>
+  {% comment %}
+  If a user has successfully requested a new password, the form.posted_successfully? variable
+  is set to true within the 'recover_customer_password' form only. Within that form you'll see
+  the variable 'resetPassword' set to true, which is used to initialize timber.resetPasswordSuccess().
+  {% endcomment %}
+  <div class="login-box-container"> 
+    <div class="note form-success" id="ResetSuccess" style="display:none;">
+      {{ 'customer.recover_password.success' | t }}
+    </div>
+  </div>
+  
+  <div class="login-box-container" id="CustomerLoginForm">
+    <div class="container">
+      <ul class="tabs">
+        <li class="item" rel="tab_1">{{ 'customer.login.title' | t }}</li>
+        <li class="item" rel="tab_2">{{ 'customer.register.title' | t }}</li>
+      </ul>
+      <div class="tab-container">
+        <div id="tab_1" class="tab-content">
+          <p>{{ 'customer.login.description' | t }}</p>
+          <div class="contact-form">
+            {% form 'customer_login' %}
+            {{ form.errors | default_errors }}
+            <div class="form-horizontal"> 
+              <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                <input type="email" name="customer[email]" class="form-control {% if form.errors contains 'email' %} error{% endif %}" id="inputemail" placeholder="{{ 'customer.login.email' | t }}">             
+              </div>
+              {% if form.password_needed %}
+              <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                <input type="password" name="customer[password]" class="form-control {% if form.errors contains 'password' %} error{% endif %}" id="inputpass" placeholder="{{ 'customer.login.password' | t }}">                
+              </div>
+              {% endif %}
+              <div class="form-group">            
+                <button type="submit" class="btn link-button lh-55 hover-white">{{ 'customer.login.log_in' | t }}<i class="link-icon-white"></i></button>
+              </div>
+              {% if form.password_needed %}
+              <p class="form-link"><a href="#recover" id="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a></p>
+              {% endif %}
+            </div>
+            {% endform %}
+          </div>
+          <!-- End contact form -->
+        </div>
+        <div id="tab_2" class="tab-content">
+          <p>{{ 'customer.register.description' | t }}</p>
+          <div class="contact-form">
+            {% form 'create_customer' %}
+            {{ form.errors | default_errors }}
+            <div class="form-horizontal"> 
+              <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                <input type="text" name="customer[first_name]" {% if form.first_name %}value="{{ form.first_name }}"{% endif %} class="form-control" id="inputemail1" placeholder="{{ 'customer.register.first_name' | t }}">             
+              </div>
+              <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                <input type="text" name="customer[last_name]" {% if form.last_name %}value="{{ form.last_name }}"{% endif %} class="form-control" id="inputpass2" placeholder="{{ 'customer.register.last_name' | t }}">            
+              </div>
+              <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                <input type="email" name="customer[email]" {% if form.email %} value="{{ form.email }}"{% endif %} class="form-control{% if form.errors contains 'email' %} error{% endif %}" id="inputemail2" placeholder="{{ 'customer.register.email' | t }}">             
+              </div>
+              <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                <input type="password" name="customer[password]" class="form-control{% if form.errors contains 'password' %} error{% endif %}" id="inputpass3" placeholder="{{ 'customer.register.password' | t }}">            
+              </div>
+              <div class="form-group">            
+                <button class="btn link-button lh-55 hover-white">{{ 'customer.register.submit' | t }}<i class="link-icon-white"></i></button>
+              </div>
+              <p class="form-link"><a href="{{shop.url}}">{{ 'customer.register.cancel' | t }}</a></p>
+            </div>
+            {% endform %}
+          </div>
+          <!-- End contact form -->
+        </div>
+      </div>
+    </div>
+    <!-- End container -->
+  </div>
+  
+  {% comment %}
+  JS shows/hides this form in timber.loginForms()
+  {% endcomment %}
+  <div class="login-box-container" id="RecoverPasswordForm" style="display: none;">
+    <div class="container">
+      <ul class="tabs">
+        <li class="item" rel="tab_1">{{ 'customer.recover_password.title' | t }}</li>
+      </ul>
+      <div class="tab-container">
+        <div id="tab_1" class="tab-content">
+          <p>{{ 'customer.recover_password.subtext' | t }}</p>
+          <div class="contact-form">
+            {% form 'recover_customer_password' %}
+            {{ form.errors | default_errors }}
+            {% comment %}
+            Assign variable to be used after timber.init() is run in theme.liquid
+            {% endcomment %}
+            {% if form.posted_successfully? %}
+            {% assign resetPassword = true %}
+            {% endif %}
+            <div class="form-horizontal"> 
+              <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                <input type="email" name="email" id="RecoverEmail" class="form-control" id="inputemail" placeholder="{{ 'customer.login.email' | t }}" style="margin: 0 auto;">             
+              </div>
+              <div class="form-group">            
+                <button type="submit" class="btn link-button lh-55 hover-green">{{ 'customer.recover_password.submit' | t }}<i class="link-icon-white"></i></button>
+              </div>
+              <p class="form-link"><a id="HideRecoverPasswordLink" style="cursor: pointer;">{{ 'customer.recover_password.cancel' | t }}</a></p>
+            </div>
+            {% endform %}
+          </div>
+          <!-- End contact form -->
+        </div>
+      </div>
+    </div>
+    <!-- End container -->
+  </div>
+
+  {% comment %}
+  If accounts are set as optional, the following will be shown as an option
+  during checkout, not on the default /login page.
+  {% endcomment %}
+  {% if shop.checkout.guest_login %}
+  <hr>
+  <h2>{{ 'customer.login.guest_title' | t }}</h2>
+  {% form 'guest_login' %}
+  <input type="submit" class="btn" value="{{ 'customer.login.guest_continue' | t }}">
+  {% endform %}
+  {% endif %}
+</div>

@@ -1,0 +1,72 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-ibanner-lookbook" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="container">
+    <div class="banner-home3-lookbook1 banner-private">
+      <a href="{{section.settings.iblb_url}}">
+        {% if section.settings.iblb_background == blank %}
+        {% capture _img_url %}iblookbook_bg1.jpg{% endcapture %}
+        <img src="{{ _img_url | asset_url}}" alt="">
+        {% else %}
+        <img src="{{ section.settings.iblb_background | img_url:'master' }}" alt="Banner">
+        {% endif %}
+      </a>
+      <div class="text">
+        <h3>{{section.settings.iblb_title}}</h3>
+        <p>{{section.settings.iblb_content}}</p>
+      </div>
+    </div>   
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "iBanner Lookbook",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "iblb_background",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "iblb_title",
+      "label": "Title",
+      "default": "Manlook"
+    },
+    {
+      "type": "text",
+      "id": "iblb_content",
+      "label": "Content",
+      "default": "the spring report"
+    },
+    {
+      "type": "text",
+      "id": "iblb_url",
+      "label": "URL",
+      "default": "\/collections\/all"
+    },
+	{
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "iBanner Lookbook",
+      "category": "Content"
+    }
+  ]
+}
+{% endschema %}

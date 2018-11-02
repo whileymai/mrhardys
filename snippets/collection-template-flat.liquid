@@ -1,0 +1,55 @@
+<!-- snippets/collection-template-flat.liquid -->
+<div class="container">
+  <div class="banner-header banner-lbook3 engoc_header_collection" style="background-image: url({% if section.settings.cfl_bg == blank %}{% capture _img_url %}collection_ls_hbg.jpg{% endcapture %}{{ _img_url | asset_url}}{% else %}{{ section.settings.cfl_bg | img_url:'master' }}{% endif %});">
+    <div class="text">
+      <h3>{{collection.title}}</h3>
+      <img class="border" src="{{ 'border_title_blog_detail.png' | asset_url }}" alt="border">
+      <p>{{collection.description}}</p>
+    </div>
+  </div>
+</div>
+<!-- End Banner Grid -->
+<div class="container">
+  <div class="wrap-breadcrumb">
+    {% include 'breadcrumb' %}
+    {% comment %}
+    {% include 'collection-sorting-2' %}
+    {% endcomment %}
+  </div>
+</div>
+<!-- End ordering -->
+<div class="container">
+  <div class="tab-product-all tab-product-all-v2 tab-product-all-v3">
+    <ul class="tabs tabs-title">
+      <li class="item" rel="all"><span>all</span> <span class="count">{{collections["all"].all_products_count}}</span></li>
+      {% for collection_c in collections %}
+      <li class="item {% if collection.id == collection_c.id %}active{% endif %}" rel="{{collection_c.id}}"><span>{{collection_c.title}}</span><span class="count">{{collection_c.products_count}}</span></li>
+      {% endfor %}
+    </ul>
+    <div class="tab-container">
+      <div id="all" class="tab-content">
+        <div class="products">
+          {% for product in collections["all"].products %}
+          {% include 'product-item-collection-flat' %}
+          {% else %}
+          {% include 'onboarding-empty-c-flat' %}
+          {% endfor %}
+        </div>
+        <!-- End product-tab-content products -->
+      </div>
+      {% for collection_c in collections %}
+      <div id="{{collection_c.id}}" class="tab-content">
+        <div class="products">
+          {% for product in collection_c.products %}
+          {% include 'product-item-collection-flat' %}
+          {% else %}
+          {% include 'onboarding-empty-c-flat' %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <!-- End tab-container -->
+  </div>
+</div>
+<!-- end tab product all -->

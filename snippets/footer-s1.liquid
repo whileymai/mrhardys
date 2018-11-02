@@ -1,0 +1,20 @@
+<footer id="footer" class="footer-v4 engoc_footer_s1">         
+  <div class="container">
+    {% if settings.enable_fs1_copyright %}
+      {% if settings.fs1_copyright != blank %}
+      <p class="left">{{settings.fs1_copyright}}</p>
+      {% else %}
+      <p class="left">Copyright &copy; {{ 'now' | date: "%Y" }} by <a href="http://engotheme.com" title="EngoTheme" target="_blank">EngoTheme</a>. All Rights Reserved.
+      {% comment %}  <br> <small class="left">{{ powered_by_link }}</small>{% endcomment %}
+      </p>
+      {% endif %}
+    {% endif %}
+    
+    {% include 'currency-picker' %}
+    
+    {% if settings.enable_fs1_email %}
+    <a class="right email" href="mailto:{{settings.fs1_email}}" title="mail">{{settings.fs1_email}}</a>
+    {% endif %}
+  </div>
+  <!-- End container -->
+</footer>

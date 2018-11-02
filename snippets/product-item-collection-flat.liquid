@@ -1,0 +1,28 @@
+<!-- /snippets/product-item-collection-flat.liquid -->
+{% assign on_sale = false %}
+{% if product.compare_at_price > product.price %}
+{% assign on_sale = true %}
+{% endif %}
+
+{% assign sold_out = true %}
+{% if product.available %}
+{% assign sold_out = false %}
+{% endif %}
+
+<div class="item-inner">
+  <div class="product">
+    <div class="product-images">
+      <a href="{{ product.url | within: collection }}" title="{{ product.title }}">
+        <img src="{{ product.featured_image.src | img_url: 'grande' }}" alt="{{ product.featured_image.alt | escape }}"/>
+      </a>
+    </div>
+    <a class="product-title" href="{{ product.url | within: collection }}" title="{{ product.title }}">
+      <p>{{ product.title }}</p>
+    </a>
+    {% capture price %}{{ product.price | money }}{% endcapture %}
+    <p class="product-price">{% if product.price_varies %}{{ 'products.general.from_text_html' | t: price: price }}{% else %}{{ price }}{% endif %}
+      {% if on_sale %} <del>{{ product.compare_at_price | money }}</del> {% endif %}
+    </p>
+    <a class="engoj_btn_quickview quick-view" href="javascript:void(0)" data-id="{{ product.handle }}" title="{{settings.pia_quickview_name}}" ><i class="icon icon-eye"></i></a>
+  </div>
+</div>

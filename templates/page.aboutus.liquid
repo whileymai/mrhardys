@@ -1,0 +1,126 @@
+
+<div class="title-page space-padding-tb-50">
+  <h3>{{page.title}}</h3>
+  <img class="border" src="{{ 'border_title_blog_detail.png' | asset_url }}" alt="border">
+      <p>{{page.content}}</p>
+</div>
+
+<div style="{% if section.settings.about_sifo_margin_top != blank %}margin-top: {{settings.about_sifo_margin_top}}px;{%endif%} {% if settings.about_sifo_margin_bottom != blank %}margin-bottom: {{settings.about_sifo_margin_bottom}}px;{% endif %}">
+  <div class="container container-ver2">
+    <div class="tab-v1 tab-shortcode space-80">
+      <div class="custom-content">
+        <div class="col-md-6">
+          {% if settings.about_sifo_bg1 == blank %}
+          {% capture _img_url %}about_info1.jpg{% endcapture %}
+          <img src="{{ _img_url | asset_url}}" alt="">
+          {% else %}
+          <img src="{{ settings.about_sifo_bg1 | img_url:'master' }}" alt="Banner">
+          {% endif %}
+        </div>
+        <div class="col-md-6">
+          <h3>{{settings.about_sifo_tit1}}</h3>
+          	{{settings.about_sifo_con1}}
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="custom-content engoc_60">
+        <div class="col-md-6">
+          <h3>{{settings.about_sifo_tit2}}</h3>
+          	{{settings.about_sifo_con2}}
+        </div>
+        <div class="col-md-6">
+          {% if settings.about_sifo_bg2 == blank %}
+          {% capture _img_url %}about_info2.jpg{% endcapture %}
+          <img src="{{ _img_url | asset_url}}" alt="">
+          {% else %}
+          <img src="{{ settings.about_sifo_bg2 | img_url:'master' }}" alt="Banner">
+          {% endif %}
+        </div>
+      </div>
+      <!-- End custom-content -->
+    </div>
+    <!-- End tab -->
+  </div>
+</div>
+
+<div style="{% if section.settings.about_sifo_margin_top != blank %}margin-top: {{settings.about_service_margin_top}}px;{%endif%} {% if settings.about_sifo_margin_bottom != blank %}margin-bottom: {{settings.about_sifo_margin_bottom}}px;{% endif %}">
+  <div class="container container-ver2">
+    <h3 class="engoc_title_service">{{settings.service_title}}</h3>
+    <div class="icon-box-v1 engoc_iconbox_service">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="feature-box feature-box-v3 feature-box-center space-30">
+            <div class="fbox-icon">
+              <a href="{{settings.service_url1}}"><i class="icons {{settings.service_icon1}}"></i></a>
+            </div>
+            <div class="fbox-body">                            
+              <h4>{{settings.service_title1}}</h4> 
+              <p>{{settings.service_content1}}</p>
+              <a class="link-icon-box" href="{{settings.service_url1}}" title="lean more">{{settings.service_btn1}}<i class="fa fa-angle-right"></i></a>                    
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="feature-box feature-box-v3 feature-box-center color-red space-30">
+            <div class="fbox-icon">
+              <a href="{{settings.service_url2}}"><i class="icons {{settings.service_icon2}}"></i></a>
+            </div>
+            <div class="fbox-body">
+              <h4>{{settings.service_title2}}</h4> 
+              <p>{{settings.service_content2}}</p>
+              <a class="link-icon-box" href="{{settings.service_url2}}" title="lean more">{{settings.service_btn2}}<i class="fa fa-angle-right"></i></a>
+            </div> 
+          </div> 
+        </div>
+        <div class="col-md-3">
+          <div class="feature-box feature-box-v3 feature-box-center color-blue space-30">
+            <div class="fbox-icon">
+              <a href="{{settings.service_url3}}"><i class="icons {{settings.service_icon3}}"></i></a>
+            </div>
+            <div class="fbox-body">
+              <h4>{{settings.service_title3}}</h4>
+              <p>{{settings.service_content3}}</p>
+              <a class="link-icon-box" href="{{settings.service_url3}}" title="lean more">{{settings.service_btn3}}<i class="fa fa-angle-right"></i></a>
+            </div>
+
+          </div>     
+        </div>
+        <div class="col-md-3">
+          <div class="feature-box feature-box-v3 feature-box-center color-purple space-30">
+            <div class="fbox-icon">
+              <a href="{{settings.service_url4}}"><i class="icons {{settings.service_icon4}}"></i></a>
+            </div>
+            <div class="fbox-body">
+              <h4>{{settings.service_title4}}</h4> 
+              <p>{{settings.service_content4}}</p>
+              <a class="link-icon-box" href="{{settings.service_url4}}" title="lean more">{{settings.service_btn4}}<i class="fa fa-angle-right"></i></a>
+            </div> 
+          </div> 
+        </div>
+      </div>
+    </div>
+    <!-- End icon-box-v1 -->
+  </div>
+</div>
+
+<div style="{% if settings.margin_top != blank %}margin-top: {{settings.margin_top}}px;{%endif%} {% if settings.margin_bottom != blank %}margin-bottom: {{settings.margin_bottom}}px;{% endif %}">
+  <div {% if settings.newletter_style == "f_width" %}class="container"{% else %}class="newsletter-home6" {% if settings.newletter_bg == blank %}{% capture _img_url %}newletter_v2_background.jpg{% endcapture %}style="background: url({{ _img_url | asset_url }}) no-repeat; background-size: cover;"{% else %}style="background: url({{ settings.newletter_bg | img_url:'master' }}) no-repeat; background-size: cover;"{% endif %}{% endif %}>
+    <div {% if settings.newletter_style == "f_width" %}class="newsletter-home6" {% if settings.newletter_bg == blank %}{% capture _img_url %}newletter_v2_background.jpg{% endcapture %}style="background: url({{ _img_url | asset_url }}) no-repeat; background-size: cover;"{% else %}style="background: url({{ settings.newletter_bg | img_url:'master' }}) no-repeat; background-size: cover;"{% endif %}{% else %}class="container"{% endif %}>
+      <div class="newsletter-content">
+        <i class="icon {{settings.newletter_icon}}"></i>
+        <h3>{{settings.newletter_title}}</h3>
+        <p>{{settings.newletter_des}}</p>
+        {% if settings.newsletter_form_action != blank %}
+        {% assign form_action = settings.newsletter_form_action %}
+        {% else %}
+        {% assign form_action = '#' %}
+        {% endif %}
+        <form action="{{ form_action }}" method="post" accept-charset="utf-8">
+          <input placeholder="{{settings.newletter_placeholder}}" type="email" onblur="if (this.value == '') {this.value = '{{settings.newletter_placeholder}}';}" onfocus="if(this.value != '') {this.value = '';}" value="{% if customer %}{{ customer.email }}{% endif %}" class="input-text required-entry validate-email" title="Sign up for our newsletter" id="newsletter" name="email">
+          <button type="submit" title="{{settings.newletter_btn_name}}" class="button button1 hover-white">{{settings.newletter_btn_name}}<i class="link-icon-white"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

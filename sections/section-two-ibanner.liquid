@@ -1,0 +1,131 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-two-ibanner" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="girllook">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="items banner-private banner-home3-lookbook1 banner-home3-top-50">
+            <a href="{{section.settings.tib1_url}}" title="banner">
+              {% if section.settings.tib1_background == blank %}
+              {% capture _img_url %}tibanner1_bg.jpg{% endcapture %}
+              <img src="{{ _img_url | asset_url}}" alt="">
+              {% else %}
+              <img src="{{ section.settings.tib1_background | img_url:'master' }}" alt="Banner">
+              {% endif %}
+            </a>
+            <div class="text">
+              <h3>{{section.settings.tib1_content1}}</h3>
+              <p>{{section.settings.tib1_content2}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="items banner-video">
+            <a href="{{section.settings.tib2_url}}" title="banner">
+              {% if section.settings.tib2_background == blank %}
+              {% capture _img_url %}tibanner2_bg.jpg{% endcapture %}
+              <img src="{{ _img_url | asset_url}}" alt="">
+              {% else %}
+              <img src="{{ section.settings.tib2_background | img_url:'master' }}" alt="Banner">
+              {% endif %}
+              <div class="text">
+                <span class="icons">
+                  {% if section.settings.tib2_icon == blank %}
+                  {% capture _img_url %}tibanner2_icon.png{% endcapture %}
+                  <img src="{{ _img_url | asset_url}}" alt="">
+                  {% else %}
+                  <img src="{{ section.settings.tib2_icon | img_url:'master' }}" alt="Banner">
+                  {% endif %}
+                </span>
+                <h3>{{section.settings.tib2_content}}</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Two iBanner",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Banner Left"
+    },
+	{
+      "type": "image_picker",
+      "id": "tib1_background",
+      "label": "Image"
+    },
+	{
+      "type": "text",
+      "id": "tib1_content1",
+      "label": "Content 1",
+      "default": "GirlLook"
+    },
+	{
+      "type": "text",
+      "id": "tib1_content2",
+      "label": "Content 2",
+      "default": "The spring report"
+    },
+    {
+      "type": "text",
+      "id": "tib1_url",
+      "label": "URL",
+      "default": "\/collections\/all"
+    },
+	{
+      "type": "header",
+      "content": "Banner Right"
+    },
+	{
+      "type": "image_picker",
+      "id": "tib2_background",
+      "label": "Image"
+    },
+	{
+      "type": "image_picker",
+      "id": "tib2_icon",
+      "label": "Icon"
+    },
+	{
+      "type": "text",
+      "id": "tib2_content",
+      "label": "Content",
+      "default": "Neighborhood"
+    },
+    {
+      "type": "text",
+      "id": "tib2_url",
+      "label": "URL",
+      "default": "\/collections\/all"
+    },
+	{
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Two iBanner",
+      "category": "Content"
+    }
+  ]
+}
+{% endschema %}

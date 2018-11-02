@@ -1,0 +1,24 @@
+{% comment %}
+Add default products to help with onboarding for collections/all only.
+
+The onboarding styles and products are only loaded if the
+store has no products.
+{% endcomment %}
+
+{% for i in (1..15) %}
+<div class="item-inner">
+  <div class="product">
+    <div class="product-images">
+      <a href="/admin/products" title="Uno Engo Product">
+        {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+        {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+      </a>
+    </div>
+    <a class="product-title" href="/admin/products" title="Uno Engo Product">
+      <p>Uno Engo Product</p>
+    </a>
+    <p class="product-price">$69.90</p>
+    <a class="quick-view" href="/admin/products" title="quick-view"><i class="icons icon-eye"></i></a>
+  </div>
+</div>
+{% endfor %}

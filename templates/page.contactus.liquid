@@ -1,0 +1,81 @@
+
+<div class="title-page space-padding-tb-50">
+  <h3>{{page.title}}</h3>
+</div>
+
+<div style="{% if settings.margin_top_contact_form != blank %}margin-top: {{settings.margin_top_contact_form}}px;{%endif%} {% if settings.margin_bottom_contact_form != blank %}margin-bottom: {{settings.margin_bottom_contact_form}}px;{% endif %}">
+  <div class="main-content">
+    <div class="contact-us">
+      <div class="container">
+        <div class="col-md-12 contact-form contact-form-bg">
+          <i class="icon {{settings.fc_icon}} "></i>
+          <h3 class="space-30">{{settings.fc_title}}</h3> 
+          <p>{{settings.fc_des}}</p>
+          
+          {% comment %}
+          Contact form starts here
+          {% endcomment %}
+          {% form 'contact' %}
+
+          {% comment %}
+          Successful message
+          {% endcomment %}
+          {% if form.posted_successfully? %}
+          <p class="note form-success">
+            {{ 'contact.form.post_success' | t }}
+          </p>
+          {% endif %}
+
+          {{ form.errors | default_errors }}
+
+          <div class="form-horizontal">
+            <div class="form-group col-md-6">
+              {% assign fname_attr = 'contact.form.subject' | t | handle %}
+              <input name="contact[{{fname_attr}}]" type="text" class="form-control" id="inputfname" placeholder="{{settings.fc_firstname}}">                        
+            </div>
+            <div class="form-group col-md-6">
+              {% assign lname_attr = 'contact.form.subject' | t | handle %}
+              <input name="contact[{{lname_attr}}]" type="text" class="form-control" id="inputlname" placeholder="{{settings.fc_lastname}}">                   
+            </div>
+            <div class="form-group col-md-6">
+              <input name="contact[phone]" type="text" class="form-control" id="inputphone" placeholder="{{settings.fc_phone}}">                   
+            </div>
+            <div class="form-group col-md-6">
+              <input name="contact[email]" type="text" class="form-control" id="inputEmail" placeholder="{{settings.fc_email}}" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">                   
+            </div>
+            <div class="form-group col-md-12">
+              <textarea name="contact[body]" class="form-control" id="message" name="message" placeholder="{{settings.fc_message}}">{% if form.body %}{{ form.body }}{% endif %}</textarea> 
+              <div class="checkbox space-10">
+              </div>
+              <button class="btn button1 hover-white" type="submit">{{settings.fc_btn_name}} <i class="link-icon-white"></i></button>
+            </div>
+          </div>
+          {% endform %}
+        </div>
+      </div>
+      <!-- End container -->
+    </div>
+    <!-- End contact-us -->
+  </div>
+</div>
+
+<div style="{% if settings.margin_top_contact_4 != blank %}margin-top: {{settings.margin_top_contact_4}}px;{%endif%} {% if settings.margin_bottom_contact_4 != blank %}margin-bottom: {{settings.margin_bottom_contact_4}}px;{% endif %}">
+  <div {% if settings.newletter_style_contact_4 == "f_width_contact_4" %}class="container"{% else %}class="newsletter-home6" {% if settings.newletter_bg_contact_4 == blank %}{% capture _img_url %}newletter_v2_background.jpg{% endcapture %}style="background: url({{ _img_url | asset_url }}) no-repeat; background-size: cover;"{% else %}style="background: url({{ settings.newletter_bg_contact_4 | img_url:'master' }}) no-repeat; background-size: cover;"{% endif %}{% endif %}>
+    <div {% if settings.newletter_style_contact_4 == "f_width_contact_4" %}class="newsletter-home6" {% if settings.newletter_bg_contact_4 == blank %}{% capture _img_url %}newletter_v2_background.jpg{% endcapture %}style="background: url({{ _img_url | asset_url }}) no-repeat; background-size: cover;"{% else %}style="background: url({{ settings.newletter_bg_contact_4 | img_url:'master' }}) no-repeat; background-size: cover;"{% endif %}{% else %}class="container"{% endif %}>
+      <div class="newsletter-content">
+        <i class="icon {{settings.newletter_icon_contact_4}}"></i>
+        <h3>{{settings.newletter_title_contact_4}}</h3>
+        <p>{{settings.newletter_des_contact_4}}</p>
+        {% if settings.newsletter_form_action != blank %}
+        {% assign form_action = settings.newsletter_form_action %}
+        {% else %}
+        {% assign form_action = '#' %}
+        {% endif %}
+        <form action="{{ form_action }}" method="post" accept-charset="utf-8">
+          <input placeholder="{{settings.newletter_placeholder_contact_4}}" type="email" onblur="if (this.value == '') {this.value = '{{settings.newletter_placeholder_contact_4}}';}" onfocus="if(this.value != '') {this.value = '';}" value="{% if customer %}{{ customer.email }}{% endif %}" class="input-text required-entry validate-email" title="Sign up for our newsletter" id="newsletter" name="email">
+          <button type="submit" title="{{settings.newletter_btn_name_contact_4}}" class="button button1 hover-white">{{settings.newletter_btn_name_contact_4}}<i class="link-icon-white"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

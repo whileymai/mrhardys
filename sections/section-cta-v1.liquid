@@ -1,0 +1,119 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-cta-v1" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="container">
+    <div class="banner-home6">
+      {% if section.blocks.size > 0 %}
+      {%- assign i = 1 -%}
+      {% for block in section.blocks %}
+      <div class="col-md-6">
+        <div class="items banner-private">
+          {% if block.settings.cta_background == blank %}
+          {% capture _img_url %}cta_v1_bg{{i}}.jpg{% endcapture %}
+          <img src="{{ _img_url | asset_url}}" alt="">
+          {% else %}
+          <img src="{{ block.settings.cta_background | img_url:'master' }}" alt="Banner">
+          {% endif %}
+          <div class="text">
+            <p>{{block.settings.cta_content_1}}</p>
+            <h3>{{block.settings.cta_content_2}}</h3>
+            {% if block.settings.cta_btn_url != blank %}
+            <a class="button button1 hover-white" href="{{block.settings.cta_btn_url}}" title="{{block.settings.cta_btn_name}}">{{block.settings.cta_btn_name}}<i class="link-icon-white"></i></a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {%- assign i = i | plus : 1 -%}
+      {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Call To Action v1",
+  "max_blocks": 2,
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "cta_background",
+          "label": "CTA Background"
+        },
+        {
+          "type": "text",
+          "id": "cta_content_1",
+          "label": "CTA content 1",
+          "default": "FALL 2016"
+        },
+        {
+          "type": "text",
+          "id": "cta_content_2",
+          "label": "CTA content 2",
+          "default": "Lookbook"
+        },
+        {
+          "type": "text",
+          "id": "cta_btn_name",
+          "label": "CTA button name",
+          "default": "DICOVERY"
+        },
+        {
+          "type": "text",
+          "id": "cta_btn_url",
+          "label": "CTA button url",
+          "info": "if URL empty, Button don't show",
+          "default": "\/collections\/all"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Call To Action v1",
+      "category": "Content",
+      "blocks": [
+        {
+          "type": "block",
+          "settings": {
+            "cta_content_1": "FALL 2016",
+            "cta_content_2": "Lookbook",   		
+			"cta_btn_name": "DICOVERY",
+			"cta_btn_url": "collections/all"
+          }
+        },
+        {
+          "type": "block",
+          "settings": {
+            "cta_content_1": "WHAT NEWS?",
+            "cta_content_2": "OUR BLOG", 			
+			"cta_btn_name": "LEARN MORE",
+			"cta_btn_url": "collections/all"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

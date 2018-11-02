@@ -1,0 +1,44 @@
+<!-- /sections/footer.liquid -->
+{% if section.settings.select_fts == "footer_s1" %}
+{% include 'footer-s1' %}
+{% elsif section.settings.select_fts == "footer_s2" %}
+{% include 'footer-s2' %}
+{% elsif section.settings.select_fts == "footer_s3" %}
+{% include 'footer-s3' %}
+{% elsif section.settings.select_fts == "footer_s4" %}
+{% include 'footer-s4' %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Footer",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "select_fts",
+      "label": "Select Footer Style",
+      "options": [
+        {
+          "value": "footer_s1",
+          "label": "Footer Style 1"
+        },
+        {
+          "value": "footer_s2",
+          "label": "Footer Style 2"
+        },
+        {
+          "value": "footer_s3",
+          "label": "Footer Style 3"
+        },
+		{
+          "value": "footer_s4",
+          "label": "Footer Style 4"
+        }
+      ],
+      "default": "footer_s2",
+      "info": "[View image with footer designs](https://cdn.shopify.com/s/files/1/1552/1369/files/demo_footer.jpg?6300831229300689227)"
+    }
+  ]
+}
+{% endschema %}

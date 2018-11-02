@@ -1,0 +1,79 @@
+<header id="header" class="header-v3 header-v7 engoc_header_s5">
+  <div id="topbar" class="topbar-v3">
+    <div class="container">
+      {% if settings.hds5_topbar1_enable %}
+      <div class="topbar-title">
+        <p>
+          {{settings.hds5_topbar1_content}}
+        </p>
+      </div>
+      {% endif %}
+      {% if settings.hds5_topbar2_enable %}
+      <div class="topbar-left">
+        <div class="social">
+          <a href="/account/login" title="login"><i class="{{settings.hds5_acc_icon}} icons"></i></a>
+        </div>
+        <!-- End Social -->
+      </div>
+      <!-- End topBar-left -->
+      <div class="logo">
+        <a href="{{shop.url}}" title="Logo">
+            {% if settings.hds5_svg_logo_enable %}
+            	{{settings.hds5_svg_logo}}
+            {% else %}
+            	{% if settings.hds5_logo == blank %}
+                {% capture _img_url %}uno_logo_white.png{% endcapture %}
+                <img src="{{ _img_url | asset_url}}" alt="">
+                {% else %}
+          		<img src="{{settings.hds5_logo | img_url:'master'}}" alt="logo">
+                {% endif %}
+            {% endif %}
+        </a>
+      </div>
+      <div class="topbar-right">
+        <div class="sign-in">
+          <div class="search dropdown" data-toggle="modal" data-target=".bs-example-modal-lg">
+            <i class="icons {{settings.hds5_search_icon}} dropdown-toggle"></i>
+          </div>
+          <!-- End search -->
+          <div class="cart">
+            <p class="icon-cart">
+              <i class="icons {{settings.hds5_cart_icon}}"></i>
+              <span id="CartCount" class="cart-count">{{ cart.item_count }}</span>
+            </p>
+          </div>
+          <!-- End cart -->
+        </div>
+        <!-- End SignIn -->
+      </div>
+      {% endif %}
+    </div>
+    <!-- End container -->
+  </div>
+  <!-- End Top Bar -->
+  <div class="header-top">
+    <div class="container">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <p class="icon-menu-mobile"><i class="fa fa-bars" ></i></p>
+        <div class="logo-mobile">
+          <a href="{{shop.url}}" title="Logo">
+            {% if settings.hds5_mobile_svg_logo_enable %}
+            	{{settings.hds5_mobile_svg_logo}}
+            {% else %}
+            	{% if settings.hds5_mobile_logo == blank %}
+                {% capture _img_url %}uno_logo_black.png{% endcapture %}
+                <img src="{{ _img_url | asset_url}}" alt="">
+                {% else %}
+          		<img src="{{settings.hds5_mobile_logo | img_url:'master'}}" alt="logo">
+                {% endif %}
+            {% endif %}
+          </a>
+        </div>
+        {% include 'menu' %}
+      </div>
+    </div>
+    <!-- End container -->
+  </div>
+  <!-- End header-top -->
+</header>
+<div></div>

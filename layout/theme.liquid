@@ -1,0 +1,287 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+
+   <!--
+==========================================================================
+ _____        ______        ______
+\     \      /      \      /      \
+ \     \    /        \    /        \
+  \     \  /    /\    \  /    /\    \
+   \     \/    /  \    \/    /  \    \
+    \         /    \        /    \    \
+     \       /      \      /      \    \
+      \_____/        \____/        \____\
+
+==========================================================================
+
+ v1.0.3
+ Updated: April 10, 2017
+ Website: https://whileymai.com
+
+==========================================================================
+-->
+  
+  <!-- Basic page needs ================================================== -->
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- SEO ================================================== -->  
+  {% include 'SEOManager' %}
+
+  <!-- Helpers ================================================== -->
+  {% include 'social-meta-tags' %}
+
+  <link rel="canonical" href="{{ canonical_url }}" />
+  
+  <meta name="theme-color" content="{{ settings.m_primary_color }}">
+  <link rel="icon" href="{{'favicon.png'| asset_url}}" type="image/png" sizes="16x16">
+  <meta name="p:domain_verify" content="989d0ede05869333c558472cf3b3f719"/>
+  <meta name="google-site-verification" content="kbA-Iah3dGN24arL60b9GLi75rS1wUTbc3G6F68PZJQ" />
+  <meta name="msvalidate.01" content="78758E18E16DA75E1F76C5D33DBC3EBC" />
+    
+  <!-- Dublin core meta -->
+  <meta name="DC.creator" content="microapps" />
+  <meta name="DC.type" scheme="DCTERMS.DCMIType" content="Text" />
+  <meta name="DC.format" scheme="DCTERMS.IMT" content="text/html" />
+  <link rel="schema.DC" href="https://purl.org/dc/elements/1.1/" />
+  <link rel="schema.DCTERMS" href="https://purl.org/dc/terms/" />
+  <meta name="DC.identifier" scheme="DCTERMS.URI" content="http://seaff.microapps.com/" />
+  <meta name="DC.subject" xml:lang="en" content="EASDK - Shopify Embedded App Frontend Framework" />
+  <meta name="DC.language" scheme="DCTERMS.URI" content="en" />
+  <!-- Endof - Dublin core  -->
+  
+  <!-- Yotp Reviews -->
+  <script type="text/javascript">
+  (function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/WrJotyrocV0IqiJMJszOxY1FWHErMiGtc2lVQPEH/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+  </script>
+
+  <!-- font -->
+  {% include 'engo_head_fonts' %}
+  
+  <!-- CSS ================================================== -->
+  {% if settings.po_style == "po_swatchs" %}
+  {{ 'timber.scss.css' | asset_url | stylesheet_tag }}./m,'/,
+  {% endif %}
+  {% if settings.po_style == "po_dropdown" %}
+  {{ 'timber_2.scss.css' | asset_url | stylesheet_tag }}
+  {% endif %}
+
+  {{ 'style.css' | asset_url | stylesheet_tag }}
+  
+  {{ 'engo-customize.scss.css' | asset_url | stylesheet_tag }}
+  
+  {{ 'new-style-combined.css' | asset_url | stylesheet_tag }}
+  
+  <!-- Header hook for plugins ================================================== -->
+  {{ content_for_header }}
+  {% include 'oldIE-js' %}
+
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' | script_tag }}
+  {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+  {{ 'modernizr.min.js' | asset_url | script_tag }}
+  {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+  
+  {{ 'slick.min.js' | asset_url | script_tag }}
+  
+  {{ 'jquery.themepunch.tools.min.js' | asset_url | script_tag }}
+  {{ 'jquery.themepunch.revolution.min.js' | asset_url | script_tag }}
+  
+
+  <script>
+    window.ajax_cart = true;
+    window.money_format = '{{shop.money_with_currency_format}}';
+    window.shop_currency = '{{ shop.currency }}';
+    window.show_multiple_currencies = true;
+    window.loading_url = "{{ 'loader.gif' | asset_url}}";
+    window.use_color_swatch = true;
+    window.product_image_resize = true;
+    window.enable_sidebar_multiple_choice = true;
+
+    window.file_url = "{{''|file_url}}";
+    window.asset_url = "{{''|asset_url}}";
+    window.images_size = {
+      is_crop: true,
+      ratio_width : 1,
+      ratio_height : 1,
+    };
+    window.inventory_text = {
+      in_stock: "{{ 'products.product.in_stock' | t }}",
+      many_in_stock: "{{ 'products.product.many_in_stock' | t }}",
+      out_of_stock: "{{ 'products.product.out_of_stock' | t }}",
+      add_to_cart: "{{ 'products.product.add_to_cart' | t }}",
+      sold_out: "{{ 'products.product.sold_out' | t }}",
+      unavailable: "{{ 'products.product.unavailable' | t }}"
+    };
+
+    window.sidebar_toggle = {
+      show_sidebar_toggle: "{{ 'general.sidebar_toggle.show_sidebar_toggle' | t }}",
+      hide_sidebar_toggle: "{{ 'general.sidebar_toggle.hide_sidebar_toggle' | t }}"
+    };
+
+  </script>
+
+  {% comment %}
+  If you store has customer accounts disabled, you can remove the following JS file
+  {% endcomment %}
+  {% if template contains 'customers' %}
+  {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+  {% endif %}
+
+  {% include 'social-meta-tags' %}
+
+</head>
+{% comment %}
+Add the page template as a class for easy page or template specific styling.
+{% endcomment %}
+<body>
+  {% if template == 'index' or template == 'blog' %}
+  {% if settings.enable_preloader %}
+  <div id="preloader">
+    <div class="sk-cube-grid">
+      <div class="sk-cube sk-cube1"></div>
+      <div class="sk-cube sk-cube2"></div>
+      <div class="sk-cube sk-cube3"></div>
+      <div class="sk-cube sk-cube4"></div>
+      <div class="sk-cube sk-cube5"></div>
+      <div class="sk-cube sk-cube6"></div>
+      <div class="sk-cube sk-cube7"></div>
+      <div class="sk-cube sk-cube8"></div>
+      <div class="sk-cube sk-cube9"></div>
+    </div>
+  </div>
+  {% endif %}
+  {% endif %}
+  
+  {% include 'minicart' %}
+  
+  {% include 'modal-search' %}
+	
+  {% include 'menu-header-s4' %}
+  
+  <div class="wrappage">
+    
+    {% section 'header' %} 
+    
+    {{ content_for_layout }}
+    
+    <div class="main-content">
+      <div id="back-to-top">
+        <i class="fa fa-long-arrow-up"></i>
+      </div>
+    </div>
+    
+    <div class="main-content">
+      {% section 'footer' %} 
+    </div>
+    <!-- End wrappage -->
+  </div>
+
+
+  {{ 'fastclick.min.js' | asset_url | script_tag }}
+  {% include 'currencies' %}
+  {{ 'timber.js' | asset_url | script_tag }}
+  {{ 'jquery-ui.min.js' | asset_url | script_tag }}
+  {{ 'bootstrap.min.js' | asset_url | script_tag }}
+
+  {% comment %}
+  Template-specific js
+  {% endcomment %}
+  <script>
+    {% if resetPassword %}
+    $(function() {
+      timber.resetPasswordSuccess();
+    });
+    {% endif %}
+  </script>
+
+  <script>
+    jQuery(function() {
+      jQuery('.swatch :radio').change(function() {
+        var optionIndex = jQuery(this).closest('.swatch').attr('data-option-index');
+        var optionValue = jQuery(this).val();
+        jQuery(this)
+        .closest('form')
+        .find('.single-option-selector')
+        .eq(optionIndex)
+        .val(optionValue)
+        .trigger('change');
+      });
+    });
+  </script>
+
+  {% if settings.ajax_cart_method == "drawer" %}
+  {{ 'handlebars.min.js' | asset_url | script_tag }}
+  {% include 'ajax-cart-template' %}
+  {{ 'ajax-cart.js' | asset_url | script_tag }}
+  <script>
+    var ajaxCartConfig = {
+      cartContainer: '#CartContainer',
+      addToCartSelector: '.enj-add-to-cart-btn',
+      cartCountSelector: '#CartCount',
+      cartCostSelector: '#CartCost',
+      moneyFormat: {{ shop.money_format | json }}
+    };
+      jQuery(function($) {
+      ajaxCart.init(ajaxCartConfig);
+    });
+
+    jQuery('body').on('ajaxCart.afterCartLoad', function(evt, cart) {
+      // Bind to 'ajaxCart.afterCartLoad' to run any javascript after the cart has loaded in the DOM
+      /*   timber.RightDrawer.open(); */
+    });
+  </script>
+  {% endif %}
+
+  {% if template contains 'index' or template contains 'contactus'  %}
+  {% capture gmap_key %}gmap_key{% endcapture %}
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{settings[gmap_key]}}&sensor=false"></script>
+  {{ 'gmaps.min.js' | asset_url | script_tag }}
+  {{ 'map-icons.js' | asset_url | script_tag }}
+  {% endif %}
+
+  {{ 'engo-plugins.js' | asset_url | script_tag }}
+  {{ 'quickview.js' | asset_url | script_tag }}
+  {{ 'wish-list.js' | asset_url | script_tag }}
+  {{ 'collection.js' | asset_url | script_tag }}
+  
+  {{ 'masonry.pkgd.min.js' | asset_url | script_tag }}
+  
+  {{ 'jquery.bxslider.js' | asset_url | script_tag }}  
+  
+  {{ 'lightgallery.js' | asset_url | script_tag }}
+  {{ 'lg-thumbnail.js' | asset_url | script_tag }}
+  {{ 'jquery.mousewheel.min.js' | asset_url | script_tag }}
+  {{ 'lg-autoplay.js' | asset_url | script_tag }}
+
+  
+  {% if template contains 'product' %}
+  {{ 'jquery.elevatezoom.js' | asset_url | script_tag }}
+  {% endif %}
+  
+  {{ 'store.js' | asset_url | script_tag }}
+
+  {{ 'engo-scripts.js' | asset_url | script_tag }}
+  {{ 'engo-autocomplate.js' | asset_url | script_tag }}
+
+  {{ 'instafeed.min.js' | asset_url | script_tag }} 
+
+  {% include 'product-quick-view' %}
+  {% include 'template-popup' %}
+  {% if settings.show_popup_newletter %}
+  {% include 'popup-newletter' %}
+  {% endif %}
+  {% include 'template-popup-ajax-addtocart' %}
+  
+  <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us9.list-manage.com","uuid":"7560c829d4fb558599c5002da","lid":"9dd4351b6d"}) })</script>
+
+  {% include 'sweettooth-initializer' %}
+
+  {% include 'sweettooth-tab-widget' %}
+
+</body>
+</html>

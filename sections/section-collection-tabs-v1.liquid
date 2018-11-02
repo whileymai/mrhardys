@@ -1,0 +1,123 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-collection-tabs-v1" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="main-content">
+    <div class="container">
+      <div class="slider-product our-new-product owl-nav-hidden">
+        <ul class="tabs">
+          {% if section.blocks.size > 0 %}
+          {%- assign i = 1 -%}
+          {% for block in section.blocks %}
+          <li class="item" rel="sctv1_tab_{{i}}">{{block.settings.tab_title}}</li>
+          {%- assign i = i | plus : 1 -%}
+          {% endfor %}
+          {% endif %}
+        </ul>
+        <div class="tab-container space-10">
+          {% if section.blocks.size > 0 %}
+          
+          {%- assign i = 1 -%}
+          
+          {% for block in section.blocks %}
+          
+          {% assign products_limit = block.settings.tab_limit %}
+          {% assign col = block.settings.tab_collection %}
+          
+          <div id="sctv1_tab_{{i}}" class="tab-content">
+            <div class="product-tab-content products">
+              {% for product in collections[col].products limit: products_limit %}
+              {% include 'product-item' %}
+              {% else %}
+              {% include 'onboarding-empty-s-products' %}
+              {% endfor %}
+            </div>
+            <!-- End product-tab-content products -->
+          </div>
+          {%- assign i = i | plus : 1 -%}
+          {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+      <!-- End OurNewProduct -->
+    </div>
+    <!-- End container -->
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection Tabs v1",
+  "max_blocks": 3,
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_title",
+          "label": "Title",
+          "info": "NEW ARRIVALS"
+        },
+        {
+          "type": "collection",
+          "id": "tab_collection",
+          "label": "Choose Collection"
+        },
+        {
+          "type": "text",
+          "id": "tab_limit",
+          "label": "Limit number of products",
+          "default": "5"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Tabs v1",
+      "category": "Product",
+	  "blocks": [
+        {
+          "type": "tab",
+          "settings": {
+            "tab_title": "NEW ARRIVALS",
+            "tab_limit": "5"
+          }
+        },
+        {
+          "type": "tab",
+          "settings": {
+            "tab_title": "BEST SELLER",
+            "tab_limit": "5"
+          }
+        },
+        {
+          "type": "tab",
+          "settings": {
+            "tab_title": "TOP RATED",
+            "tab_limit": "5"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

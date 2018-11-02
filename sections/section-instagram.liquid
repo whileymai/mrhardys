@@ -1,0 +1,75 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-instagram" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  {% assign instafeed_img = '{{image}}' %}
+  {% assign instafeed_link = '{{link}}' %}
+  <script>
+    jQuery(document).ready(function($) {
+
+      var feed = new Instafeed({
+        get: 'user',
+        userId: '{{section.settings.ins_userid}}',
+        accessToken: '{{section.settings.ins_access_token}}',
+        template: '<a href="{{instafeed_link}}" class="items"><img src="{{instafeed_img}}" alt="instafeed"><div class="text">{% if section.settings.ins_icon == blank %}{% capture _img_url %}instagram_icon.png{% endcapture %}<img src="{{ _img_url | asset_url}}" alt="instafeed">{% else %}<img src="{{ section.settings.ins_icon | img_url:'master' }}" alt="instafeed">{% endif %}<h3>{{section.settings.ins_title}}</h3><p>{{section.settings.ins_content}}</p></div></a>',
+        target: 'instagram',
+        resolution: 'standard_resolution',
+        limit: '{{section.settings.ins_limit_number}}'
+      });
+      feed.run();
+
+    });
+  </script>
+  <div class="container">
+    <div class="instafeed" id="instagram">
+      
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Instagram",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "ins_userid",
+      "label": "User ID Instagram",
+      "default": "3672948962"
+    },
+    {
+      "type": "text",
+      "id": "ins_access_token",
+      "label": "Access Token Instagram",
+      "default": "3672948962.0f64772.430edb7f711e4665b59777c54d1ed9ce"
+    },
+    {
+      "type": "text",
+      "id": "ins_limit_number",
+      "label": "Limit Image",
+      "default": "5"
+    },
+    {
+      "type": "image_picker",
+      "id": "ins_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "ins_title",
+      "label": "Title",
+      "default": "FOLLOW US ON INSTAGRAM"
+    },
+    {
+      "type": "text",
+      "id": "ins_content",
+      "label": "Content",
+      "default": "#UNOSTORES"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram",
+      "category": "Content"
+    }
+  ]
+}
+{% endschema %}

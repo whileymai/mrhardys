@@ -1,0 +1,43 @@
+<div class="pushmenu pushmenu-left cart-box-container">
+  <div class="cart-list"> 
+    <span id="close-pushmenu" style="margin: 10px 0 10px;">Close</span>
+  </div>
+  <div class="cart-list" id="CartContainer">
+    
+    {% if cart.item_count > 0 %}
+    <ul class="list" style="overflow: auto;height: 790px;">
+      {% for item in cart.items %}
+      <li>
+        <a href="{{item.url}}" title="" class="cart-product-image">
+          <img src="{{ item.image | product_img_url: 'small' }}" alt="{{ item.title }}">
+        </a>
+        <div class="text">
+          <p class="product-name">
+            <a href="{{item.url}}" class="ajaxcart__product-name">{{ item.product.title }}</a>
+            {% if item.product.variants.size > 1 %}
+            <span class="ajaxcart__product-meta">{{ item.variant.title }}</span>
+            {% endif %}
+          </p>
+          <p class="product-price">{{ item.price | money }}</p>
+          <p class="qty">{{ 'minicart.general.qty' | t }}:{{ item.quantity }}</p>
+          
+        </div>
+      </li> 
+      {% endfor %}                                 
+    </ul>
+    <div class="cart-bottom">
+      <p class="total"><span>{{ 'minicart.general.total_price' | t }}:</span> {{cart.total_price | money}}</p>
+      <a class="checkout" href="/checkout" title="">{{ 'minicart.general.checkout' | t }} <i class="link-icon-white"></i></a>
+      <a class="edit-cart" href="/cart" title="edit cart">{{ 'minicart.general.view_cart' | t }}</a>
+    </div>
+    {% else %}
+    <div class="text-center" style="margin-bottom: 20px;">
+      <p>{{ 'minicart.general.empty' | t }}</p>
+    </div>
+    <div class="text-center">
+      <a href="/collections/all" class="btn btn-danger" style="line-height: 42px;">{{ 'minicart.general.shop_now' | t }}</a>
+    </div>
+    {% endif %}
+  </div>
+</div>
+<!-- End cart -->

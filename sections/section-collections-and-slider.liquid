@@ -1,0 +1,252 @@
+<!-- section-collections-and-sliders.liquid -->
+<style>
+  .slider-full-screen2 .bx-wrapper {
+    {% if section.settings.s_collection_bg == blank %}
+    {% capture _img_url %}cas_img_bg.jpg{% endcapture %}
+    background: url({{ _img_url | asset_url }}) no-repeat;
+    {% else %}
+    background: url({{ section.settings.s_collection_bg | img_url:'master' }}) no-repeat;
+    {% endif %}
+    background-size: 100% auto;
+  }
+</style>
+<div data-section-id="{{ section.id }}" data-section-type="section-collections-and-slider" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="container">
+    <div class="slider-full-screen2">
+      <div class="col-md-2 slider-vertical">
+        <div class="slider8">
+          {% for i in (1..5)  %}
+          {% capture _col %}s_collection_{{i}}{% endcapture %}
+          {% assign col = section.settings[_col] %}
+
+          {% if col == blank %}
+          <div class="slide">
+            <a href="/admin/collections" class="images">
+              {% capture _img_url %}cas_img_collection{{i}}.jpg{% endcapture %}
+              <img src="{{ _img_url | asset_url }}" alt="Uno Collection">
+            </a>
+            <div class="text">
+              <h3>Uno Collection</h3>
+            </div>
+          </div>
+          {% else %}
+          <div class="slide">
+            <a href="{{collections[col].url}}" class="images">
+              <img src="{{ collections[col].image | img_url:'master' }}" alt="{{collections[col].title}}">
+            </a>
+            <div class="text">
+              <h3>{{collections[col].title}}</h3>
+            </div>
+          </div>
+          {% endif %}
+          
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-md-10">
+        <div class="products slider-one-item owl-nav-hidden dots-show">
+          {% for i in (1..2)  %}
+          
+          {% capture _enable %}enable_slider_{{i}}{% endcapture %}          
+          {% capture _bg_img %}bg_slider_{{i}}{% endcapture %}
+          {% capture _title %}title_slider_{{i}}{% endcapture %}
+          {% capture _des %}des_slider_{{i}}{% endcapture %}
+          {% capture _content %}content_slider_{{i}}{% endcapture %}
+          {% capture _btn_name %}btn_name_slider_{{i}}{% endcapture %}
+          {% capture _btn_url %}btn_url_slider_{{i}}{% endcapture %}
+          
+          {% assign enable = section.settings[_enable] %}
+          {% if enable %}
+          {% assign title = section.settings[_title] %}
+          {% assign bg_img = section.settings[_bg_img] %}
+          {% assign des = section.settings[_des] %}
+          {% assign content = section.settings[_content] %}
+          {% assign btn_name = section.settings[_btn_name] %}
+          {% assign btn_url = section.settings[_btn_url] %}
+          
+          <div class="product">
+            <a class="product-images" href="{{btn_url}}" title="">
+              {% if bg_img == blank %}
+              {% capture _bg_url %}cas_bg_slider_{{i}}.jpg{% endcapture %}
+              <img src="{{ _bg_url | asset_url }}" alt=""/>
+              {% else %}
+              <img src="{{ bg_img | img_url:'master' }}" alt=""/>
+              {% endif %}
+            </a>
+            <div class="text">
+              {% if title != blank %}
+              <h3>{{title}}</h3>
+              {% endif %}
+              {% if des != blank %}
+              <p class="product-content">{{des}}</p>
+              {% endif %}
+              {% if content != blank %}
+              <p class="price">{{content}}</p>
+              {% endif %}
+              {% if btn_name != blank %}
+              <a title="{{btn_name}}" href="{{btn_url}}" class="hover-black">{{btn_name}}<i class="link-icon-black"></i></a>
+              {% endif %}
+            </div>
+          </div>
+          
+          {% endif %}
+          {% endfor %}
+        </div>
+        <!-- End products -->
+      </div>
+    </div>
+    <!-- End slider full screen -->
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Collections & Slider",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Collections"
+    },
+    {
+      "type": "image_picker",
+      "id": "s_collection_bg",
+      "label": "Background image"
+    },
+    {
+      "type": "collection",
+      "id": "s_collection_1",
+      "label": "Select Collection 1"
+    },
+    {
+      "type": "collection",
+      "id": "s_collection_2",
+      "label": "Select Collection 2"
+    },
+    {
+      "type": "collection",
+      "id": "s_collection_3",
+      "label": "Select Collection 3"
+    },
+    {
+      "type": "collection",
+      "id": "s_collection_4",
+      "label": "Select Collection 4"
+    },
+    {
+      "type": "collection",
+      "id": "s_collection_5",
+      "label": "Select Collection 5"
+    },
+    {
+      "type": "header",
+      "content": "Slider"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider_1",
+      "label": "Enable Slider 1",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_slider_1",
+      "label": "Background Slider"
+    },
+    {
+      "type": "text",
+      "id": "title_slider_1",
+      "label": "Title",
+      "default": "Bottle Humidifier"
+    },
+    {
+      "type": "text",
+      "id": "des_slider_1",
+      "label": "Description",
+      "default": "The Bottle Humidifier is a culmination of pleasing aesthetics and modern utility. The humidifier can generate enough humidity to sufficiently supply any personal space... whether it be the bedroom"
+    },
+    {
+      "type": "text",
+      "id": "content_slider_1",
+      "label": "Content",
+      "default": "$89.90"
+    },
+    {
+      "type": "text",
+      "id": "btn_name_slider_1",
+      "label": "Button Name",
+      "info": "If button name empty, button don't show",
+      "default": "View details"
+    },
+    {
+      "type": "text",
+      "id": "btn_url_slider_1",
+      "label": "Button URL",
+      "default": "\/collections\/all"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider_2",
+      "label": "Enable Slider 2",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_slider_2",
+      "label": "Background Slider"
+    },
+    {
+      "type": "text",
+      "id": "title_slider_2",
+      "label": "Title",
+      "default": "Shoes Humidifier"
+    },
+    {
+      "type": "text",
+      "id": "des_slider_2",
+      "label": "Description",
+      "default": "The Shoes Humidifier is a culmination of pleasing aesthetics and modern utility. The humidifier can generate enough humidity to sufficiently supply any personal space... whether it be the bedroom"
+    },
+    {
+      "type": "text",
+      "id": "content_slider_2",
+      "label": "Content",
+      "default": "$69.90"
+    },
+    {
+      "type": "text",
+      "id": "btn_name_slider_2",
+      "label": "Button Name",
+      "info": "If button name empty, button don't show",
+      "default": "View details"
+    },
+    {
+      "type": "text",
+      "id": "btn_url_slider_2",
+      "label": "Button URL",
+      "default": "\/collections\/all"
+    },
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collections & Slider",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,157 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-contact-us" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="main-content">
+    <div class="contact-us">
+      <div class="container">
+        <div class="col-md-6 contact-form contact-form-bg">
+          <i class="icon {{section.settings.fc_icon}} "></i>
+          <h3 class="space-30">{{section.settings.fc_title}}</h3>
+          <p>{{section.settings.fc_des}}</p>
+          
+          {% comment %}
+          Contact form starts here
+          {% endcomment %}
+          {% form 'contact' %}
+
+          {% comment %}
+          Successful message
+          {% endcomment %}
+          {% if form.posted_successfully? %}
+          <p class="note form-success">
+            {{ 'contact.form.post_success' | t }}
+          </p>
+          {% endif %}
+
+          {{ form.errors | default_errors }}
+
+          <div class="form-horizontal">
+            <div class="form-group col-md-6">
+              {% assign fname_attr = 'contact.form.subject' | t | handle %}
+              <input name="contact[{{fname_attr}}]" type="text" class="form-control" id="inputfname" placeholder="{{section.settings.fc_firstname}}">                        
+            </div>
+            <div class="form-group col-md-6">
+              {% assign lname_attr = 'contact.form.subject' | t | handle %}
+              <input name="contact[{{lname_attr}}]" type="text" class="form-control" id="inputlname" placeholder="{{section.settings.fc_lastname}}">                   
+            </div>
+            <div class="form-group col-md-6">
+              <input name="contact[phone]" type="text" class="form-control" id="inputphone" placeholder="{{section.settings.fc_phone}}">                   
+            </div>
+            <div class="form-group col-md-6">
+              <input name="contact[email]" type="text" class="form-control" id="inputEmail" placeholder="{{section.settings.fc_email}}" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">                   
+            </div>
+            <div class="form-group col-md-12">
+              <textarea name="contact[body]" class="form-control" id="message" name="message" placeholder="{{section.settings.fc_message}}">{% if form.body %}{{ form.body }}{% endif %}</textarea> 
+              <div class="checkbox space-10">
+              </div>
+              <button class="btn button1 hover-white" type="submit">{{section.settings.fc_btn_name}} <i class="link-icon-white"></i></button>
+            </div>
+          </div>
+          {% endform %}
+        </div>
+        <div class="col-md-6">
+          <div id="googleMap">
+
+          </div>
+          <!-- End google map -->
+        </div>
+      </div>
+      <!-- End container -->
+    </div>
+    <!-- End contact-us -->
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Contact Us",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Form Contact"
+    },
+    {
+      "type": "text",
+      "id": "fc_icon",
+      "label": "Icon",
+      "info": "[Get icon from here](http://simplelineicons.com/)",
+      "default": "icon-paper-plane"
+    },
+    {
+      "type": "text",
+      "id": "fc_title",
+      "label": "Title",
+      "default": "Contact Us"
+    },
+    {
+      "type": "text",
+      "id": "fc_des",
+      "label": "Description",
+      "default": "TO RECEIVE UPDATES"
+    },
+    {
+      "type": "text",
+      "id": "fc_firstname",
+      "label": "Text placeholder firstname",
+      "default": "First Name"
+    },
+    {
+      "type": "text",
+      "id": "fc_lastname",
+      "label": "Text placeholder lastname",
+      "default": "Last Name"
+    },
+    {
+      "type": "text",
+      "id": "fc_phone",
+      "label": "Text placeholder phone",
+      "default": "Phone number"
+    },
+    {
+      "type": "text",
+      "id": "fc_email",
+      "label": "Text placeholder email",
+      "default": "Email address"
+    },
+    {
+      "type": "text",
+      "id": "fc_message",
+      "label": "Text placeholder message",
+      "default": "Message"
+    },
+    {
+      "type": "text",
+      "id": "fc_btn_name",
+      "label": "Button name",
+      "default": "Submit"
+    },
+    {
+      "type": "header",
+      "content": "Google Maps",
+      "info": "Google Maps: Setting in Login Store > Customize theme > General Settings tab > Google Maps"
+    },
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact Us",
+      "category": "Content"
+    }
+  ]
+}
+{% endschema %}

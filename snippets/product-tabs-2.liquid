@@ -1,0 +1,52 @@
+<!-- /snippets/product-tabs.liquid -->
+<div class="hoz-tab-container space-padding-tb-40 slider-product tabs-title-v2">
+  <ul class="tabs">
+    {% if section.settings.enable_custom_tab %}
+    <li class="item" rel="product-tags">{{section.settings.title_custom_tab}}</li>
+    {% endif %}
+    
+    {% if section.settings.enable_review_tab %}
+    <li class="item" rel="customer">{{section.settings.title_review_tab}}</li>
+    {% endif %}
+  </ul>
+  <div class="tab-container">
+    {% if section.settings.enable_custom_tab %}
+    <div id="product-tags" class="tab-content">
+      
+      {% if section.settings.custom_tab_option == "ct_ops_image" %}
+        {% if section.settings.ct_option_1 != blank%}
+        <img src="{{ section.settings.ct_option_1 | img_url: "master" }}"/>
+        {% else %}
+        
+        {% endif %}
+      {% endif %}
+      
+      {% if section.settings.custom_tab_option == "ct_ops_html" %}
+      {{ section.settings.ct_option_2 }}
+      {% endif %}
+      
+      {% if section.settings.custom_tab_option == "ct_ops_page" %}
+      {% if section.settings.custom_tab_option != blank%}
+      
+      {% if product.handle contains 'beard-oil' %} 
+	  {{ pages.shipping.content }}
+      {% elsif product.handle contains 'razor' %}
+      {{ pages.mr-replenish-faqs.content }}
+      {% elsif product.handle contains 'after-shave' %}
+      {{ pages.privacy-policy.content }}
+      {% endif %}
+      {% endif %}
+      {% endif %}
+      
+    </div>
+    {% endif %}
+    {% if section.settings.enable_review_tab %}
+    <div id="customer" class="tab-content">
+      <div class="col-md-12">
+{% include 'yotpo-reviews' %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+<!-- tab-container -->

@@ -1,0 +1,51 @@
+<!-- /snippets/collection-widget-categories.liquid -->
+<aside class="widget widget_product_categories">
+  <h3 class="widget-title">{{section.settings.widget_cate_title}}</h3>
+  <li class="clearfix filter">
+  <select class="coll-picker">
+    <option value="all">All</option>
+    {% for link in linklists.collections.links %}
+    {% assign c = link.object %}
+    {% if collection.handle == c.handle %}
+    <option value="{{ c.handle }}" selected>{{ c.title }}</option>
+    {% else %}
+    <option value="{{ c.handle }}">{{ c.title }}</option>
+    {% endif %}
+    {% endfor %}
+  </select>
+</li>
+</aside>
+
+<script>
+  $('select option')
+    .filter(function() {
+        return !this.value || $.trim(this.value).length == 0 || $.trim(this.text).length == 0;
+    })
+   .remove();
+</script>
+
+<script>
+  /* Product Tag Filters - Good for any number of filters on any type of collection pages */
+  var collFilters = jQuery('.coll-filter');
+  collFilters.change(function() {
+    var newTags = [];
+    collFilters.each(function() {
+      if (jQuery(this).val()) {
+        newTags.push(jQuery(this).val());
+      }
+    });
+    if (newTags.length) {
+      var query = newTags.join('+');
+      window.location.href = jQuery('{{ 'tag' | link_to_tag: 'tag' }}').attr('href').replace('tag', query);
+    }
+    else {
+      {% if collection.handle %}
+      window.location.href = '/collections/{{ collection.handle }}';
+      {% elsif collection.products.first.type == collection.title %}
+      window.location.href = '{{ collection.title | url_for_type }}';
+      {% elsif collection.products.first.vendor == collection.title %}
+      window.location.href = '{{ collection.title | url_for_vendor }}';
+      {% endif %}
+    }
+  });
+</script>

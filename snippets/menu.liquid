@@ -1,0 +1,128 @@
+<!-- /snippets/menu.liquid -->
+<nav class="mega-menu">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <ul class="nav navbar-nav" id="navbar">
+    {% assign main_menu = section.settings.main_menu_store %}
+    {% for link in linklists[main_menu].links %}
+    
+    {% assign item = link.title | downcase %}
+    {% assign child_list_handle = link.title | handleize %}
+    
+    {% capture megamenu_1 %}meg1_parent{% endcapture %}
+    {% capture megamenu_2 %}meg2_parent{% endcapture %}
+    {% capture megamenu_3 %}meg3_parent{% endcapture %}
+    {% capture megamenu_4 %}meg4_parent{% endcapture %}
+    {% capture megamenu_5 %}meg5_parent{% endcapture %}
+    {% capture megamenu_6 %}meg6_parent{% endcapture %}
+    
+    {% if settings[megamenu_1] == item or settings[megamenu_2] == item  or settings[megamenu_3] == item or settings[megamenu_4] == item or settings[megamenu_5] == item or settings[megamenu_6] == item %}
+    
+      {% for i in (1..6) %}
+      {% capture megamenu %}meg{{i}}_parent{% endcapture %}
+      {% if settings[megamenu] == item %}
+      <li class="level1 {% if link.active %}active{% endif %} dropdown">
+        <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+        <div class="sub-menu dropdown-menu">
+          <ul class="menu-level-1">
+              {% for j in (1..3) %}
+
+              {% capture _enable %}meg{{i}}c{{j}}_enable{% endcapture %}
+              {% capture _megacol_select %}meg{{i}}c{{j}}_select{% endcapture %}
+              {% capture _linklist_title %}meg{{i}}c{{j}}_linklist_title{% endcapture %}
+              {% capture _lisklist_l %}meg{{i}}c{{j}}_linklist{% endcapture %}
+              {% capture _col_banner %}meg{{i}}c{{j}}_banner{% endcapture %}
+              {% capture _banner_url %}meg{{i}}c{{j}}_banner_url{% endcapture %}
+              {% capture _banner_img %}meg{{i}}c{{j}}_banner_img{% endcapture %}
+              {% capture _col_product %}meg{{i}}c{{j}}_product{% endcapture %}
+              {% capture _product_p %}meg{{i}}c{{j}}_product_p{% endcapture %}
+
+              {% assign enable = settings[_enable] %}
+              {% if enable %}
+              {% assign megacol_select = settings[_megacol_select] %}
+              {% assign linklist_title = settings[_linklist_title] %}
+              {% assign lisklist_l = settings[_lisklist_l] %}
+              {% assign col_banner = _col_banner %}
+              {% assign banner_url = settings[_banner_url] %}
+              {% assign banner_img = settings[_banner_img] %}
+              {% assign col_product = _col_product %}
+              {% assign product_p = settings[_product_p] %}
+
+                {% if megacol_select == col_banner %}
+                <li class="level2">
+                  {% if banner_img == blank %}
+                  {% else %}
+                  <a href="{{banner_url}}" class="engoc_hidden">
+                      <img src="{{ banner_img | img_url:'master' }}" alt="Banner" />
+                  </a>
+                  {% endif %}
+                </li>
+
+                {% elsif megacol_select == col_product %}
+                <li class="level2">
+                  {% if product_p == blank %}
+                  {% else %}
+                  <div class="products engoc_hidden">
+                    {% assign product = all_products[product_p] %}
+                    {% include 'product-item' %}
+                  </div>
+                  {% endif %}
+                </li>
+
+                {% else %}
+                <li class="level2">
+                  <a href="javascript:void(0)" title="{{ linklist_title }}" target="_self">{{ linklist_title }}</a>
+                  <ul class="menu-level-2">
+                    {% for link_l in linklists[lisklist_l].links %}
+                    <li class="level3"><a href="{{ link_l.url }}" title="{{ link_l.title }}" target="_self">{{ link_l.title }}</a></li>
+                    {% endfor %}
+                  </ul>
+                </li>
+                {% endif %}
+
+              {% endif %}
+              {% endfor %}
+
+
+          </ul>
+        </div>
+        <!-- End Dropdow Menu -->
+      </li>
+      {% endif %}
+      {% endfor %}
+
+    {% else %}
+    
+      {% if linklists[child_list_handle].links != blank %}
+      <li class="level1 {% if link.active %}active{% endif %} dropdown">
+        <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+        <ul class="menu-level-1 dropdown-menu">
+          {% for childlink in linklists[child_list_handle].links %}
+          {% assign grand_child_list_handle = childlink.title | handle %}
+
+          {% if linklists[grand_child_list_handle].links != blank %}
+          <li class="level2">
+            <a href="{{ childlink.url }}" title="{{ childlink.title }}" target="_selfk">{{ childlink.title }}</a>
+            <ul class="menu-level-2">
+              {% for grandchildlink in linklists[grand_child_list_handle].links %}
+              <li class="level3"><a href="{{ grandchildlink.url }}" title="{{ grandchildlink.title }}" target="_self">{{ grandchildlink.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+          {% else %}
+          <li class="level2"><a href="{{ childlink.url }}" title="{{ childlink.title }}" target="_self">{{ childlink.title }}</a></li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </li>
+
+      {% else %}
+      <li class="level1 {% if link.active %}active{% endif %}">
+        <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+      </li>
+      {% endif %}
+    
+    {% endif %}
+    
+    {% endfor %}
+  </ul>
+</nav>

@@ -1,0 +1,158 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-special-products" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  {% capture _special_product %}special_product{% endcapture %} 
+  {% assign s_product = all_products[section.settings[_special_product]] %}
+  
+  {% assign on_sale = false %}
+  {% if s_product.compare_at_price > s_product.price %}
+  {% assign on_sale = true %}
+  {% endif %}
+  
+  {% assign products_limit = section.settings.special_rp_limit %}
+  {% assign col = section.settings.special_rp_collection %}
+  
+  <div class="main-content">
+    <div class="related-products space-40">
+      <div class="container">
+        <div class="col-md-7">
+          <div class="products slider-one-item owl-nav-hidden dots-show">
+            {% if section.settings.special_product == blank %}
+              <div class="product">
+                <a class="product-images" href="/admin/products" title="engo product">
+                  <img src="{{ 'special_product1.png' | asset_url }}" alt="engo product"/>
+                </a>
+              </div>
+              <div class="product">
+                <a class="product-images" href="/admin/products" title="engo product">
+                  <img src="{{ 'special_product2.png' | asset_url }}" alt="engo product"/>
+                </a>
+              </div>
+            {% else %}
+              <div class="product">
+                <a class="product-images" href="{{ s_product.url | within: collection }}" title="{{ s_product.title }}">
+                  <img src="{{ s_product.featured_image.src | img_url: 'master' }}" alt="{{ s_product.featured_image.alt | escape }}"/>
+                </a>
+              </div>
+              <!-- End product -->
+              {% for image in s_product.images %}
+              {% if forloop.last == true %}
+              <div class="product">
+                <a class="product-images" href="{{ s_product.url | within: collection }}" title="{{ s_product.featured_image.alt | escape }}">
+                  <img src="{{ image.src | product_img_url: 'master' }}" alt="{{ s_product.featured_image.alt | escape }}"/>
+                </a>
+              </div>
+              {% endif %}
+              {% endfor %}
+            {% endif %}
+          </div>
+          <!-- End products -->
+        </div>
+        <!-- End col-md-7 -->
+        <div class="col-md-5">
+          <div class="product-details">
+            <div class="title"><h4>{{section.settings.special_title}}</h4></div>
+            <h1>{{s_product.title}}</h1>
+            {% capture price %}{{ s_product.price | money }}{% endcapture %}
+            <p class="price">{% if s_product.price_varies %}{{ 'products.general.from_text_html' | t: price: price }}{% else %}{{ price }}{% endif %}
+              {% if on_sale %} <del>{{ s_product.compare_at_price | money }}</del> {% endif %}
+            </p>
+            <p class="product-content">{{ s_product.description | strip_html | truncatewords: 80}}</p>
+            <a href="{{ s_product.url | within: collection }}" title="{{ s_product.title }}" class="hover-black">{{section.settings.special_btn}}<i class="link-icon-black"></i></a>
+          </div>
+          <!-- End product content -->
+          <div class="slider-text">
+            <h3>{{section.settings.special_rp_title}}</h3>
+          </div>
+          <div class="slider-product">
+            <div class="products slider-two-item">              
+              {% for product in collections[col].products limit: products_limit %}
+              {% include 'product-item-tabv3' %}
+              {% else %}
+              {% include 'onboarding-empty-s-collection-tabv3' %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <!-- End col-md-5 -->
+      </div>
+      <!-- End container -->
+    </div>
+    <!-- End related-products -->
+  </div>
+</div>
+
+<script>
+$('.product-content').each(function(){    
+if( !$.trim( $(this).html() ).length ){
+    $(this).parent().prev().find('h3').empty();
+}
+});
+</script>
+
+{% schema %}
+{
+  "name": "Special Product",
+  "class": "index-section",
+  "settings": [
+	{
+      "type": "text",
+      "id": "special_title",
+      "label": "Section Title",
+	  "default": "Staff pick"
+	},
+	{
+      "type": "product",
+      "id": "special_product",
+      "label": "Choose special product"
+	},
+	{
+      "type": "text",
+      "id": "special_btn",
+      "label": "Button name",
+      "default": "View details"
+    },   
+	{
+      "type": "header",
+      "content": "Related Product"
+    },
+	{
+      "type": "text",
+      "id": "special_rp_title",
+      "label": "Title",
+	  "default": "Related product"
+	},
+    {
+      "type": "collection",
+      "id": "special_rp_collection",
+      "label": "Select collection"
+    },
+	{
+      "type": "text",
+      "id": "special_rp_limit",
+      "label": "Limit number of products",
+      "default": "5"
+    },
+	{
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Special Product",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,14 @@
+<!-- /snippets/collection-widget-banner.liquid -->
+<aside class="widget" >
+  <div class="banner-col-left space-30">
+    <a href="{{section.settings.w_banner_url}}">
+      {% if section.settings.w_banner_bg == blank %}
+      {% capture _img_url %}collection_sidebar_banner_bg.jpg{% endcapture %}
+      <img src="{{ _img_url | asset_url}}" alt="">
+      {% else %}
+      <img src="{{ section.settings.w_banner_bg | img_url:'master' }}" alt="Banner">
+      {% endif %}
+    </a>
+  </div>
+  <!-- End banner-col-left -->
+</aside>

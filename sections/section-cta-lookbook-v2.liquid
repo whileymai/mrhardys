@@ -1,0 +1,81 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-cta-lookbook-v2" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="container">
+    <div class="banner-home3-lookbook2 banner-private space-30">
+      {% if section.settings.ctalb_background == blank %}
+      {% capture _img_url %}ctalbv2_background.jpg{% endcapture %}
+      <img src="{{ _img_url | asset_url}}" alt="">
+      {% else %}
+      <img src="{{ section.settings.ctalb_background | img_url:'master' }}" alt="Banner">
+      {% endif %}
+      <div class="text">
+        <span class="{{section.settings.ctalb_icon}} icons"></span>
+        <h3>{{section.settings.ctalb_content}}</h3>
+        {% if section.settings.ctalb_btn_url != blank %}
+        <a class="button button1 hover-white" href="{{section.settings.ctalb_btn_url}}" title="{{section.settings.ctalb_btn_name}}">{{section.settings.ctalb_btn_name}}<i class="link-icon-white"></i></a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CTA Lookbook v2",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "ctalb_background",
+      "label": "Image"
+    },
+	{
+      "type": "text",
+      "id": "ctalb_icon",
+      "label": "Icon",
+	  "info": "[Get icon from here](http://simplelineicons.com/)",
+      "default": "icon-plane"
+    },
+	{
+      "type": "text",
+      "id": "ctalb_content",
+      "label": "Content",
+      "default": "You can never be overdressed or overeducated"
+    },
+	{
+      "type": "text",
+      "id": "ctalb_btn_name",
+      "label": "Button name",
+      "default": "DISCOVERY OUR SHOP"
+    },
+    {
+      "type": "text",
+      "id": "ctalb_btn_url",
+      "label": "Button url",
+      "info": "if URL empty, Button don't show",
+      "default": "\/collections\/all"
+    },
+	{
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "CTA Lookbook v2",
+      "category": "Content"
+    }
+  ]
+}
+{% endschema %}

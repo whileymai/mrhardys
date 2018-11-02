@@ -1,0 +1,164 @@
+<!-- section-slider-products.liquid -->
+{% if section.settings.cta_style == "s_left" %}
+<style>
+  .home7-banner1.banner-private a {
+    padding-left: 0px;
+  }
+</style>
+{% endif %}
+<div data-section-id="{{ section.id }}" data-section-type="section-slider-products" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  {% assign products_limit = section.settings.sps_limit %}
+  {% assign col = section.settings.sps_collection %}
+  <div class="container">
+    <div class="slider-product-3-item">
+      {% if section.settings.cta_style == "s_left" %}
+      <div class="col-md-3">
+        <div class="items banner-private home7-banner1">
+          {% if section.settings.cta_background == blank %}
+          {% capture _img_url %}sp_cta_left.jpg{% endcapture %}
+          <img src="{{ _img_url | asset_url}}" alt="">
+          {% else %}
+          <img src="{{ section.settings.cta_background | img_url:'master' }}" alt="Banner">
+          {% endif %}
+          <div class="text">
+            <p>{{section.settings.cta_content_1}}</p>
+            <h3>{{section.settings.cta_content_2}}</h3>
+            {% if section.settings.cta_btn_url != blank %}
+            <a class="button button1 hover-white" href="{{section.settings.cta_btn_url}}" title="{{section.settings.cta_btn_name}}">{{section.settings.cta_btn_name}} <i class="link-icon-white"></i></a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      <div class="col-md-9">
+        <div class="products our-new-product home7-control">
+          {% for product in collections[col].products limit: products_limit %}
+          {% include 'product-item-slider' %}
+          {% else %}
+          {% include 'onboarding-empty-s-slider-products' %}
+          {% endfor %}
+        </div>
+        <!-- End product-tab-content products -->
+      </div>
+      {% if section.settings.cta_style == "s_right" %}
+      <div class="col-md-3">
+        <div class="items banner-private home7-banner2">
+          {% if section.settings.cta_background == blank %}
+          {% capture _img_url %}sp_cta_right.jpg{% endcapture %}
+          <img src="{{ _img_url | asset_url}}" alt="">
+          {% else %}
+          <img src="{{ section.settings.cta_background | img_url:'master' }}" alt="Banner">
+          {% endif %}
+          <div class="text">
+            <p>{{section.settings.cta_content_1}}</p>
+            <h3>{{section.settings.cta_content_2}}</h3>
+            {% if section.settings.cta_btn_url != blank %}
+            <a class="button button1 hover-white" href="{{section.settings.cta_btn_url}}" title="{{section.settings.cta_btn_name}}">{{section.settings.cta_btn_name}} <i class="link-icon-white"></i></a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    <!-- End OurNewProduct -->
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Slider Products",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Settings"
+    },
+	{
+      "type": "select",
+      "id": "cta_style",
+      "options": [
+        {
+          "value": "s_left",
+          "label": "CTA Left"
+        },
+	    {
+          "value": "s_right",
+          "label": "CTA Right"
+        }
+      ],
+      "label": "Choose Style",
+      "default": "s_left"
+    },
+    {
+      "type": "header",
+      "content": "CTA"
+    },
+    {
+      "type": "image_picker",
+      "id": "cta_background",
+      "label": "CTA Background"
+    },
+    {
+      "type": "text",
+      "id": "cta_content_1",
+      "label": "CTA content 1",
+      "default": "TOPS"
+    },
+    {
+      "type": "text",
+      "id": "cta_content_2",
+      "label": "CTA content 2",
+      "default": "PRODUCTS"
+    },
+    {
+      "type": "text",
+      "id": "cta_btn_name",
+      "label": "CTA button name",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "text",
+      "id": "cta_btn_url",
+      "label": "CTA button url",
+      "info": "if URL empty, Button don't show",
+      "default": "\/collections\/all"
+    },
+    {
+      "type": "header",
+      "content": "Products"
+    },
+    {
+      "type": "collection",
+      "id": "sps_collection",
+      "label": "Select collection"
+    },
+    {
+      "type": "text",
+      "id": "sps_limit",
+      "label": "Limit number of products",
+      "default": "5"
+    },
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slider Products",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,40 @@
+<!-- /snippets/menu-header-s4.liquid -->
+<div class="pushmenu menu-home6 cart-box-container">
+  <span id="close-pushmenu" class="close-left">Close</span>
+  <ul class="nav-home6"> 
+    {% assign main_menu = settings.main_menu_store %}
+    {% for link in linklists[main_menu].links %}
+    
+    {% assign item = link.title | downcase %}
+    {% assign child_list_handle = link.title | handleize %}
+    
+    {% if linklists[child_list_handle].links != blank %}
+    <li class="lv1"><a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+      <ul class="menu-lv1">
+        {% for childlink in linklists[child_list_handle].links %}
+        {% assign grand_child_list_handle = childlink.title | handle %}
+
+        {% if linklists[grand_child_list_handle].links != blank %}
+        <li class="lv2"><a href="{{ childlink.url }}" title="{{ childlink.title }}" target="blank">{{ childlink.title }}</a>
+          <ul class="menu-lv2">
+            {% for grandchildlink in linklists[grand_child_list_handle].links %}
+            <li class="lv3">
+              <a href="{{ grandchildlink.url }}" title="{{ grandchildlink.title }}">{{ grandchildlink.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
+        {% else %}
+        <li class="lv2"><a href="{{ childlink.url }}" title="{{ childlink.title }}" target="blank">{{ childlink.title }}</a></li>
+        {% endif %}
+        
+        {% endfor %}
+      </ul>
+    </li>
+    {% else %}
+    <li class="lv1"><a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>
+    {% endif %}
+    
+    {% endfor %}
+  </ul>
+</div>

@@ -1,0 +1,189 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-latest-blog" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+<div class="blog-slider-home8" style="background: {{section.settings.lps2_bgcolor}};">
+
+    <div class="container">
+      <div class="title-text border-color-red">
+        <h3>{{section.settings.lps2_content_2}}</h3>
+      </div>
+      <!-- End title text -->
+      
+      <div class="blog-post-container owl-nav-hidden dots-show blog-slider space-10">
+        <div class="blog-post-inner">
+           {% for article in blogs["im-with-hardy"].articles limit: 8 %}
+          <div class="blog-post-item">
+            <div class="blog-post-image hover-images">
+              <a href="{{ article.url }}" title="{{section.settings.lps2_content_1}}"><img src="{{ article.image.src | img_url: 'master' }}" alt="{{section.settings.lps2_content_1}}"></a>
+            </div>
+            <div class="blog-post-content">
+              <a class="cat" href="/blogs/im-with-hardy" title="News">{{section.settings.lp_title}}</a>                  
+              <a class="blog-title" href="{{ article.url }}" title="{{ article.title }}">{{ article.title }}</a>
+              <p class="comment"></p>     
+            </div>
+          </div>
+          {% endfor %} 
+        </div>
+        <!-- End Blog-Post-Inner -->
+      </div>
+      <!-- End blog post -->  
+    </div>
+    <!-- From our Blog -->
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Latest Blog",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "lp_style",
+      "options": [
+        {
+          "value": "style_1",
+          "label": "Style 1"
+        },
+	    {
+          "value": "style_2",
+          "label": "Style 2"
+        },
+	    {
+          "value": "style_3",
+          "label": "Style 3"
+        }
+      ],
+      "label": "Choose Style",
+      "default": "style_1"
+    },
+    {
+      "type": "header",
+      "content": "only for Style 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_numbercomment",
+      "label": "Show number comment?",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "only for Style 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "lps2_background",
+      "label": "Blog 1"
+    },
+    {
+      "type": "text",
+      "id": "lps2_content_1",
+      "label": "Article title 1",
+      "default": "Top"
+    },
+    {
+      "type": "text",
+      "id": "lps2_btn_url",
+      "label": "Article 1 url",
+	  "info": "if URL empty, Button don't show",
+      "default": "\/collections\/all"
+    },
+	{
+      "type": "image_picker",
+      "id": "lps3_background",
+      "label": "Blog 2"
+    },
+    {
+      "type": "text",
+      "id": "lps3_content_1",
+      "label": "Article title 2",
+      "default": "Top"
+    },
+    {
+      "type": "text",
+      "id": "lps3_btn_url",
+      "label": "Article 2 url",
+	  "info": "if URL empty, Button don't show",
+      "default": "\/collections\/all"
+    },
+	{
+      "type": "image_picker",
+      "id": "lps4_background",
+      "label": "Blog 3"
+    },
+    {
+      "type": "text",
+      "id": "lps4_content_1",
+      "label": "Article title 2",
+      "default": "Top"
+    },
+    {
+      "type": "text",
+      "id": "lps4_btn_url",
+      "label": "Article 3 url",
+	  "info": "if URL empty, Button don't show",
+      "default": "\/collections\/all"
+    },
+    {
+      "type": "header",
+      "content": "only for Style 2"
+    },
+    {
+      "type": "color",
+      "id": "lps2_bgcolor",
+      "label": "Background color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_authornumbercomment",
+      "label": "Show author and number comment?",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Settings"
+    },
+    {
+      "type": "text",
+      "id": "lps2_content_2",
+      "label": "Title",
+      "default": "products"
+    },
+    {
+      "type": "text",
+      "id": "lp_title",
+      "label": "sub-title",
+      "default": "FROM OUR BLOG"
+    },
+    {
+      "type": "text",
+      "id": "lp_limit",
+      "label": "Limit",
+      "default": "3"
+    },
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Latest Blog",
+      "category": "Blog"
+    }
+  ]
+}
+{% endschema %}

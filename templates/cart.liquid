@@ -1,0 +1,122 @@
+<!-- /templates/cart.liquid -->
+{% comment %}
+
+For info on test orders:
+- General http://docs.shopify.com/manual/your-store/orders/test-orders
+- Shopify Payments - http://docs.shopify.com/manual/more/shopify-payments/testing-shopify-payments
+
+{% endcomment %}
+
+<div class="main-content">
+  <div class="title-page space-padding-tb-50">
+    <h3>{{ 'cart.general.title' | t }}</h3>
+  </div>
+  <div class="cart-box-container">
+    <form action="/cart" method="post" novalidate>
+    <div class="container container-ver2">
+      <div class="col-md-8">
+        <table class="table cart-table space-80">
+          <thead>
+            <tr>
+              <th class="product-photo">{{ 'cart.label.product' | t }}</th>
+              <th class="produc-name"></th>
+              <th class="product-quantity">{{ 'cart.label.quantity' | t }}</th>
+              <th class="total-price">{{ 'cart.label.total' | t }}</th>
+              <th class="product-remove"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in cart.items %}
+            <tr class="item_cart">
+              <td class="product-photo">
+                <img src="{{ item | img_url: 'small' }}" alt="{{ item.title | escape }}" height="100" width="100">
+              </td>
+              <td class="produc-name">
+                <a href="{{ item.url }}" title="">{{ item.product.title }}</a>
+                {% unless item.variant.title contains 'Default' %}
+                <small style="display: block;font-weight: 300;font-size: 12px;letter-spacing: 1px;margin-bottom: 5px;">{{ item.variant.title }}</small>
+                {% endunless %}
+                {% if settings.cart_vendor_enable %}
+                <p>{{ item.vendor }}</p>
+                {% endif %}
+
+                {% comment %}
+                Optional, loop through custom product line items if available
+
+                For more info on line item properties, visit:
+                - http://docs.shopify.com/support/your-store/products/how-do-I-collect-additional-information-on-the-product-page-Like-for-a-monogram-engraving-or-customization
+                {% endcomment %}
+                {% assign property_size = item.properties | size %}
+                {% if property_size > 0 %}
+                {% for p in item.properties %}
+                {% unless p.last == blank %}
+                {{ p.first }}:
+
+                {% comment %}
+                Check if there was an uploaded file associated
+                {% endcomment %}
+                {% if p.last contains '/uploads/' %}
+                <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                {% else %}
+                {{ p.last }}
+                {% endif %}
+                {% endunless %}
+                {% endfor %}
+                {% endif %}
+                <p class="price">{{ item.price | money }}</p>
+              </td>
+              <td class="product-quantity engoc_cart_qty">
+                <input type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="0">
+              </td>
+              <td class="total-price">{{ item.line_price | money }}</td>
+              <td class="product-remove"><a class="remove" href="/cart/change?line={{ forloop.index }}&amp;quantity=0" title=""><i class="fa fa-times-circle"></i></a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      
+
+      <!-- End contact-form -->
+      <div class="col-md-4">
+        <div class="text-price">
+         <small style="display: block; font-weight: 300;font-size: 12px;letter-spacing: 1px;margin-bottom: 5px;">Got a discount code? Add it in the next step.</small>
+          <h3>{{ 'cart.label.cart_total' | t }}</h3>
+          <ul>
+            <li><span class="text">{{ 'cart.general.subtotal' | t }}</span><span class="number">{{ cart.total_price | money }}</span></li>
+            <li><span class="text calculate">Cart Instructions</span>
+              <div class="zipcode" action="#">
+                <textarea name="note" class="input-full" id="CartSpecialInstructions" placeholder="{{ 'cart.general.note' | t }}" style="font-weight: 300;">{{ cart.note }}</textarea>
+              </div>
+            </li>
+          </ul>
+          <input type="submit" name="update" class="btn link-button hover-black update" value="{{ 'cart.general.update' | t }}">
+          <input type="submit" name="checkout" class="btn link-button hover-green checkout" value="{{ 'cart.general.checkout' | t }}">
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+  <!-- End cat-box-container -->
+</div>
+
+<div style="{% if settings.margin_top != blank %}margin-top: {{settings.margin_top}}px;{%endif%} {% if settings.margin_bottom != blank %}margin-bottom: {{settings.margin_bottom}}px;{% endif %}">
+  <div {% if settings.newletter_style == "f_width" %}class="container"{% else %}class="newsletter-home6" {% if settings.newletter_bg == blank %}{% capture _img_url %}newletter_v2_background.jpg{% endcapture %}style="background: url({{ _img_url | asset_url }}) no-repeat; background-size: cover;"{% else %}style="background: url({{ settings.newletter_bg | img_url:'master' }}) no-repeat; background-size: cover;"{% endif %}{% endif %}>
+    <div {% if settings.newletter_style == "f_width" %}class="newsletter-home6" {% if settings.newletter_bg == blank %}{% capture _img_url %}newletter_v2_background.jpg{% endcapture %}style="background: url({{ _img_url | asset_url }}) no-repeat; background-size: cover;"{% else %}style="background: url({{ settings.newletter_bg | img_url:'master' }}) no-repeat; background-size: cover;"{% endif %}{% else %}class="container"{% endif %}>
+      <div class="newsletter-content">
+        <i class="icon {{settings.newletter_icon}}"></i>
+        <h3>{{settings.newletter_title}}</h3>
+        <p>{{settings.newletter_des}}</p>
+        {% if settings.newsletter_form_action != blank %}
+        {% assign form_action = settings.newsletter_form_action %}
+        {% else %}
+        {% assign form_action = '#' %}
+        {% endif %}
+        <form action="{{ form_action }}" method="post" accept-charset="utf-8">
+          <input placeholder="{{settings.newletter_placeholder}}" type="email" onblur="if (this.value == '') {this.value = '{{settings.newletter_placeholder}}';}" onfocus="if(this.value != '') {this.value = '';}" value="{% if customer %}{{ customer.email }}{% endif %}" class="input-text required-entry validate-email" title="Sign up for our newsletter" id="newsletter" name="email">
+          <button type="submit" title="{{settings.newletter_btn_name}}" class="button button1 hover-white">{{settings.newletter_btn_name}}<i class="link-icon-white"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

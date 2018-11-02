@@ -1,0 +1,325 @@
+<!-- section-slider-and-cta.liquid -->
+<div data-section-id="{{ section.id }}" data-section-type="section-slider-and-cta" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="container">
+    <div class="slide-show-home3">
+      <div class="col-md-9">
+        <div class="tp-banner-container ver2">
+          <div class="tp-banner" >
+            <ul>
+              {% for i in (1..2)  %}
+
+              {% capture _enable %}enable_slider_{{i}}{% endcapture %}          
+              {% capture _bg_img %}bg_slider_{{i}}{% endcapture %}
+              {% capture _title %}title_slider_{{i}}{% endcapture %}
+              {% capture _content %}content_slider_{{i}}{% endcapture %}
+              {% capture _icon_img %}icon_slider_{{i}}{% endcapture %}
+              {% capture _btn_name %}btn_name_slider_{{i}}{% endcapture %}
+              {% capture _btn_url %}btn_url_slider_{{i}}{% endcapture %}
+
+              {% assign enable = section.settings[_enable] %}
+              {% if enable %}
+              {% assign bg_img = section.settings[_bg_img] %}
+              {% assign title = section.settings[_title] %}
+              {% assign content = section.settings[_content] %}
+              {% assign icon_img = section.settings[_icon_img] %}
+              {% assign btn_name = section.settings[_btn_name] %}
+              {% assign btn_url = section.settings[_btn_url] %}
+              
+              <li data-transition="random" data-slotamount="6" data-masterspeed="1000" >
+                <!-- MAIN IMAGE -->
+                {% if bg_img == blank %}
+                {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+                {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                {% else %}
+                <img src="{{ bg_img | img_url:'master' }}"  alt="slideshow"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                {% endif %}
+
+                <!-- LAYER NR. 3 -->
+                {% if title != blank %}
+                <div class="tp-caption large_bold_orange color-white font-os letter-spacing-5 font-300 skewfromleft customout size-24"
+                     data-x="563"
+                     data-y="306"
+                     data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="800"
+                     data-start="1600"
+                     data-easing="Power4.easeOut"
+                     data-endspeed="300"
+                     data-endeasing="Power1.easeIn"
+                     data-captionhidden="on"
+                     style="z-index: 9">{{title}}
+                </div>
+                {% endif %}
+                <!-- LAYER NR. 4 -->
+                {% if content != blank %}
+                <div class="tp-caption large_bold_orange color-white text-transform-cap font-play skewfromright customout size-80"
+                     data-x="350"
+                     data-y="330"
+                     data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="800"
+                     data-start="1700"
+                     data-easing="Power4.easeOut"
+                     data-endspeed="300"
+                     data-endeasing="Power1.easeIn"
+                     data-captionhidden="on"
+                     style="z-index: 7">{{content}}
+                </div>
+                {% endif %}
+
+                <!-- LAYER NR. 5 -->
+                {% if icon_img != blank %}
+                <div class="tp-caption welcome size-16 skewfromright customout"
+                     data-x="600" data-hoffset="-140"
+                     data-y="440" data-voffset="-103"
+                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:5;scaleY:5;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="500"
+                     data-start="1500"
+                     data-easing="Power4.easeOut"
+                     data-endspeed="500"
+                     data-endeasing="Power4.easeIn"
+                     data-captionhidden="on"
+                     style="z-index: 7"><img src="{{ icon_img | img_url:'master' }}" alt="icon">
+                </div>
+                {% endif %}
+
+                <!-- LAYER NR. 7 -->
+                {% if btn_name != blank %}
+                <div class="tp-caption skewfromright customout font-italic font-play link-1 height-50"
+                     data-x="560"
+                     data-y="510"
+                     data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="800"
+                     data-start="1500"
+                     data-easing="Power4.easeOut"
+                     data-endspeed="300" 
+                     data-endeasing="Power1.easeIn"
+                     data-captionhidden="on"
+                     style="z-index: 8"><a href="{{btn_url}}" title="{{btn_name}}" class="">{{btn_name}}</a>
+                </div>
+                {% endif %}
+
+                <!-- LAYER NR. 8s -->
+              </li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+            <div class="tp-bannertimer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="banner-top-home3">
+          {% for i in (1..2)  %}
+          
+          {% capture _cta_bg_img %}bg_cta_{{i}}{% endcapture %}
+          {% capture _cta_title %}title_cta_{{i}}{% endcapture %}
+          {% capture _cta_content %}content_cta_{{i}}{% endcapture %}
+          {% capture _cta_btn_name %}btn_name_cta_{{i}}{% endcapture %}
+          {% capture _cta_btn_url %}btn_url_cta_{{i}}{% endcapture %}
+
+          {% assign cta_bg_img = section.settings[_cta_bg_img] %}
+          {% assign cta_title = section.settings[_cta_title] %}
+          {% assign cta_content = section.settings[_cta_content] %}
+          {% assign cta_btn_name = section.settings[_cta_btn_name] %}
+          {% assign cta_btn_url = section.settings[_cta_btn_url] %}
+          
+          <div class="items">
+            <div class="images">
+              {% if cta_bg_img == blank %}
+              {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+              {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+              {% else %}
+              <img class="img-responsive" src="{{ cta_bg_img | img_url:'master' }}" alt="images">
+              {% endif %}
+            </div>
+            <div class="text">
+              <h3>{{cta_title}}</h3>
+              <p>{{cta_content}}</p>
+              <a href="{{cta_btn_url}}" title="{{cta_btn_name}}">{{cta_btn_name}}</a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <!-- End slide-show-home3 -->
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Slider & CTA",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Slider"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider_1",
+      "label": "Enable Slider 1",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_slider_1",
+      "label": "Background Slider"
+    },
+    {
+      "type": "text",
+      "id": "title_slider_1",
+      "label": "Title",
+      "default": "The men"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_slider_1",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "content_slider_1",
+      "label": "Content",
+      "default": "Men & romantic"
+    },
+    {
+      "type": "text",
+      "id": "btn_name_slider_1",
+      "label": "Button Name",
+      "info": "If button name empty, button don't show",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "text",
+      "id": "btn_url_slider_1",
+      "label": "Button URL",
+      "default": "\/collections\/all"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider_2",
+      "label": "Enable Slider 2",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_slider_2",
+      "label": "Background Slider"
+    },
+    {
+      "type": "text",
+      "id": "title_slider_2",
+      "label": "Title",
+      "default": "The men"
+    },
+    {
+      "type": "text",
+      "id": "content_slider_2",
+      "label": "Content",
+      "default": "Men & romantic"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_slider_2",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "btn_name_slider_2",
+      "label": "Button Name",
+      "info": "If button name empty, button don't show",
+      "default": "View details"
+    },
+    {
+      "type": "text",
+      "id": "btn_url_slider_2",
+      "label": "Button URL",
+      "default": "\/collections\/all"
+    },
+    {
+      "type": "header",
+      "content": "CTA(Call to Action)"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_cta_1",
+      "label": "Background CTA 1"
+    },
+    {
+      "type": "text",
+      "id": "title_cta_1",
+      "label": "Title CTA 1",
+      "default": "Accessories"
+    },
+    {
+      "type": "text",
+      "id": "content_cta_1",
+      "label": "Content CTA 1",
+      "default": "UP TO $10 OFF BOOTS"
+    },
+    {
+      "type": "text",
+      "id": "btn_name_cta_1",
+      "label": "Button Name CTA 1",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "text",
+      "id": "btn_url_cta_1",
+      "label": "Button URL CTA 1",
+      "default": "\/collections\/all"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_cta_2",
+      "label": "Background CTA 2"
+    },
+    {
+      "type": "text",
+      "id": "title_cta_2",
+      "label": "Title CTA 2",
+      "default": "Children"
+    },
+    {
+      "type": "text",
+      "id": "content_cta_2",
+      "label": "Content CTA 2",
+      "default": "FREE DELIVERY OVER 55"
+    },
+    {
+      "type": "text",
+      "id": "btn_name_cta_2",
+      "label": "Button Name CTA 2",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "text",
+      "id": "btn_url_cta_2",
+      "label": "Button URL CTA 2",
+      "default": "\/collections\/all"
+    },
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slider & CTA",
+      "category": "Slideshow"
+    }
+  ]
+}
+{% endschema %}

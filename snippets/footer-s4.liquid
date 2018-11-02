@@ -1,0 +1,102 @@
+<footer id="footer" class="footer-v1 footer-v3 engoc_footer_s4">         
+  <div class="container">
+    <div class="footer-top">
+      <div class="col-md-6">
+        {% if settings.enable_fs4_col1 %}
+        <div class="col-md-6 wrap-logo">
+          <div class="logo-footer">
+            {% if settings.enable_svglogo_fs4 %}
+            <a href="{{shop.url}}" title="Logo">
+              {{settings.svglogo_text_fs4}}
+            </a>
+            {% else %}
+            <a href="{{shop.url}}" title="Logo">
+              <img src="{{ 'fs4_logo_black.png' | asset_url }}" alt="Logo">
+            </a>
+            {% endif %}
+          </div>
+          <p>{{settings.fs4_col1_content1}}</p>
+          <p>{{settings.fs4_col1_content2}}</p>
+          <p>{{settings.fs4_col1_content3}}</p>
+        </div>
+        {% endif %}
+        {% if settings.enable_fs4_col2 %}
+        <div class="col-md-6">
+          <div class="footer-title">
+            <h3>{{settings.fs4_col2_title}}</h3>
+          </div>
+          <div class="newsletter-footer">
+            {% if settings.newsletter_form_action != blank %}
+            {% assign form_action = settings.newsletter_form_action %}
+            {% else %}
+            {% assign form_action = '#' %}
+            {% endif %}
+            <form  action="{{form_action}}" method="post" accept-charset="utf-8">
+              <input placeholder="{{settings.fs4_subscribe_placeholder}}" type="email" name="EMAIL" id="newsletter" title="Sign up for our newsletter" class="input-text required-entry validate-email" value="{% if customer %}{{ customer.email }}{% endif %}" onfocus="if(this.value != '') {this.value = '';}" onblur="if (this.value == '') {this.value = '{{settings.fs4_subscribe_placeholder}}';}"> 
+              <button type="submit" title="{{settings.fs4_subscribe_btn_name}}" class="button button1 hover-white">{{settings.fs4_subscribe_btn_name}}<i class="link-icon-white"></i></button>
+            </form>
+          </div>
+          <!-- End newsletter -->
+        </div>
+        {% endif %}
+      </div>
+      <div class="col-md-6">
+        {% if settings.enable_fs4_col3 %}
+        <div class="col-md-4">
+          <div class="footer-title">
+            <h3>{{settings.fs4_col3_title}}</h3>
+          </div>
+          {% assign footer_menu_c2 = settings.fs4_menu_col3 %}
+          <ul>
+            {% for link in linklists[footer_menu_c2].links %}
+            <li><a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        {% if settings.enable_fs4_col4 %}
+        <div class="col-md-4">
+          <div class="footer-title">
+            <h3>{{settings.fs4_col4_title}}</h3>
+          </div>
+          {% assign footer_menu_c3 = settings.fs4_menu_col4 %}
+          <ul>
+            {% for link in linklists[footer_menu_c3].links %}
+            <li><a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        {% if settings.enable_fs4_col5 %}
+        <div class="col-md-4">
+          <div class="footer-title">
+            <h3>{{settings.fs4_col5_title}}</h3>
+          </div>
+          {% if settings.fs4_col5_social != blank %}
+          <ul class="follow">
+            {{ settings.fs4_col5_social }}
+          </ul>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    <!-- End footer-top -->
+    
+    <div class="footer-bottom">
+      {% if settings.fs4_copyright != blank %}
+      <p class="left">{{settings.fs4_copyright}}</p>
+      {% else %}
+      <p class="left">Copyright &copy; {{ 'now' | date: "%Y" }} by <a href="http://engotheme.com" title="EngoTheme" target="_blank">EngoTheme</a>. All Rights Reserved.
+      {% comment %}  <br> <small>{{ powered_by_link }}</small> {% endcomment %}
+      </p>
+      {% endif %}
+      
+      <div class="right">
+        {% include 'currency-picker' %}
+      </div>
+    </div>
+    
+  </div>
+  <!-- End container -->
+</footer>

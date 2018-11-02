@@ -1,0 +1,68 @@
+<footer id="footer" class="footer-v1 footer-v2 engoc_footer_s3">         
+  <div class="container">
+    <div class="footer-top">
+      {% if settings.enable_fs3_top %}
+      <div class="head">
+        {% if settings.fs3_social != blank %}
+        <div class="social">
+          {{settings.fs3_social}}
+        </div>
+        <!-- End social -->
+        {% endif %}
+        <div class="newsletter-footer">
+          {% if settings.newsletter_form_action != blank %}
+          {% assign form_action = settings.newsletter_form_action %}
+          {% else %}
+          {% assign form_action = '#' %}
+          {% endif %}
+          <form  action="{{form_action}}" method="post" accept-charset="utf-8">
+            <input placeholder="{{settings.fs3_subscribe_placeholder}}" type="email" name="EMAIL" id="newsletter" title="Sign up for our newsletter" class="input-text required-entry validate-email" value="{% if customer %}{{ customer.email }}{% endif %}" onfocus="if(this.value != '') {this.value = '';}" onblur="if (this.value == '') {this.value = '{{settings.fs3_subscribe_placeholder}}';}"> 
+            <button type="submit" title="{{settings.fs3_subscribe_btn_name}}" class="button button1 hover-black">{{settings.fs3_subscribe_btn_name}}<i class="link-icon-black"></i></button>
+          </form>
+        </div>
+      </div>
+      {% endif %}
+      
+      <div class="logo-footer">
+        {% if settings.enable_svglogo_fs3 %}
+        <a href="{{shop.url}}" title="Logo">
+          {{settings.svglogo_text_fs3}}
+        </a>
+        {% else %}
+        <a href="{{shop.url}}" title="Logo">
+          <img src="{{ 'fs3_logo_white.png' | asset_url }}" alt="Logo">
+        </a>
+        {% endif %}
+      </div>
+      {% if settings.fs3_menu != blank %}
+      <div class="menu-footer">
+        {% assign footer_menu = settings.fs3_menu %}
+        <ul>
+          {% for link in linklists[footer_menu].links %}
+          <li><a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>    
+      </div>
+      {% endif %}
+      <!-- End menu-footer -->
+
+    </div>
+    <!-- End footer-top -->
+    
+    <div class="footer-bottom">
+      {% if settings.fs3_copyright != blank %}
+      <p class="left">{{settings.fs3_copyright}}</p>
+      {% else %}
+      <p class="left">Copyright &copy; {{ 'now' | date: "%Y" }} by <a href="http://engotheme.com" title="EngoTheme" target="_blank">EngoTheme</a>. All Rights Reserved.
+      {% comment %}  <br> <small>{{ powered_by_link }}</small> {% endcomment %}
+      </p>
+      {% endif %}
+      
+      <div class="right">
+        {% include 'currency-picker' %}
+      </div>
+    </div>
+    
+  </div>
+  <!-- End container -->
+</footer>

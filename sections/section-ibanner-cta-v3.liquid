@@ -1,0 +1,317 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-ibanner-cta-v3" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="main-content">
+    <div class="cat-box-home3">
+      <div class="container">
+        {% if section.settings.cta_style == "s_left" %}
+        <div class="row">
+          <div class="col-md-6">
+            {% if section.settings.cta_big_label != blank %}
+            <span class="label">{{section.settings.cta_big_label}}</span>
+            {% endif %}
+            <div class="hover-images">
+              {% if section.settings.cta_big_background == blank %}
+              {% capture _img_url %}ibanner_cta_v3_ctabig_bg1.jpg{% endcapture %}
+              <img src="{{ _img_url | asset_url}}" alt="">
+              {% else %}
+              <img src="{{ section.settings.cta_big_background | img_url:'master' }}" alt="banner">
+              {% endif %}
+            </div>
+            <div class="text">
+              <h3>{{section.settings.cta_big_title}}</h3>
+              <p>{{section.settings.cta_big_des}}</p>
+              <a class="button button1 hover-black" href="{{section.settings.cta_big_btn_url}}">{{section.settings.cta_big_btn_name}}<i class="link-icon-black"></i></a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="col-md-12">
+              <div class="col-md-6 bg-text" bg-text="{{section.settings.banner_text_bg}}">
+                <h1>{{section.settings.banner_text_content}}</h1>
+              </div>
+              <div class="col-md-6 box-img">
+                <div class="hover-images banner-private center">
+                  {% if section.settings.banner_img_background == blank %}
+                  {% capture _img_url %}ibanner_cta_v3_banner_bg1.jpg{% endcapture %}
+                  <img src="{{ _img_url | asset_url}}" alt="">
+                  {% else %}
+                  <img src="{{ section.settings.banner_img_background | img_url:'master' }}" alt="banner">
+                  {% endif %}
+                  <div class="text">
+                    {% if section.settings.banner_img_icon == blank %}
+                    {% capture _img_url %}ibanner_cta_v3_banner_icon1.png{% endcapture %}
+                    <img src="{{ _img_url | asset_url}}" alt="">
+                    {% else %}
+                    <img src="{{ section.settings.banner_img_icon | img_url:'master' }}" alt="images-icon">
+                    {% endif %}
+                    <h2>{{section.settings.banner_img_content1}}</h2>
+                    <p><a class="engoc_ibctav3_link" target="_blank" href="{{section.settings.banner_img_content2_url}}">{{section.settings.banner_img_content2}}</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="col-md-6 box-img">
+                <div class="hover-images">
+                  {% if section.settings.cta_small_background == blank %}
+                  {% capture _img_url %}ibanner_cta_v3_ctasmall_bg1.jpg{% endcapture %}
+                  <img src="{{ _img_url | asset_url}}" alt="">
+                  {% else %}
+                  <img src="{{ section.settings.cta_small_background | img_url:'master' }}" alt="banner">
+                  {% endif %}
+                </div>
+              </div>
+              <div class="col-md-6 box-text">
+                <div class="text">
+                  <h3>{{section.settings.cta_small_title}}</h3>
+                  <p>{{section.settings.cta_small_des}}</p>
+                  <a class="button button1 hover-black" href="{{section.settings.cta_small_btn_url}}">{{section.settings.cta_small_btn_name}} <i class="link-icon-black"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% if section.settings.cta_style == "s_right" %}
+        <div class="row">
+          <div class="col-md-6">
+            <div class="col-md-12">
+              <div class="col-md-6 bg-text" bg-text="{{section.settings.banner_text_bg}}">
+                <h1>{{section.settings.banner_text_content}}</h1>
+              </div>
+              <div class="col-md-6 box-img">
+                <div class="hover-images banner-private center">
+                  {% if section.settings.banner_img_background == blank %}
+                  {% capture _img_url %}ibanner_cta_v3_banner_bg1.jpg{% endcapture %}
+                  <img src="{{ _img_url | asset_url}}" alt="">
+                  {% else %}
+                  <img src="{{ section.settings.banner_img_background | img_url:'master' }}" alt="banner">
+                  {% endif %}
+                  <div class="text">
+                    {% if section.settings.banner_img_icon == blank %}
+                    {% capture _img_url %}ibanner_cta_v3_banner_icon1.png{% endcapture %}
+                    <img src="{{ _img_url | asset_url}}" alt="">
+                    {% else %}
+                    <img src="{{ section.settings.banner_img_icon | img_url:'master' }}" alt="images-icon">
+                    {% endif %}
+                    <h2>{{section.settings.banner_img_content1}}</h2>
+                    <p><a class="engoc_ibctav3_link" target="_blank" href="{{section.settings.banner_img_content2_url}}">{{section.settings.banner_img_content2}}</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="col-md-6 box-img">
+                <div class="hover-images">
+                  {% if section.settings.cta_small_background == blank %}
+                  {% capture _img_url %}ibanner_cta_v3_ctasmall_bg1.jpg{% endcapture %}
+                  <img src="{{ _img_url | asset_url}}" alt="">
+                  {% else %}
+                  <img src="{{ section.settings.cta_small_background | img_url:'master' }}" alt="banner">
+                  {% endif %}
+                </div>
+              </div>
+              <div class="col-md-6 box-text">
+                <div class="text">
+                  <h3>{{section.settings.cta_small_title}}</h3>
+                  <p>{{section.settings.cta_small_des}}</p>
+                  <a class="button button1 hover-black" href="{{section.settings.cta_small_btn_url}}">{{section.settings.cta_small_btn_name}} <i class="link-icon-black"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            {% if section.settings.cta_big_label != blank %}
+            <span class="label">{{section.settings.cta_big_label}}</span>
+            {% endif %}
+            <div class="hover-images">
+              {% if section.settings.cta_big_background == blank %}
+              {% capture _img_url %}ibanner_cta_v3_ctabig_bg1.jpg{% endcapture %}
+              <img src="{{ _img_url | asset_url}}" alt="">
+              {% else %}
+              <img src="{{ section.settings.cta_big_background | img_url:'master' }}" alt="banner">
+              {% endif %}
+            </div>
+            <div class="text">
+              <h3>{{section.settings.cta_big_title}}</h3>
+              <p>{{section.settings.cta_big_des}}</p>
+              <a class="button button1 hover-black" href="{{section.settings.cta_big_btn_url}}">{{section.settings.cta_big_btn_name}}<i class="link-icon-black"></i></a>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      <!-- End container -->
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "iBanner & CTA v3",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Settings"
+    },
+	{
+      "type": "select",
+      "id": "cta_style",
+      "options": [
+        {
+          "value": "s_left",
+          "label": "CTA big Left"
+        },
+	    {
+          "value": "s_right",
+          "label": "CTA big Right"
+        }
+      ],
+      "label": "Choose Style",
+      "default": "s_left"
+    },
+    {
+      "type": "header",
+      "content": "CTA big"
+    },
+    {
+      "type": "image_picker",
+      "id": "cta_big_background",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "cta_big_label",
+      "label": "Label",
+      "info": "if content Label empty, Label don't show",
+      "default": "50% DISCOUNT"
+    },
+    {
+      "type": "text",
+      "id": "cta_big_title",
+      "label": "Title",
+      "default": "Hearts & Bows"
+    },
+    {
+      "type": "text",
+      "id": "cta_big_des",
+      "label": "Description",
+      "default": "Best collection 2016"
+    },
+    {
+      "type": "text",
+      "id": "cta_big_btn_name",
+      "label": "CTA button name",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "text",
+      "id": "cta_big_btn_url",
+      "label": "CTA button url",
+      "default": "\/collections\/all"
+    },
+    {
+      "type": "header",
+      "content": "CTA small"
+    },
+    {
+      "type": "image_picker",
+      "id": "cta_small_background",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "cta_small_title",
+      "label": "Title",
+      "default": "Sun Glasses"
+    },
+    {
+      "type": "text",
+      "id": "cta_small_des",
+      "label": "Description",
+      "default": "Best collection 2016"
+    },
+    {
+      "type": "text",
+      "id": "cta_small_btn_name",
+      "label": "CTA button name",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "text",
+      "id": "cta_small_btn_url",
+      "label": "CTA button url",
+      "default": "\/collections\/all"
+    },
+    {
+      "type": "header",
+      "content": "Banner text"
+    },
+    {
+      "type": "text",
+      "id": "banner_text_bg",
+      "label": "Text Background",
+      "default": "N"
+    },
+    {
+      "type": "text",
+      "id": "banner_text_content",
+      "label": "Content",
+      "default": "NEW ARRIVALS"
+    },
+    {
+      "type": "header",
+      "content": "Banner image"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_img_background",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_img_icon",
+      "label": "Icon Image"
+    },
+    {
+      "type": "text",
+      "id": "banner_img_content1",
+      "label": "Content 1",
+      "default": "FOLLOW US ON INSTAGRAM"
+    },
+    {
+      "type": "text",
+      "id": "banner_img_content2",
+      "label": "Content 2",
+      "default": "#UNOSTORES"
+    },
+    {
+      "type": "text",
+      "id": "banner_img_content2_url",
+      "label": "URL for Content2",
+      "default": "\/collections\/all"
+    },
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "iBanner & CTA v3",
+      "category": "Content"
+    }
+  ]
+}
+{% endschema %}

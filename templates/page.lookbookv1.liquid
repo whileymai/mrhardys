@@ -1,0 +1,109 @@
+<style>
+span.white {
+    color: #ffffff;
+}
+</style>
+
+<!-- /templates/page.lookbookv1.liquid -->
+
+<div class="container">
+  <div class="banner-header banner-lbook3 engoc_header_collection" style="background-image: url({% if settings.lbv1_bg == blank %}{% capture _img_url %}collection_ls_hbg.jpg{% endcapture %}{{ _img_url | asset_url}}{% else %}{{ settings.lbv1_bg | img_url:'master' }}{% endif %});">
+    <div class="text">
+  	<h1><span class="white">{{page.title}}</span></h1>
+      <img class="border" src="{{ 'border_title_blog_detail.png' | asset_url }}" alt="border">
+    </div>
+  </div>
+</div>
+<!-- Begin Gallery -->
+<div class="container">
+  <div class="tile-lookbook-v2">
+    <span class="icon-mustache icons"></span>
+    {{settings.lbv1_summary}}
+    <h3>{{settings.lbv1_title}}</h3>
+  </div>
+  <!-- End title text -->
+  
+<div style="{% if section.settings.about_sifo_margin_top != blank %}margin-top: {{settings.about_sifo_margin_top}}px;{%endif%} {% if settings.about_sifo_margin_bottom != blank %}margin-bottom: {{settings.about_sifo_margin_bottom}}px;{% endif %}">
+  <div class="container container-ver2">
+    <div class="tab-v1 tab-shortcode space-0">
+      <div class="custom-content">
+        <div class="col-md-6">
+          {% if settings.about_sifo_bg1 == blank %}
+          {% capture _img_url %}about_info1.jpg{% endcapture %}
+          <img src="{{ _img_url | asset_url}}" alt="">
+          {% else %}
+          <img src="{{ settings.about_sifo_bg1 | img_url:'master' }}" alt="Banner">
+          {% endif %}
+        </div>
+        <div class="col-md-6">
+          <h3>{{settings.about_sifo_tit1}}</h3>
+          	{{settings.about_sifo_con1}}
+        </div>
+      </div>
+      <!-- End custom-content -->
+    </div>
+    <!-- End tab -->
+  </div>
+</div>
+
+
+
+  <section class="slider-loobook2 slider">
+    {% for i in (1..6) %}
+    
+    {% capture _enable %}enable_gs{{i}}{% endcapture %}
+    {% capture _gallery_image %}image_gs{{i}}{% endcapture %}
+    {% capture _title %}title_gs{{i}}{% endcapture %}   
+    {% capture _des %}des_gs{{i}}{% endcapture %}
+    {% capture _btn_name %}btn_name_gs{{i}}{% endcapture %}
+    {% capture _btn_url %}btn_url_gs{{i}}{% endcapture %}
+
+    {% assign enable = settings[_enable] %}
+    {% if enable %}
+    {% assign gallery_image = settings[_gallery_image] %}
+    {% assign title = settings[_title] %}
+    {% assign des = settings[_des] %}
+    {% assign btn_name = settings[_btn_name] %}    
+    {% assign btn_url = settings[_btn_url] %}
+
+    <div class="items">
+      {% if gallery_image == blank %}
+      {% capture _img_url %}lb1_gallery.png{% endcapture %}
+      <img src="{{ _img_url | asset_url}}" alt="">
+      {% else %}
+      <img src="{{ gallery_image | img_url:'master' }}" alt="Lookbook">
+      {% endif %}
+      <div class="text">
+        <h3>{{title}}</h3>
+        <p>{{des}}</p>
+        <a class="button button1 hover-white" href="{{btn_url}}" title="{{btn_name}}">{{btn_name}}<i class="link-icon-white"></i></a>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </section>
+</div>
+
+
+
+<div style="{% if settings.margin_top != blank %}margin-top: {{settings.margin_top}}px;{%endif%} {% if settings.margin_bottom != blank %}margin-bottom: {{settings.margin_bottom}}px;{% endif %}">
+  <div {% if settings.newletter_style == "f_width" %}class="container"{% else %}class="newsletter-home6" {% if settings.newletter_bg == blank %}{% capture _img_url %}newletter_v2_background.jpg{% endcapture %}style="background: url({{ _img_url | asset_url }}) no-repeat; background-size: cover;"{% else %}style="background: url({{ settings.newletter_bg | img_url:'master' }}) no-repeat; background-size: cover;"{% endif %}{% endif %}>
+    <div {% if settings.newletter_style == "f_width" %}class="newsletter-home6" {% if settings.newletter_bg == blank %}{% capture _img_url %}newletter_v2_background.jpg{% endcapture %}style="background: url({{ _img_url | asset_url }}) no-repeat; background-size: cover;"{% else %}style="background: url({{ settings.newletter_bg | img_url:'master' }}) no-repeat; background-size: cover;"{% endif %}{% else %}class="container"{% endif %}>
+      <div class="newsletter-content">
+        <i class="icon {{settings.newletter_icon}}"></i>
+        <h3>{{settings.newletter_title}}</h3>
+        <p>{{settings.newletter_des}}</p>
+        {% if settings.newsletter_form_action != blank %}
+        {% assign form_action = settings.newsletter_form_action %}
+        {% else %}
+        {% assign form_action = '#' %}
+        {% endif %}
+        <form action="{{ form_action }}" method="post" accept-charset="utf-8">
+          <input placeholder="{{settings.newletter_placeholder}}" type="email" onblur="if (this.value == '') {this.value = '{{settings.newletter_placeholder}}';}" onfocus="if(this.value != '') {this.value = '';}" value="{% if customer %}{{ customer.email }}{% endif %}" class="input-text required-entry validate-email" title="Sign up for our newsletter" id="newsletter" name="email">
+          <button type="submit" title="{{settings.newletter_btn_name}}" class="button button1 hover-white">{{settings.newletter_btn_name}}<i class="link-icon-white"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

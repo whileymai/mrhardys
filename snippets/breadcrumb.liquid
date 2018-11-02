@@ -1,0 +1,60 @@
+<!-- /snippets/breadcrumb.liquid -->
+{% comment %}
+Documentation - http://docs.shopify.com/support/your-website/navigation/creating-a-breadcrumb-navigation
+{% endcomment %}
+
+{% unless template == 'index' %}
+<ul {% unless template contains 'product' %}class="breadcrumb"{% endunless %}>
+  <li>
+    <a href="/" title="{{ 'general.breadcrumbs.home_link_title' | t }}">{{ 'general.breadcrumbs.home' | t }}</a>
+  </li>
+  {% if template contains 'product' %}
+
+    {% if collection %}
+      {% if collection.handle %}
+      {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+        <li>
+        {{ collection.title | link_to: url }}
+        </li>
+      {% endif %}
+    {% endif %}
+  <li class="active">{{ product.title }}</li>
+
+  {% elsif template contains 'collection' and collection.handle %}
+    {% if current_tags %}
+    {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+    <li>
+      {{ collection.title | link_to: url }}
+    </li>
+    <li class="active">{{ current_tags | join: " + " }}</li>
+    {% else %}
+    <li class="active">{{ collection.title }}</li>
+    {% endif %}
+
+  {% elsif template == 'blog' %}
+    {% if current_tags %}
+    <li>
+    {{ blog.title | link_to: blog.url }}
+    </li>
+    <li class="active">{{ current_tags | join: " + " }}</li>
+    {% else %}
+    <li class="active">{{ blog.title }}</li>
+  	{% endif %}
+
+  {% elsif template == 'article' %}
+    <li>
+      {{ blog.title | link_to: blog.url }}
+    </li>
+    <li class="active">{{ article.title }}</li>
+
+  {% elsif template contains 'page' %}
+  	<li class="active">{{ page.title }}</li>
+
+  {% else %}
+  	<li class="active">{{ page_title }}</li>
+
+  {% endif %}
+</ul>
+{% endunless %}
+
+

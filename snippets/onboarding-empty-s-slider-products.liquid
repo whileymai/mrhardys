@@ -1,0 +1,24 @@
+{% comment %}
+Add default products to help with onboarding for collections/all only.
+
+The onboarding styles and products are only loaded if the
+store has no products.
+{% endcomment %}
+{% for i in (1..5) %}
+<div class="item-inner">
+  <div class="product">
+    <div class="product-images">
+      <a href="/admin/products" title="product-images">
+        {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+        {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+      </a>
+      <div class="action">
+        <a class="chart" href="/admin/products" title="Compare" ><i class="icon icon-bar-chart"></i></a>
+        <a class="zoom" href="/admin/products" title="Quick view" ><i class="icon icon-magnifier-add "></i></a>
+        <a class="wish" href="/admin/products" title="Wishlist" ><i class="icon icon-heart"></i></a>
+        <a class="add-cart" href="/admin/products" title="Add to cart" ><i class="icon-bag"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}

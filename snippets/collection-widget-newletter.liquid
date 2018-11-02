@@ -1,0 +1,18 @@
+<!-- /snippets/collection-widget-newletter.liquid -->
+<aside class="widget">
+  <div class="newsletter-content space-30">
+    <i class="icon {{section.settings.w_newletter_icon}}"></i>
+    <h3>{{section.settings.w_newletter_title}}</h3>
+    <p>{{section.settings.w_newletter_des}}</p>'
+    
+    {% if settings.newsletter_form_action != blank %}
+    {% assign form_action = settings.newsletter_form_action %}
+    {% else %}
+    {% assign form_action = '#' %}
+    {% endif %}
+    <form accept-charset="utf-8" method="post" action="{{ form_action }}">
+      <input type="email" name="EMAIL" id="newsletter" placeholder="{{section.settings.w_newletter_placeholder}}" class="input-text required-entry validate-email" value="{% if customer %}{{ customer.email }}{% endif %}" onfocus="if(this.value != '') {this.value = '';}" onblur="if (this.value == '') {this.value = '{{section.settings.w_newletter_placeholder}}';}"> 
+      <button type="submit" title="{{section.settings.w_newletter_btn_name}}" class="button button1 hover-black">{{section.settings.w_newletter_btn_name}}<i class="link-icon-black"></i></button>
+    </form>
+  </div>
+</aside>

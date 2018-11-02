@@ -1,0 +1,43 @@
+<!-- /snippets/modal-search.liquid -->
+{% comment %}
+
+A snippet to include a search bar anywhere in your theme.
+Note we are using 'input-group' for the layout. Look under Forms > Input Groups for some demos.
+
+More information:
+- http://docs.shopify.com/themes/liquid-variables/search
+
+To return only products in results:
+- http://docs.shopify.com/manual/configuration/store-customization/return-only-product-in-storefront-search-results
+- Or manually add type=product to the search URL as a query parameter
+- Uncomment hidden input with value="product" below
+
+{% endcomment %}
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></button>
+        <h4 class="modal-title" id="myLargeModalLabel">Search Our Store</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="input-group">
+          <form method="get" class="searchform" action="/search" role="search">
+            <input type="hidden" name="type" value="product">
+            <input type="text" id="engo_autocomplate" class="form-control control-search" value="{{ search.terms | escape }}" autocomplete="off" placeholder="{{ 'general.search.placeholder' | t }}" aria-label="{{ 'general.search.placeholder' | t }}" name="q" />
+            <span class="input-group-btn">
+              <button class="btn btn-default button_search" type="button"><i data-toggle="dropdown" class="icons icon-magnifier dropdown-toggle"></i></button>
+            </span>
+          </form>
+        </div><!-- /input-group -->
+
+        <div id="productSearchResults" class="hidden-xs" style="display: none;">
+          <ul class="search-results"></ul>
+        </div>
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>

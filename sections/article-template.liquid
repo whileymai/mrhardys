@@ -1,0 +1,340 @@
+{% assign number_of_comments = article.comments_count %}
+
+{% comment %}
+If a comment was just submitted and it has no blank fields, we have an extra comment to count.
+{% endcomment %}
+{% if comment and comment.created_at %}
+{% assign number_of_comments = article.comments_count | plus: 1 %}
+{% endif %}
+
+<div class="container">
+  <div class="banner-header banner-lbook3 single-post space-30">
+    <img src="{{ article.image.src | img_url: 'master' }}" alt="{{ article.title }}">
+    <div class="text">
+      <p class="cat"><a style="color:#fff;" href="{{blog.url}}" title="{{blog.title}}">{{blog.title}}</a></p>
+      <h3>{{ article.title }}</h3>       
+      <img class="border" src="{{ 'border_title_blog_detail.png' | asset_url }}" alt="border">
+      {% if section.settings.show_authordate %}
+      <p>{{ 'blogs.article.by' | t }} {{ article.author }} <span>|</span> {{ article.published_at | date: "%B, %d, %Y" }} </p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+<div class="container container-ver2 blog-classic">
+  <div id="primary" class="col-xs-12 col-md-9">
+    <div class="blog-post-container single-post">                     
+      <div class="blog-post-item">
+        <div class="blog-post-images">
+          <div class="">
+          </div>
+        </div>
+        <div class="content">
+          {{article.content}}
+        </div>
+        <p class="tag-cat"><span>{{ 'blogs.article.tags' | t }}:</span>
+          {% for tag in article.tags %}
+          {{ tag | link_to_tag: tag }}. 
+          {% endfor %}
+        </p>
+      </div>
+      <!-- End blog-item -->
+      <div class="social">
+        <p>{{ 'blogs.article.share' | t }}:</p>
+        {% include 'socialshare' %}
+      </div>
+      {% if blog.next_article or blog.previous_article %}
+      <div class="pagination">
+        <div class="prev">
+          <a class="button-v2 hover-black color-black" href="{{blog.previous_article}}" title="{{ 'blogs.article.older_post' | t }}"><i class="link-icon-black"></i>{{ 'blogs.article.older_post' | t }}</a>
+        </div>
+        <div class="next">
+          <a class="button-v2 hover-black color-black" href="{{blog.next_article}}" title="{{ 'blogs.article.newer_post' | t }}">{{ 'blogs.article.newer_post' | t }}<i class="link-icon-black"></i></a>
+        </div>
+      </div>
+      {% endif %}
+      <!-- End pagination -->
+      
+      {% if blog.comments_enabled? %}
+
+      {% comment %}
+      Just like blog.liquid page, define how many comments should be on each page.
+      {% endcomment %}
+
+      {% paginate article.comments by 5 %}
+
+      {% comment %}
+      #comments is required, it is used as an anchor link by Shopify.
+      {% endcomment %}
+      <div class="widget">
+        <h3 class="widget-title">{{ 'blogs.comments.comment' | t }}(<span>{{ 'blogs.comments.comments_with_count' | t: count: number_of_comments }}</span>)</h3>
+      </div>
+      
+      {% if comment and comment.created_at %}
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <p>
+          {% if blog.moderated? %}
+          {{ 'blogs.comments.success_moderated' | t }}
+          {% else %}
+          {{ 'blogs.comments.success' | t }}
+          {% endif %}
+        </p>
+      </div>
+      {% endif %}
+      {% if number_of_comments > 0 %}
+      <div class="panel" id="media-object">
+        <div class="panel-body">
+          <ul class="media-list">
+            {% comment %}
+            If a comment was just submitted with no blank field, show it.
+            {% endcomment %}
+            {% if comment and comment.created_at %}
+            {% include 'comment' %}
+            {% endif %}
+
+            {% comment %}
+            Showing the rest of the comments.
+            {% endcomment %}
+            {% for comment in article.comments %}
+            {% include 'comment' %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      {% endif %}
+      <!-- End panel -->
+      {% form 'new_comment', article %}
+      <div class="widget">
+        <h3 class="widget-title">{{ 'blogs.comments.title' | t }}</h3>
+      </div>
+      {{ form.errors | default_errors }}
+      <div class="form-horizontal space-50">
+        <div class="form-group col-md-6">
+          <input type="text" placeholder="{{ 'blogs.comments.name' | t }}" id="inputName" class="form-control" name="comment[author]" value="{{ form.author }}">
+        </div>
+        <div class="form-group col-md-6">
+          <input type="text" placeholder="{{ 'blogs.comments.email' | t }}" id="inputsumary" class="form-control" name="comment[email]" value="{{ form.email }}">
+        </div>
+        <div class="form-group">
+          <textarea placeholder="{{ 'blogs.comments.message' | t }}" id="message" class="form-control  {% if form.errors contains 'body' %}error{% endif %}" name="comment[body]">{{ form.body }}</textarea>
+        </div>
+        <button type="submit" class="button-v2 hover-white color-white">{{ 'blogs.comments.submit' | t }}<i class="link-icon-white"></i></button>
+      </div>
+      <!-- End form -->
+      {% endform %}
+      {% endpaginate %}
+      {% endif %}
+    </div>
+    <!-- End blog-post-container -->  
+  </div>
+  <!-- End Primary -->
+  <div id="secondary" class="widget-area col-xs-12 col-md-3">
+    {% include 'blog-sidebar' %}
+  </div>
+  <!-- End Secondary -->
+</div>
+
+{% schema %}
+{
+  "name": "Blog details",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Select Template"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_header_blog_detail",
+      "label": "Background Header"
+    },
+	{
+      "type": "checkbox",
+      "id": "show_authordate",
+      "label": "Show author & date?",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Blog Detail sidebar"
+    },
+    {
+      "type": "header",
+      "content": "Widget Search"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_widget_search",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Widget Categories"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_widget_categories",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "widget_categories_title",
+      "label": "Widget Title",
+      "default": "Categories"
+    },
+    {
+      "type": "header",
+      "content": "Widget Social"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_widget_social",
+      "label": "Enable",
+      "default": true
+    },
+	{
+      "type": "text",
+      "id": "widget_social_title",
+      "label": "Widget Title",
+      "default": "follow us"
+    },
+    {
+      "type": "textarea",
+      "id": "widget_social_content",
+      "label": "Social Content"
+    },
+	{
+      "type": "header",
+	  "info": "MailChimp form action URL: Setting in Login Store > Customize theme > General Settings tab > General > Mailchimp",
+      "content": "Widget Newletter"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_widget_newletter",
+      "label": "Enable",
+      "default": true
+    },
+	{
+      "type": "text",
+      "id": "widget_newletter_title",
+      "label": "Widget Title",
+      "default": "Subscribe"
+    },
+    {
+      "type": "image_picker",
+      "id": "newletter_bg",
+      "label": "Background Widget"
+    },
+	{
+      "type": "text",
+      "id": "newletter_icon",
+      "label": "Icon",
+	  "info": "[Get icon from here](http://simplelineicons.com/)",
+      "default": "icon-envelope-letter"
+    },
+    {
+      "type": "text",
+      "id": "newletter_title",
+      "label": "Title",
+      "default": "Sign up for newsletter"
+    },
+    {
+      "type": "text",
+      "id": "newletter_des",
+      "label": "Description",
+      "default": "to receive updates"
+    },
+	{
+      "type": "text",
+      "id": "newletter_placeholder",
+      "label": "Input placeholder",
+      "default": "Enter your email here..."
+    },
+    {
+      "type": "text",
+      "id": "newletter_btn_name",
+      "label": "Button name",
+      "default": "Subscribe"
+    },
+    {
+      "type": "header",
+      "content": "Widget Recent Post"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_widget_recent_post",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "widget_recent_post_title",
+      "label": "Widget Title",
+      "default": "Recent post"
+    },
+    {
+      "type": "blog",
+      "id": "widget_recent_post_select",
+      "label": "Select Category"
+    },
+    {
+      "type": "text",
+      "id": "widget_recent_post_limit",
+      "label": "Limit number",
+      "default": "4"
+    },
+    {
+      "type": "header",
+      "content": "Widget Instagram"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_widget_gallery_instagram",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "widget_gallery_instagram_title",
+      "label": "Widget Title",
+      "default": "INSTAGRAM"
+    },
+    {
+      "type": "text",
+      "id": "gallery_instagram_userid",
+      "label": "User ID Instagram",
+      "default": "3672948962"
+    },
+    {
+      "type": "text",
+      "id": "gallery_instagram_access_token",
+      "label": "Access Token Instagram",
+      "default": "3672948962.0f64772.430edb7f711e4665b59777c54d1ed9ce"
+    },
+    {
+      "type": "text",
+      "id": "gallery_instagram_limit_number",
+      "label": "Limit Image",
+      "default": "6"
+    },
+    {
+      "type": "header",
+      "content": "Widget Tags"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_widget_tags",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "widget_tags_title",
+      "label": "Widget Title",
+      "default": "Tag cloud"
+    }
+  ]
+}
+{% endschema %}
+

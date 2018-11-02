@@ -1,0 +1,128 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-service-box-v1" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="main-content">
+    <div class="shipping-container{% if section.settings.sb_style == "style_bl" %} shipping-container-home8{% else %}{% endif %}">
+      <div class="container">
+        <div class="shipping-content">
+          {% if section.blocks.size > 0 %}
+          {% for block in section.blocks %}
+          <div class="col-md-4">
+            {% if block.settings.enable_sb_v1_icon_img %}
+            <img src="{{ block.settings.icon_svb | img_url:'master' }}" alt="{{block.settings.sb_v1_title}}">
+            {% else %}
+            <i class="{{block.settings.sb_v1_icon}} icons"></i>
+            {% endif %}
+            <h3>{{block.settings.sb_v1_title}}</h3>
+          </div>
+          {% endfor %}
+          {% endif %}
+        </div>
+        <!-- End shipping-content -->
+      </div>
+      <!-- End container -->
+    </div>
+    <!-- Enb shipping container -->
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Service Box v1",
+  "class": "index-section",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "select",
+      "id": "sb_style",
+      "options": [
+        {
+          "value": "style_bl",
+          "label": "Style Black"
+        },
+	    {
+          "value": "style_wh",
+          "label": "Style White"
+        }
+      ],
+      "label": "Choose Style",
+      "default": "style_wh"
+    },
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "box",
+      "name": "Box",
+      "settings": [
+        {
+          "type": "text",
+          "id": "sb_v1_title",
+          "label": "Title",
+          "default": "The title here"
+        },
+        {
+          "type": "text",
+          "id": "sb_v1_icon",
+          "label": "Icon",
+		  "info": "[Get icon from here](http://simplelineicons.com/)",
+          "default": "icon-plane"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_sb_v1_icon_img",
+          "label": "Use Image Icon?",
+          "default": false
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_svb",
+          "label": "Image Icon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Service Box v1",
+      "category": "Content",
+	  "blocks": [
+        {
+          "type": "box",
+          "settings": {
+            "sb_v1_title": "INTERNATIONAL DELIVERY FROM £6.99",
+            "sb_v1_icon": "icon-plane"
+          }
+        },
+        {
+          "type": "box",
+          "settings": {
+            "sb_v1_title": "CLICK & COLLECT TO 500 STORES",
+            "sb_v1_icon": "icon-diamond"
+          }
+        },
+        {
+          "type": "box",
+          "settings": {
+            "sb_v1_title": "10% STUDENT DISCOUNT",
+            "sb_v1_icon": "icon-emoticon-smile"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
